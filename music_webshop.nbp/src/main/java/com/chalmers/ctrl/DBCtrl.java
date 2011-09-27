@@ -6,7 +6,7 @@ package com.chalmers.ctrl;
 
 /**
  *
- * @author sajohan
+ * @author Johan
  */
 public interface DBCtrl {
     
