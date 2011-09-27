@@ -6,7 +6,7 @@ package com.chalmers.core;
 
 /**
  *
- * @author sajohan
+ * @author Johan
  */
 public class OrderItem {
     
