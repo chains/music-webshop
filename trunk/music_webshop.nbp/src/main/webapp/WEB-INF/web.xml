@@ -6,6 +6,6 @@
         </session-timeout>
     </session-config>
     <welcome-file-list>
-        <welcome-file>jsp/index.jspx</welcome-file>
+        <welcome-file>index.jspx</welcome-file>
     </welcome-file-list>
 </web-app>
