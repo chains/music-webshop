@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+    Document   : header
+    Created on : Sep 27, 2011, 1:04:20 PM
+    Author     : Jonas
+-->
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.0">
+    <div>
+        <div>
+            <div id="loggedInUser">
+            Logged in as: ${sessionScope['user'].login}  
+        </div>
+            <p id="p1">TODO header</p>
+        </div>
+        <div class="menu">
+          <!--  <ul>
+                <li><a href="/webshop">Home</a></li>
+                <li><a href="FrontController?action=shop">Shop</a></li>
+                <li><a href="FrontController?action=cart">View Cart</a></li>
+                <li><a href="FrontController?action=pay">Pay</a></li>
+                <li><a href="/webshop/login?action=logout">Logout</a></li> 
+            </ul>
+            <br style="clear:left"/>-->
+        </div>
+        
+    </div>
+</jsp:root>

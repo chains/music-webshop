@@ -1,0 +1,39 @@
+/* 
+    Document   : default
+    Created on : 2011-sep-27, 14:13:22
+    Author     : Jonas
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+/* 
+   TODO customize this sample style
+   Syntax recommendation http://www.w3.org/TR/REC-CSS2/
+*/
+
+root { 
+    display: block;
+}
+
+#container{
+    position:relative;
+    font-size:14px;
+    width: 50em;
+    height:100%;
+    margin: 0px auto;
+    background-color: blue;
+}
+
+#main:hover{
+    background-color:yellow;
+}
+#main{
+    
+    background-color:blueviolet;
+   
+}
+#loggedInUser{
+    position:relative;
+    z-index:1;
+    float:right;
+}
