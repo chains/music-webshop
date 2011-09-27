@@ -15,8 +15,10 @@
             <link rel="stylesheet" href="default.css" type="text/css"/>
         </head>
         <body>
-            <div id="container">
+            <div id="container">   
+            <div id="header">
             <jsp:include page="WEB-INF/jsp/header.jspx" />
+            </div>
             <div id="main">
             <h1>main.jspx</h1>
          <!--   <p>${requestScope['msg']}</p>
