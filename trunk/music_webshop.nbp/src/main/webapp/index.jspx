@@ -39,7 +39,7 @@
                         <p>TODO Main menu</p>
                     </div>
                     <div id="main">
-                        <jsp:include page="WEB-INF/jsp/main.jspx" />
+                        <h1>Welcome to the music web shop</h1>
                     </div>
                 </div>
                 <div id="footer">

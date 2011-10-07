@@ -34,7 +34,13 @@
                 </div>
                 <div id="center">
                     <div id="mainmenu">
-                        <p>TODO Main menu</p>
+                        <ul id="cdmenu">
+                    <li id="pop"><a href="#">Pop</a></li>
+                    <li id="rock"><a href="#">Rock</a></li>
+                    <li id="metal"><a href="#">Metal</a></li>
+                    <li id="jazz"><a href="#">Jazz</a></li>
+                    <li id="other"><a href="#">Other</a></li>
+                </ul>
                     </div>
                     <div id="main">
                         <h>This is the shop</h>
