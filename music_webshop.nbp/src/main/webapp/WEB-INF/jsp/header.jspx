@@ -10,7 +10,7 @@
            
         </head>
         <div id="topleft">
-            <div id="banner">Todo banner</div>
+            <div id="banner"></div>
             <div id="menubar">
                 <ul class="lavaLampNoImage" id="2">
                     <li><a href="index.jspx">Home</a></li>
