@@ -8,7 +8,7 @@ package com.chalmers.ctrl;
  *
  * @author Johan
  */
-public interface DBCDCtrl {
+public interface DBCtrl {
     
     //TODO: implement interface
     
