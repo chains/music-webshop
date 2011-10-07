@@ -28,21 +28,32 @@ public class ControlServlet extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        
-        
-        System.out.println("Hello world");
-        CD cd = new CD(new Long(0), "Black", 90, "Rock", "Description", 300, 40, "Metallica");
-        
+
         Database db = new Database();
         DBCtrl cdctrl = db.getCDController();
-        
-        cdctrl.create(cd);
 
-        // Actions used later on for
-        //String action = request.getParameter("action");
-        
-        
-        
+//        Testing purposes
+//        System.out.println("Hello world");
+//        CD cd = new CD(new Long(0), "Black", 90, "Rock", "Description", 300, 40, "Metallica");
+//        cdctrl.create(cd);
+
+        String action = request.getParameter("action");
+
+        if ("viewCart".equals(action)) {
+            response.sendRedirect("/WEB-INF/jsp/viewcart.jspx");
+        } 
+        else if ("confirm".equals(action)) {
+            response.sendRedirect("/WEB-INF/jsp/confirm.jspx");
+
+        } 
+        else if ("pay".equals(action)) {
+            response.sendRedirect("/WEB-INF/jsp/pay.jspx");
+        }
+
+
+
+
+
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
