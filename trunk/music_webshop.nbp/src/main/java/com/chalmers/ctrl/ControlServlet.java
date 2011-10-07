@@ -29,6 +29,12 @@ public class ControlServlet extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         
+        CD cd = new CD(new Long(0), "Black", 90, "Rock", "Description", 300, 40, "Metallica");
+        
+        Database db = new Database();
+        DBCtrl cdctrl = db.getCDController();
+        
+        cdctrl.create(cd);
 
         // Actions used later on for
         //String action = request.getParameter("action");
