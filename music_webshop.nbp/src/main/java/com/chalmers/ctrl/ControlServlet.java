@@ -40,7 +40,7 @@ public class ControlServlet extends HttpServlet {
         String action = request.getParameter("action");
 
         if ("viewCart".equals(action)) {
-            response.sendRedirect("/WEB-INF/jsp/viewcart.jspx");
+            response.sendRedirect("/WEB-INF/jsp/viewCart.jspx");
         } 
         else if ("confirm".equals(action)) {
             response.sendRedirect("/WEB-INF/jsp/confirm.jspx");
@@ -49,7 +49,6 @@ public class ControlServlet extends HttpServlet {
         else if ("pay".equals(action)) {
             response.sendRedirect("/WEB-INF/jsp/pay.jspx");
         }
-
 
 
 
