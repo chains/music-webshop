@@ -29,7 +29,7 @@ root {
     width:7em;
     height:50em;
     float:left;
-    position:relative;
+    position:absolute;
 }
 #center{
     position:relative;
@@ -67,7 +67,9 @@ root {
 
 #banner{
     height:5em;
+    color:white;
     vertical-align:top; 
+    
     background: url(images/610px-tux-g2-svg-svg.png);   
 }
 #topleft{
@@ -112,11 +114,13 @@ top:0em;
     z-index: 10;
     display: block;
     float: left;
-    height: 1em;
+    height: 2em;
     position: relative;
     overflow: hidden;
     margin: auto 10px;
+    
 }
 .lavaLampNoImage li a:hover, .lavaLampNoImage li a:active, .lavaLampNoImage li a:visited {
     border: none;
+    background-color:red;
 }                    

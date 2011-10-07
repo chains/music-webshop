@@ -37,9 +37,7 @@
                         <p>TODO Main menu</p>
                     </div>
                     <div id="main">
-                        <h> <form action="cs?action=pay" method="post">
-                                <input type="submit" value ="pay"></input>
-            </form></h>
+                        <h> You get mail nao!</h>
                     </div>
                 </div>
                 <div id="footer">
