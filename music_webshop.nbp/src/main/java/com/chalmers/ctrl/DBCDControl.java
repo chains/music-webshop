@@ -4,16 +4,30 @@
  */
 package com.chalmers.ctrl;
 
+import com.chalmers.core.CD;
 import java.util.List;
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
 
 /**
  *
  * @author Johan
  */
-public class DBCDControl implements DBCtrl {
+public class DBCDControl implements DBCtrl<CD> {
 
+    private EntityManager em;
+    private final EntityManagerFactory emf;
+
+    public DBCDControl(EntityManagerFactory emf) {
+        this.emf = emf;
+    }
+
+    public EntityManager getEntityManager() {
+        return emf.createEntityManager();
+    }
+    
     @Override
-    public void create(Object t) {
+    public void create(CD t) {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 
@@ -23,22 +37,22 @@ public class DBCDControl implements DBCtrl {
     }
 
     @Override
-    public void edit(Object t) {
+    public void edit(CD t) {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 
     @Override
-    public Object findEntity(Long id) {
+    public CD findEntity(Long id) {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 
     @Override
-    public List findEntities() {
+    public List<CD> findEntities() {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 
     @Override
-    public List findEntities(int maxResults, int firstResult) {
+    public List<CD> findEntities(int maxResults, int firstResult) {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 
@@ -46,5 +60,7 @@ public class DBCDControl implements DBCtrl {
     public int getEntityCount() {
         throw new UnsupportedOperationException("Not supported yet.");
     }
+
+
     
 }
