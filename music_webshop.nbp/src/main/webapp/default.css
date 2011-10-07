@@ -17,14 +17,14 @@ root {
     width: 50em;
     height:67em;
     margin: 0px auto;
-    
+
 }
 #header{
     position: relative;
     height: 7em;   
 }
 #mainmenu{
-    
+
     background-color:darkgray;
     width:7em;
     height:50em;
@@ -63,13 +63,13 @@ root {
 #footer:hover{
     background-color:gray;
 }
-    
+
 
 #banner{
     height:5em;
     color:white;
     vertical-align:top; 
-    
+
     background: url(images/610px-tux-g2-svg-svg.png);   
 }
 #topleft{
@@ -88,7 +88,7 @@ root {
     width: 35em;
     background-color: white;
     overflow: hidden;
-top:0em;
+    top:0em;
 }
 .lavaLampNoImage li {
     float: left;
@@ -118,7 +118,7 @@ top:0em;
     position: relative;
     overflow: hidden;
     margin: auto 10px;
-    
+
 }
 .lavaLampNoImage li a:hover, .lavaLampNoImage li a:active, .lavaLampNoImage li a:visited {
     border: none;
@@ -128,11 +128,26 @@ top:0em;
 #cdmenu{
     width:7em;
     float:left;
+    list-style-type:none;
+    margin:0;
+    padding:0;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align:center;
 }
-#cdmenu ul
+
+#cdmenu a
 {
-font-family: Arial, Helvetica, sans-serif;
-list-style-type:none;
-margin:0;
-padding:0;
+    color: #fff;
+    text-decoration: none;
+    font-size: 14px;
+    display: block;
+    padding: 3px;
+    width: 7em;
+    background-color: #686C7A;
+    border-bottom: 1px solid #eee;
+}
+#cdmenu a:hover
+{
+    background-color: #00BEE4;
+    color: #fff;
 }
