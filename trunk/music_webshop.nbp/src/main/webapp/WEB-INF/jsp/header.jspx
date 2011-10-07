@@ -6,27 +6,22 @@
 -->
 <jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.0">
     <html>
-
-        <div id="header">
-
-            <div id="loggedInUser">
-                Logged in as: ${sessionScope['user'].login}  
+        <head>         
+           
+        </head>
+        <div id="topleft">
+            <div id="banner">Todo banner</div>
+            <div id="menubar">
+                <ul class="lavaLampNoImage" id="2">
+                    <li><a href="index.jspx">Home</a></li>
+                    <li><a href="shop.jspx">Shop</a></li>
+                    <li><a href="cs?action=viewCart">Show cart</a></li>
+                    <li><a href="about.jspx">About us</a></li>
+                </ul>
             </div>
-            <div id="topright" class="myclass"></div>
-            <ul>
-                <li id="li1" class ="liID">CD
-                    <div class="dropdown" id="cd_dropdown"></div>
-                </li>    
-                <li id="li2" class ="liID">DVD
-                    <div class="dropdown" id="dvd_dropdown"></div>
-                </li>    
-                <li id="li3" class ="liID">About
-                    <div class="dropdown" id="about_dropdown"></div>
-                </li>    
-            </ul>
-
-
-        </div>  
-
+        </div>
+        <div id="loggedInUser">
+            Logged in as: ${sessionScope['user'].login}  
+        </div>
     </html>
 </jsp:root>
