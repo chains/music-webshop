@@ -109,4 +109,9 @@ public class CD implements Serializable {
     public Long getId() {
         return id;
     }
+    
+    @Override
+    public String toString(){
+        return artist + " " + name + " " + genre + " " + price;
+    }
 }

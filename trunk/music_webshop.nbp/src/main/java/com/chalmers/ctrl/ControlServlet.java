@@ -5,8 +5,12 @@
 package com.chalmers.ctrl;
 
 import com.chalmers.core.CD;
+import java.io.BufferedReader;
+import java.io.FileReader;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.ArrayList;
+import java.util.List;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -28,7 +32,7 @@ public class ControlServlet extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-//        response.setContentType("text/html;charset=UTF-8");
+        response.setContentType("text/html;charset=UTF-8");
 
         Database db = new Database();
         DBCtrl cdctrl = db.getCDController();
@@ -44,16 +48,35 @@ public class ControlServlet extends HttpServlet {
 //            response.sendRedirect("/WEB-INF/jsp/viewCart.jspx");
             RequestDispatcher rd = getServletContext().getRequestDispatcher("/WEB-INF/jsp/viewCart.jspx");
             rd.forward(request, response);
-        } 
-        else if ("confirm".equals(action)) {
+        } else if ("confirm".equals(action)) {
 //            response.sendRedirect("/WEB-INF/jsp/confirm.jspx");
             RequestDispatcher rd = getServletContext().getRequestDispatcher("/WEB-INF/jsp/confirm.jspx");
             rd.forward(request, response);
-        } 
-        else if ("pay".equals(action)) {
+        } else if ("pay".equals(action)) {
 //            response.sendRedirect("/WEB-INF/jsp/pay.jspx");
             RequestDispatcher rd = getServletContext().getRequestDispatcher("/WEB-INF/jsp/pay.jspx");
             rd.forward(request, response);
+        } else if ("findGenre".equals(action)) {
+
+            String genre = request.getParameter("genre");
+            PrintWriter out = response.getWriter();
+            StringBuilder fileData = new StringBuilder(1000);
+            // Now fetch from database
+            List<CD> allcd = new ArrayList<CD>();
+            allcd = cdctrl.findEntities();
+            
+            for(CD item : allcd){
+                System.out.println(item.toString());
+                fileData.append("<p>" + item.toString() + "</p>");
+            }
+
+            out.println(fileData.toString());
+            
+            //out.println(fileData.toString());
+            
+            out.flush();
+            out.close();
+
         }
 
 
