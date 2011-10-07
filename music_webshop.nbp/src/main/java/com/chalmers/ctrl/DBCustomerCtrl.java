@@ -6,9 +6,9 @@ package com.chalmers.ctrl;
 
 /**
  *
- * @author Johans
+ * @author 
  */
-public class DBCustomerCtrl {
+public class DBCustomerCtrl implements DBCtrl{
     
     
 }
