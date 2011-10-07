@@ -4,11 +4,23 @@
  */
 package com.chalmers.ctrl;
 
+import com.chalmers.core.CD;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
+
 /**
  *
- * @author Johan
+ * @author Daniel Nicklasson (dixtre@gmail.com)
  */
 public class Database {
-    
-    //TODO: Implement class
+
+    private EntityManagerFactory emf = Persistence.createEntityManagerFactory("webshop_pu");
+
+    public Database() {
+    }
+
+    public DBCtrl<CD> getCDController() {
+        return new DBCDControl(emf);
+//        return new ProductJpaController(emf);
+    }
 }
