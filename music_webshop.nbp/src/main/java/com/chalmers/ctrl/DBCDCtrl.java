@@ -8,7 +8,10 @@ package com.chalmers.ctrl;
  *
  * @author Johan
  */
-public class DBControl implements DBCDCtrl {
+public interface DBCDCtrl {
     
-    //TODO: Implement class
+    //TODO: implement interface
+    
+
+    
 }
