@@ -11,6 +11,6 @@ package com.chalmers.core;
 public class OrderItem {
     
     private int qty;
-    private Product product;
+    private CD product;
     
 }
