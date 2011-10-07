@@ -3,14 +3,13 @@
   <persistence-unit name="webshop_pu" transaction-type="RESOURCE_LOCAL">
     <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
     <class>com.chalmers.core.CD</class>
-    <class>com.chalmers.core.Customer</class>
     <exclude-unlisted-classes>false</exclude-unlisted-classes>
     <properties>
       <property name="javax.persistence.jdbc.url" value="jdbc:derby://localhost:1527/webshop_db"/>
-      <property name="javax.persistence.jdbc.password" value="base"/>
+      <property name="javax.persistence.jdbc.password" value="app"/>
       <property name="javax.persistence.jdbc.driver" value="org.apache.derby.jdbc.ClientDriver"/>
-      <property name="javax.persistence.jdbc.user" value="data"/>
-      <property name="eclipselink.ddl-generation" value="create-tables"/>
+      <property name="javax.persistence.jdbc.user" value="app"/>
+      <property name="eclipselink.ddl-generation" value="drop-and-create-tables"/>
     </properties>
   </persistence-unit>
 </persistence>

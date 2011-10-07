@@ -29,6 +29,8 @@ public class ControlServlet extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         
+        
+        System.out.println("Hello world");
         CD cd = new CD(new Long(0), "Black", 90, "Rock", "Description", 300, 40, "Metallica");
         
         Database db = new Database();
