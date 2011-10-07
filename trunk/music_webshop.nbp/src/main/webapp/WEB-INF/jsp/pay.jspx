@@ -13,22 +13,22 @@
     <html>
         <head>
             <link rel="stylesheet" href="default.css" type="text/css"/>
-<!--             <script type="text/javascript" src="js/jquery.lavalamp.min.js"></script>
-           <script type="text/javascript">
-        $(function() {
-            $("#1, #2, #3").lavaLamp({
-                fx: "backout", 
-                speed: 700,
-                click: function(event, menuItem) {
-                    return false;
-                }
-            });
-        });
-    </script>-->
+            <!--             <script type="text/javascript" src="js/jquery.lavalamp.min.js"></script>
+                       <script type="text/javascript">
+                    $(function() {
+                        $("#1, #2, #3").lavaLamp({
+                            fx: "backout", 
+                            speed: 700,
+                            click: function(event, menuItem) {
+                                return false;
+                            }
+                        });
+                    });
+                </script>-->
         </head>
         <body>
             <div id="container">  
-                
+
                 <div id="header">
                     <jsp:include page="header.jspx" />
                 </div>
@@ -37,9 +37,10 @@
                         <p>TODO Main menu</p>
                     </div>
                     <div id="main">
-                        <h> <form action="cs?action=pay" method="post">
-                                <input type="submit" value ="pay"></input>
-            </form></h>
+                        <h> NAO YOU PAY!</h>
+                        <form action="cs?action=confirm" method="post">
+                            <input type="submit" value ="confirm"></input>
+                            </form>
                     </div>
                 </div>
                 <div id="footer">
@@ -51,4 +52,4 @@
     </html>
 </jsp:root>
 
-        
+
