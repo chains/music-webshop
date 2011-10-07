@@ -28,7 +28,13 @@ public class DBCDControl implements DBCtrl<CD> {
     
     @Override
     public void create(CD t) {
-        throw new UnsupportedOperationException("Not supported yet.");
+
+        em = null;
+
+        em = getEntityManager();
+        em.getTransaction().begin();
+        em.persist(t);
+        em.getTransaction().commit();
     }
 
     @Override
