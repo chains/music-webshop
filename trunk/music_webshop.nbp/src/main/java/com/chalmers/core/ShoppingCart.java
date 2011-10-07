@@ -14,7 +14,7 @@ public class ShoppingCart {
     
     private List<OrderItem> products;
     
-    public void addProduct(Product prod){
+    public void addProduct(CD prod){
     // TODO: Implement method    
     }
 
