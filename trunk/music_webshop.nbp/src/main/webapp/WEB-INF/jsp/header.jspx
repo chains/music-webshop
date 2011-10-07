@@ -5,23 +5,28 @@
     Author     : Jonas
 -->
 <jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.0">
-    <div>
-        <div>
+    <html>
+
+        <div id="header">
+
             <div id="loggedInUser">
-            Logged in as: ${sessionScope['user'].login}  
-        </div>
-            <p id="p1">TODO header</p>
-        </div>
-        <div class="menu">
-          <!--  <ul>
-                <li><a href="/webshop">Home</a></li>
-                <li><a href="FrontController?action=shop">Shop</a></li>
-                <li><a href="FrontController?action=cart">View Cart</a></li>
-                <li><a href="FrontController?action=pay">Pay</a></li>
-                <li><a href="/webshop/login?action=logout">Logout</a></li> 
+                Logged in as: ${sessionScope['user'].login}  
+            </div>
+            <div id="topright" class="myclass"></div>
+            <ul>
+                <li id="li1" class ="liID">CD
+                    <div class="dropdown" id="cd_dropdown"></div>
+                </li>    
+                <li id="li2" class ="liID">DVD
+                    <div class="dropdown" id="dvd_dropdown"></div>
+                </li>    
+                <li id="li3" class ="liID">About
+                    <div class="dropdown" id="about_dropdown"></div>
+                </li>    
             </ul>
-            <br style="clear:left"/>-->
-        </div>
-        
-    </div>
+
+
+        </div>  
+
+    </html>
 </jsp:root>
