@@ -15,27 +15,47 @@ import javax.persistence.Id;
  * CD product
  * @author Johan
  */
-
 @Entity
 public class CD implements Serializable {
 
-@Id
-@GeneratedValue(strategy = GenerationType.AUTO)
-private Long id;
-@Column(name = "cd_title", nullable = false, updatable = false)
-private String name;
-@Column(name = "cd_price", nullable = false)
-private double price;
-@Column(name = "cd_genre", nullable = false)
-private String genre;
-@Column(name = "cd_desc", nullable = false)
-private String description;
-@Column(name = "cd_stock", nullable = false)
-private int noInStock;
-@Column(name = "cd_playtime", nullable = false)
-private double playtime;
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long id;
+    @Column(name = "cd_title", nullable = false, updatable = false)
+    private String name;
+    @Column(name = "cd_price", nullable = false)
+    private double price;
+    @Column(name = "cd_genre", nullable = false)
+    private String genre;
+    @Column(name = "cd_desc", nullable = false)
+    private String description;
+    @Column(name = "cd_stock", nullable = false)
+    private int noInStock;
+    @Column(name = "cd_playtime", nullable = false)
+    private double playtime;
+    @Column(name = "cd_artist", nullable = false)
+    private String artist;
 
     public CD() {
+    }
+
+    public CD(Long id, String name, double price, String genre, String description, int noInStock, double playtime, String artist) {
+        this.id = id;
+        this.name = name;
+        this.price = price;
+        this.genre = genre;
+        this.description = description;
+        this.noInStock = noInStock;
+        this.playtime = playtime;
+        this.artist = artist;
+    }
+
+    public String getArtist() {
+        return artist;
+    }
+
+    public void setArtist(String artist) {
+        this.artist = artist;
     }
 
     public String getDescription() {
@@ -86,22 +106,7 @@ private double playtime;
         this.price = price;
     }
 
-    public CD(Long id, String name, double price, String genre, String description, int noInStock, double playtime) {
-        this.id = id;
-        this.name = name;
-        this.price = price;
-        this.genre = genre;
-        this.description = description;
-        this.noInStock = noInStock;
-        this.playtime = playtime;
-    }
-
-
-
     public Long getId() {
         return id;
     }
-
-
-    
 }
