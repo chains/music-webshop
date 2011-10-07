@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- 
-    Document   : index
-    Created on : Sep 27, 2011, 1:04:20 PM
-    Author     : Daniel
+    Document   : viewCart
+    Created on : 2011-okt-07, 14:02:17
+    Author     : Jonas
 -->
 <jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.0">
 
@@ -30,21 +30,23 @@
             <div id="container">  
                 
                 <div id="header">
-                    <jsp:include page="WEB-INF/jsp/header.jspx" />
+                    <jsp:include page="header.jspx" />
                 </div>
                 <div id="center">
                     <div id="mainmenu">
                         <p>TODO Main menu</p>
                     </div>
                     <div id="main">
-                        <jsp:include page="WEB-INF/jsp/main.jspx" />
+                        <h> <button><a href="cs?action=pay">Pay</a></button></h>
                     </div>
                 </div>
                 <div id="footer">
-                    <jsp:include page="WEB-INF/jsp/footer.jspx"/>
+                    <jsp:include page="footer.jspx"/>
                 </div>
             </div>
         </body>
 
     </html>
 </jsp:root>
+
+        

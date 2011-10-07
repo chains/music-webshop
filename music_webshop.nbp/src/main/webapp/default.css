@@ -17,45 +17,35 @@ root {
     width: 50em;
     height:67em;
     margin: 0px auto;
-    background-color:green;  
+    
 }
-
-
-
 #header{
     position: relative;
     height: 7em;   
 }
-
 #mainmenu{
-    z-index:1;
-    background-color:red;
+    
+    background-color:darkgray;
     width:7em;
     height:50em;
     float:left;
     position:relative;
 }
-
 #center{
     position:relative;
     width:50em;
     height:50em;
 }
-
-#main:hover{
-    background-color:yellow;
-    
-}
 #main{
     float:right;
-    background-color:blueviolet;
+    background-color:lightgray;
     text-align:center;    
     position:relative;
     width:43em;
     height:50em;
     color: brown;
-   
 }
+
 #loggedInUser{
     height:7em;
     position:relative;
@@ -65,33 +55,68 @@ root {
 }
 
 #footer{
+    background-color:lightgray;
     height:10em;
     position: relative;
+    top:-1em;
 }
 #footer:hover{
     background-color:gray;
 }
-li{
-    display:block;     
-}
+    
 
-#li1{
-    float:left;    
-    position: relative;
-    left: 2em; 
-    top: 2em; 
+#banner{
+    height:5em;
+    vertical-align:top; 
+    background: url(images/610px-tux-g2-svg-svg.png);   
 }
+#topleft{
+    height:7em;
+    position:relative;
+    float:left;
+}
+#menubar{
+    margin-top:-1em;
+    height:2em;
+}
+.lavaLampNoImage {
 
-#li2{
-    float:left;    
     position: relative;
-    left: 10em;
-    top: 2em; 
+    height: 2em;
+    width: 35em;
+    background-color: white;
+    overflow: hidden;
+top:0em;
 }
-
-#li3{
-    float:left;    
+.lavaLampNoImage li {
+    float: left;
+    list-style: none;
+}
+.lavaLampNoImage li.back {
+    border: 1px solid #000;
+    background-color: #e6e8ea;
+    width: 9px;
+    height: 2em;
+    z-index: 8;
+    position: absolute;
+}
+.lavaLampNoImage li a {
+    font: bold 14px arial;
+    text-decoration: none;
+    color: #000;
+    outline: none;
+    text-align: center;
+    top: 0.5em;
+    text-transform: uppercase;
+    letter-spacing: 0;
+    z-index: 10;
+    display: block;
+    float: left;
+    height: 1em;
     position: relative;
-    left: 18em;
-    top: 2em; 
+    overflow: hidden;
+    margin: auto 10px;
 }
+.lavaLampNoImage li a:hover, .lavaLampNoImage li a:active, .lavaLampNoImage li a:visited {
+    border: none;
+}                    
