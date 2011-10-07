@@ -6,12 +6,9 @@ package com.chalmers.ctrl;
 
 /**
  *
- * @author Johan
+ * @author Johans
  */
-public interface DBCtrl {
+public class DBCustomerCtrl {
     
-    //TODO: implement interface
-    
-
     
 }
