@@ -7,6 +7,7 @@ package com.chalmers.ctrl;
 import com.chalmers.core.CD;
 import java.io.IOException;
 import java.io.PrintWriter;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -27,7 +28,7 @@ public class ControlServlet extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        response.setContentType("text/html;charset=UTF-8");
+//        response.setContentType("text/html;charset=UTF-8");
 
         Database db = new Database();
         DBCtrl cdctrl = db.getCDController();
@@ -40,14 +41,19 @@ public class ControlServlet extends HttpServlet {
         String action = request.getParameter("action");
 
         if ("viewCart".equals(action)) {
-            response.sendRedirect("/WEB-INF/jsp/viewCart.jspx");
+//            response.sendRedirect("/WEB-INF/jsp/viewCart.jspx");
+            RequestDispatcher rd = getServletContext().getRequestDispatcher("/WEB-INF/jsp/viewCart.jspx");
+            rd.forward(request, response);
         } 
         else if ("confirm".equals(action)) {
-            response.sendRedirect("/WEB-INF/jsp/confirm.jspx");
-
+//            response.sendRedirect("/WEB-INF/jsp/confirm.jspx");
+            RequestDispatcher rd = getServletContext().getRequestDispatcher("/WEB-INF/jsp/confirm.jspx");
+            rd.forward(request, response);
         } 
         else if ("pay".equals(action)) {
-            response.sendRedirect("/WEB-INF/jsp/pay.jspx");
+//            response.sendRedirect("/WEB-INF/jsp/pay.jspx");
+            RequestDispatcher rd = getServletContext().getRequestDispatcher("/WEB-INF/jsp/pay.jspx");
+            rd.forward(request, response);
         }
 
 
