@@ -123,4 +123,16 @@ top:0em;
 .lavaLampNoImage li a:hover, .lavaLampNoImage li a:active, .lavaLampNoImage li a:visited {
     border: none;
     background-color:red;
-}                    
+}    
+
+#cdmenu{
+    width:7em;
+    float:left;
+}
+#cdmenu ul
+{
+font-family: Arial, Helvetica, sans-serif;
+list-style-type:none;
+margin:0;
+padding:0;
+}
