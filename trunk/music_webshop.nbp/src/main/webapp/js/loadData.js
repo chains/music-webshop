@@ -11,9 +11,10 @@ $(document).ready(function(){
         $.ajax({
             url: "cs?action=findGenre&genre=pop",
             cache: false,
-            success: function(html){
-                $("#productTableBody").empty();
-                $("#productTableBody").append(html);
+            datatype: "xml",
+            success: function(xml){
+//                $("#productTableBody").empty();
+//                $("#productTableBody").append(xml);
             }
         });
     });
