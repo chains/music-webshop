@@ -4,6 +4,7 @@
  */
 package com.chalmers.core;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -14,8 +15,23 @@ public class ShoppingCart {
     
     private List<OrderItem> products;
     
+    public ShoppingCart(){
+        products = new ArrayList<OrderItem>();
+    }
+    
     public void addProduct(CD prod){
-    // TODO: Implement method    
+        
+        OrderItem item = new OrderItem(1, prod);
+        
+        if(products.contains(item)){
+            
+        }
+            
+            
+        
+        products.add(item);
+        
+        
     }
 
     public void removeProduct(String name){
@@ -30,9 +46,4 @@ public class ShoppingCart {
     // TODO: Implement method 
         return null;
     }
-    
-    
-    
-    
-    
 }
