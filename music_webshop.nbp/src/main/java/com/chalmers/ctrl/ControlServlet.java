@@ -62,14 +62,16 @@ public class ControlServlet extends HttpServlet {
             // Now fetch from database
             List<CD> allcd = new ArrayList<CD>();
             allcd = cdctrl.findEntities();
-            
-            for(CD item : allcd){
-                System.out.println(item.toString());
-                fileData.append("<p>" + item.toString() + "</p>");
+
+            for (CD item : allcd) {
+                if (item.getGenre().equals(genre)) {
+                    System.out.println(item.toString());
+                    fileData.append("<p>" + item.toString() + "</p>");
+                }
             }
 
             out.println(fileData.toString());
-            
+
             out.flush();
             out.close();
         }
