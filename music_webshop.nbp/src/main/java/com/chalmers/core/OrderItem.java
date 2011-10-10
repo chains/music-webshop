@@ -12,5 +12,10 @@ public class OrderItem {
     
     private int qty;
     private CD product;
+
+    OrderItem(int i, CD prod) {
+        this.qty = i;
+        this.product = prod;
+    }
     
 }
