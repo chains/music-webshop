@@ -13,10 +13,10 @@
     <html>
         <head>
             <link rel="stylesheet" href="default.css" type="text/css"/>
-<!--            <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"/>-->
+            <!--            <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"/>-->
 
-<!--                <script type="text/javascript" src="js/jquery-1.6.3.js"/>
-                <script type="text/javascript" src="js/loadData.js"/>-->
+            <!--                <script type="text/javascript" src="js/jquery-1.6.3.js"/>
+                            <script type="text/javascript" src="js/loadData.js"/>-->
 
         </head>
 
@@ -38,6 +38,17 @@
                     </div>
                     <div id="main">
                         <h>This is the shop</h>
+                        <table id="productTable">
+                            <thead>
+                                <tr>
+                                    <td>Artist</td>
+                                    <td>Album</td>
+                                    <td>Genre</td>
+                                    <td>Pris</td>
+                                </tr>
+                            </thead>
+                            <tbody id="productTableBody"></tbody>
+                        </table>
                     </div>
                 </div>
                 <div id="footer">

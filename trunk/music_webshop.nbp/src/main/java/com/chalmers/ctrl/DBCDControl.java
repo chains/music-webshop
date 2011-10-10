@@ -29,7 +29,7 @@ public class DBCDControl implements DBCtrl<CD> {
     public EntityManager getEntityManager() {
         return emf.createEntityManager();
     }
-    
+
     @Override
     public void create(CD t) {
 
@@ -42,13 +42,13 @@ public class DBCDControl implements DBCtrl<CD> {
 
     @Override
     public void destroy(Long id) {
-        
-         em = null;
+
+        em = null;
 
         em = getEntityManager();
         em.getTransaction().begin();
         CD cd;
-       
+
         try {
             cd = em.getReference(CD.class, id);
             cd.getId();
@@ -61,7 +61,7 @@ public class DBCDControl implements DBCtrl<CD> {
 
     @Override
     public void edit(CD t) {
-         em = null;
+        em = null;
         try {
             em = getEntityManager();
             em.getTransaction().begin();
@@ -89,14 +89,15 @@ public class DBCDControl implements DBCtrl<CD> {
 
     @Override
     public List<CD> findEntities() {
-         em = getEntityManager();
+        em = getEntityManager();
 
         CriteriaQuery cq = em.getCriteriaBuilder().createQuery();
         cq.select(cq.from(CD.class));
         Query q = em.createQuery(cq);
- 
+
         return (List<CD>) q.getResultList();
     }
+    
 
     @Override
     public List<CD> findEntities(int maxResults, int firstResult) {
@@ -116,7 +117,4 @@ public class DBCDControl implements DBCtrl<CD> {
     public int getEntityCount() {
         throw new UnsupportedOperationException("Not supported yet.");
     }
-
-
-    
 }

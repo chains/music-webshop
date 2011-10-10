@@ -10,12 +10,20 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.xml.bind.JAXBContext;
+import javax.xml.bind.JAXBException;
+import javax.xml.bind.Marshaller;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
 
 /**
  *
@@ -31,7 +39,7 @@ public class ControlServlet extends HttpServlet {
      * @throws IOException if an I/O error occurs
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
+            throws ServletException, IOException, JAXBException {
         response.setContentType("text/html;charset=UTF-8");
 
         Database db = new Database();
@@ -39,7 +47,7 @@ public class ControlServlet extends HttpServlet {
 
 //        Testing purposes
 //        System.out.println("Hello world");
-//        CD cd = new CD(new Long(0), "Black", 90, "Rock", "Description", 300, 40, "Metallica");
+//        CD cd = new CD(new Long(0), "Album 441", 90, "Rock", "Hopplej", 300, 40, "Artist med stort R");
 //        cdctrl.create(cd);
 
         String action = request.getParameter("action");
@@ -55,27 +63,69 @@ public class ControlServlet extends HttpServlet {
             RequestDispatcher rd = getServletContext().getRequestDispatcher("/WEB-INF/jsp/pay.jspx");
             rd.forward(request, response);
         } else if ("findGenre".equals(action)) {
-
+            
+            response.setContentType("text/xml;charset=UTF-8");
             String genre = request.getParameter("genre");
             PrintWriter out = response.getWriter();
-            StringBuilder fileData = new StringBuilder(1000);
-            // Now fetch from database
-            List<CD> allcd = new ArrayList<CD>();
-            allcd = cdctrl.findEntities();
-
-            for (CD item : allcd) {
-                if (item.getGenre().equalsIgnoreCase(genre)) {
-                    System.out.println(item.toString());
-                    fileData.append("<p>" + item.toString() + "</p>");
+            List<CD> ps = cdctrl.findEntities();
+            
+            //Remove CD's with wrong genre
+            Iterator<CD> it = ps.iterator();
+            while(it.hasNext()){
+                CD cd = it.next();
+                if(!cd.getGenre().equals(genre)){
+                    it.remove();
                 }
             }
+            
+            ProductList wrapper = new ProductList(ps);
+            JAXBContext jc;
+            try {
+                jc = JAXBContext.newInstance(ProductList.class);
+                Marshaller m = jc.createMarshaller();
+                m.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT,Boolean.TRUE);
+                // Dump XML data
+                m.marshal(wrapper, out);
+            } catch (JAXBException ex) {
+                Logger.getLogger(ControlServlet.class.getName()).log(Level.SEVERE, null, ex);
+            } finally {
+                out.close();
+            }
+            
+//            DBCDControl cdController = (DBCDControl)db.getCDController();
+//            String genre = request.getParameter("genre");
+//            PrintWriter out = response.getWriter();
+//            StringBuilder fileData = new StringBuilder(1000);
+//            // Now fetch from database
+//            List<CD> allcd = new ArrayList<CD>();
+//            allcd = cdController.findEntities();
 
-            out.println(fileData.toString());
+//            for (CD item : allcd) {
+//                if (item.getGenre().equalsIgnoreCase(genre)) {
+//                    System.out.println(item.toString());
+//                    fileData.append("<p>" + item.toString() + "</p>");
+//                }
+//            }
 
-            out.flush();
-            out.close();
+//            out.println(fileData.toString());
+//
+//            out.flush();
+//            out.close();
         }
 
+    }
+        @XmlRootElement
+    static class ProductList {
+
+        @XmlElement
+        private List<CD> cdList; // name shows up in XML
+
+        public ProductList() {
+        }
+
+        public ProductList(List<CD> cdList) {
+            this.cdList = cdList;
+        }
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
@@ -89,7 +139,11 @@ public class ControlServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        try {
+            processRequest(request, response);
+        } catch (JAXBException ex) {
+            Logger.getLogger(ControlServlet.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     /** 
@@ -102,7 +156,11 @@ public class ControlServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        try {
+            processRequest(request, response);
+        } catch (JAXBException ex) {
+            Logger.getLogger(ControlServlet.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     /** 
