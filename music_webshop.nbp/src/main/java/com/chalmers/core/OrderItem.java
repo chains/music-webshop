@@ -6,10 +6,10 @@ package com.chalmers.core;
 
 /**
  *
- * @author Johan
+ * @author Daniel, Mikael
  */
 public class OrderItem {
-    
+
     private int qty;
     private CD product;
 
@@ -17,5 +17,20 @@ public class OrderItem {
         this.qty = i;
         this.product = prod;
     }
-    
+
+    public CD getProduct() {
+        return product;
+    }
+
+    public void setProduct(CD product) {
+        this.product = product;
+    }
+
+    public int getQty() {
+        return qty;
+    }
+
+    public void setQty(int qty) {
+        this.qty = qty;
+    }
 }
