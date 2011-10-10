@@ -64,7 +64,7 @@ public class ControlServlet extends HttpServlet {
             allcd = cdctrl.findEntities();
 
             for (CD item : allcd) {
-                if (item.getGenre().equals(genre)) {
+                if (item.getGenre().equalsIgnoreCase(genre)) {
                     System.out.println(item.toString());
                     fileData.append("<p>" + item.toString() + "</p>");
                 }
