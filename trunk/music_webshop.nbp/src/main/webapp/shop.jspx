@@ -18,15 +18,13 @@
 <!--                <script type="text/javascript" src="js/jquery-1.6.3.js"/>
                 <script type="text/javascript" src="js/loadData.js"/>-->
 
-
-                    <jsp:include page="js/jquery-1.6.3.js" />
         </head>
 
         <body>
             <div id="container">  
 
                 <div id="header">
-                    <jsp:include page="WEB-INF/jsp/header.jspx" />
+                    <jsp:include page="WEB-INF/xhtml/header.xhtml" />
                 </div>
                 <div id="center">
                     <div id="mainmenu">
