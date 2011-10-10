@@ -13,19 +13,15 @@
     <html>
         <head>
             <link rel="stylesheet" href="default.css" type="text/css"/>
-            <!--             <script type="text/javascript" src="js/jquery.lavalamp.min.js"></script>
-                        <script type="text/javascript">
-                    $(function() {
-                        $("#1, #2, #3").lavaLamp({
-                            fx: "backout", 
-                            speed: 700,
-                            click: function(event, menuItem) {
-                                return false;
-                            }
-                        });
-                    });
-                </script>-->
+<!--            <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"/>-->
+
+<!--                <script type="text/javascript" src="js/jquery-1.6.3.js"/>
+                <script type="text/javascript" src="js/loadData.js"/>-->
+
+
+                    <jsp:include page="js/jquery-1.6.3.js" />
         </head>
+
         <body>
             <div id="container">  
 
