@@ -5,6 +5,7 @@
 package com.chalmers.ctrl;
 
 import com.chalmers.core.CD;
+import com.chalmers.core.ShoppingCart;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
@@ -50,6 +51,13 @@ public class ControlServlet extends HttpServlet {
 //        CD cd = new CD(new Long(0), "Album 441", 90, "Rock", "Hopplej", 300, 40, "Artist med stort R");
 //        cdctrl.create(cd);
 
+        ShoppingCart cart = (ShoppingCart) request.getSession().getAttribute("cart");
+        if (cart == null) {
+            cart = new ShoppingCart();
+            request.getSession().setAttribute("cart", cart);
+        }
+
+
         String action = request.getParameter("action");
 
         if ("viewCart".equals(action)) {
@@ -63,27 +71,27 @@ public class ControlServlet extends HttpServlet {
             RequestDispatcher rd = getServletContext().getRequestDispatcher("/WEB-INF/jsp/pay.jspx");
             rd.forward(request, response);
         } else if ("findGenre".equals(action)) {
-            
+
             response.setContentType("text/xml;charset=UTF-8");
             String genre = request.getParameter("genre");
             PrintWriter out = response.getWriter();
             List<CD> ps = cdctrl.findEntities();
-            
+
             //Remove CD's with wrong genre
             Iterator<CD> it = ps.iterator();
-            while(it.hasNext()){
+            while (it.hasNext()) {
                 CD cd = it.next();
-                if(!cd.getGenre().equals(genre)){
+                if (!cd.getGenre().equals(genre)) {
                     it.remove();
                 }
             }
-            
+
             ProductList wrapper = new ProductList(ps);
             JAXBContext jc;
             try {
                 jc = JAXBContext.newInstance(ProductList.class);
                 Marshaller m = jc.createMarshaller();
-                m.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT,Boolean.TRUE);
+                m.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, Boolean.TRUE);
                 // Dump XML data
                 m.marshal(wrapper, out);
             } catch (JAXBException ex) {
@@ -91,7 +99,7 @@ public class ControlServlet extends HttpServlet {
             } finally {
                 out.close();
             }
-            
+
 //            DBCDControl cdController = (DBCDControl)db.getCDController();
 //            String genre = request.getParameter("genre");
 //            PrintWriter out = response.getWriter();
@@ -114,7 +122,8 @@ public class ControlServlet extends HttpServlet {
         }
 
     }
-        @XmlRootElement
+
+    @XmlRootElement
     static class ProductList {
 
         @XmlElement
