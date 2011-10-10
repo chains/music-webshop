@@ -46,13 +46,13 @@ public class ControlServlet extends HttpServlet {
 
         if ("viewCart".equals(action)) {
 //            response.sendRedirect("/WEB-INF/jsp/viewCart.jspx");
-            RequestDispatcher rd = getServletContext().getRequestDispatcher("/WEB-INF/xhtml/viewCart.xhtml");
+            RequestDispatcher rd = getServletContext().getRequestDispatcher("/WEB-INF/jsp/viewCart.jspx");
             rd.forward(request, response);
         } else if ("confirm".equals(action)) {
-            RequestDispatcher rd = getServletContext().getRequestDispatcher("/WEB-INF/xhtml/confirm.xhtml");
+            RequestDispatcher rd = getServletContext().getRequestDispatcher("/WEB-INF/jsp/confirm.jspx");
             rd.forward(request, response);
         } else if ("pay".equals(action)) {
-            RequestDispatcher rd = getServletContext().getRequestDispatcher("/WEB-INF/xhtml/pay.xhtml");
+            RequestDispatcher rd = getServletContext().getRequestDispatcher("/WEB-INF/jsp/pay.jspx");
             rd.forward(request, response);
         } else if ("findGenre".equals(action)) {
 
@@ -70,15 +70,9 @@ public class ControlServlet extends HttpServlet {
 
             out.println(fileData.toString());
             
-            //out.println(fileData.toString());
-            
             out.flush();
             out.close();
-
         }
-
-
-
 
     }
 
