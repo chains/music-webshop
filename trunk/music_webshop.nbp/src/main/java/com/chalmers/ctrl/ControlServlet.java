@@ -46,15 +46,13 @@ public class ControlServlet extends HttpServlet {
 
         if ("viewCart".equals(action)) {
 //            response.sendRedirect("/WEB-INF/jsp/viewCart.jspx");
-            RequestDispatcher rd = getServletContext().getRequestDispatcher("/WEB-INF/jsp/viewCart.jspx");
+            RequestDispatcher rd = getServletContext().getRequestDispatcher("/WEB-INF/xhtml/viewCart.xhtml");
             rd.forward(request, response);
         } else if ("confirm".equals(action)) {
-//            response.sendRedirect("/WEB-INF/jsp/confirm.jspx");
-            RequestDispatcher rd = getServletContext().getRequestDispatcher("/WEB-INF/jsp/confirm.jspx");
+            RequestDispatcher rd = getServletContext().getRequestDispatcher("/WEB-INF/xhtml/confirm.xhtml");
             rd.forward(request, response);
         } else if ("pay".equals(action)) {
-//            response.sendRedirect("/WEB-INF/jsp/pay.jspx");
-            RequestDispatcher rd = getServletContext().getRequestDispatcher("/WEB-INF/jsp/pay.jspx");
+            RequestDispatcher rd = getServletContext().getRequestDispatcher("/WEB-INF/xhtml/pay.xhtml");
             rd.forward(request, response);
         } else if ("findGenre".equals(action)) {
 
