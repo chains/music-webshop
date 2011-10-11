@@ -28,6 +28,9 @@ import javax.xml.bind.annotation.XmlRootElement;
 
 /**
  *
+ * OLD
+ * NOT USED
+ * 
  * @author Daniel
  */
 public class ControlServlet extends HttpServlet {
