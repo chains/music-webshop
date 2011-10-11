@@ -1,4 +1,10 @@
 
+#main{
+    width: 60em;
+    margin-left:auto;
+    margin-right:auto;
+}
+
 #top {
     position: relative;
     background-color: #036fab;
