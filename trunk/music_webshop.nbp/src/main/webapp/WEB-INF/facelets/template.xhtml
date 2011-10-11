@@ -1,8 +1,16 @@
 <?xml version='1.0' encoding='UTF-8' ?> 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:ui="http://java.sun.com/jsf/facelets"
-      xmlns:h="http://java.sun.com/jsf/html">
+
+
+
+
+<html
+    xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:p="http://primefaces.prime.com.tr/ui"
+    xmlns:f="http://java.sun.com/jsf/core"
+    template="WEB-INF/facelets/template.xhtml">
 
     <h:head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
@@ -17,7 +25,28 @@
 
         <div id="main">
             <div id="top">
-                <ui:insert name="top">Top</ui:insert>
+                <ui:insert name="top">
+
+                    <h:form>  
+                        <p:menubar autoSubmenuDisplay="true">  
+                            <p:submenu label="File" icon="ui-icon ui-icon-document">  
+                                <p:submenu label="New" icon="ui-icon ui-icon-contact">  
+                                    <p:menuitem value="Project" url="#" helpText="CTRL+N" />  
+                                    <p:menuitem value="Other" url="#" helpText="CTRL+O"/>  
+                                </p:submenu>  
+                                <p:menuitem value="Open" url="#" />  
+                                <p:menuitem value="Quit" url="#" />  
+                            </p:submenu>  
+                            
+                            <p:menuitem value="Home" url="./../../index.xhtml" icon="ui-icon ui-icon-home" />
+                            <p:menuitem value="Shop" url="./../../index.xhtml" icon="ui-icon ui-icon-star" />  
+                            <p:menuitem value="View Cart" url="./viewCart.xhtml" icon="ui-icon ui-icon-extlink" />  
+                            <p:menuitem value="About Us" url="./pay.xhtml" icon="ui-icon ui-icon-arrowrefresh" /> 
+                        </p:menubar>  
+                    </h:form>  
+
+
+                </ui:insert>
             </div>
             <div>
                 <div id="left">
