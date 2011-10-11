@@ -8,9 +8,9 @@ package com.chalmers.beans;
  *
  * @author Johan Sandström
  */
-public class PayBackingBean {
+public class ViewCartControllerBean {
 
-    /** Creates a new instance of PayBackingBean */
-    public PayBackingBean() {
+    /** Creates a new instance of ViewCartControllerBean */
+    public ViewCartControllerBean() {
     }
 }
