@@ -42,6 +42,7 @@ public class Mailer extends HttpServlet {
     private static final int SMTP_HOST_PORT = 465;
     private static final String SMTP_AUTH_USER = "music.webshop.mailer@gmail.com";
     private static final String SMTP_AUTH_PWD = "LogCatIsLog!";
+    private static final String RECIEVERTEMP = "dixtre@gmail.com";
 
     private void sendMail(String content, String receiver) throws NoSuchProviderException, MessagingException {
         Properties props = new Properties();
@@ -75,7 +76,10 @@ public class Mailer extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
 
         try {
-            sendMail(request.getParameter("message"), request.getParameter("receiver"));
+//            sendMail(request.getParameter("message"), request.getParameter("receiver"));
+
+            sendMail(request.getParameter("message"), RECIEVERTEMP);
+
             response.sendRedirect("cs?action=confirm");
 
         } catch (AddressException ex) {

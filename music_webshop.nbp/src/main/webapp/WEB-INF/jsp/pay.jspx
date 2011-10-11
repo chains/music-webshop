@@ -30,7 +30,7 @@
                         <form id="frmButton" action="Mailer" method="post">
 
                             <input type="hidden" name="message" value="${sessionScope['cart'].toString()}"/>
-                            <input type="hidden" name="receiver" value="${sessionScope['user'].getLogin()}"/>
+<!--                            <input type="hidden" name="receiver" value="${sessionScope['user'].getLogin()}"/>-->
                             <input id="btnPay" type="submit" value="Pay" />
                         </form>
 
