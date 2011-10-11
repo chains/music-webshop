@@ -59,7 +59,7 @@ public class ShoppingCart {
     }
 
     public double getTotalCost() {
-        
+
         int total = 0;
 
         for (OrderItem dummy : products) {
@@ -69,7 +69,23 @@ public class ShoppingCart {
     }
 
     public List<OrderItem> getOrderItems() {
-        
+
         return products;
+    }
+
+    @Override
+    public String toString() {
+        
+        // Help method for Mailer class
+        StringBuilder b = new StringBuilder();
+        
+        
+        for(OrderItem item : products){
+            CD tempcd = item.getProduct();
+            b.append(tempcd.toString() );
+            b.append(this.getTotalCost() );
+            b.append("\n");
+        }
+        return b.toString();
     }
 }
