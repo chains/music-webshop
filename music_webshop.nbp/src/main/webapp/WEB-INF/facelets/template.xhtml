@@ -14,10 +14,8 @@
 
     <h:head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-        <link href="./../../resources/css/default.css" rel="stylesheet" type="text/css" />
-        <link href="./../../resources/css/cssLayout.css" rel="stylesheet" type="text/css" />
-        <link href="resources/css/default.css" rel="stylesheet" type="text/css" />
-        <link href="resources/css/cssLayout.css" rel="stylesheet" type="text/css" />
+        <link href="./resources/css/default.css" rel="stylesheet" type="text/css" />
+        <link href="./resources/css/cssLayout.css" rel="stylesheet" type="text/css" />
         <title>Music Webshop</title>
     </h:head>
 
@@ -28,10 +26,10 @@
                 <ui:insert name="top">
                     <h:form>  
                         <p:menubar autoSubmenuDisplay="true">  
-                            <p:menuitem value="Home" url="index.xhtml" icon="ui-icon ui-icon-home" />
-                            <p:menuitem value="Shop" url="shop.xhtml" icon="ui-icon ui-icon-star" />  
-                            <p:menuitem value="View Cart" url="./viewCart.xhtml" icon="ui-icon ui-icon-extlink" />  
-                            <p:menuitem value="About Us" url="./pay.xhtml" icon="ui-icon ui-icon-arrowrefresh" /> 
+                            <p:menuitem value="Home" url="xhtml/index.xhtml" icon="ui-icon ui-icon-home" />
+                            <p:menuitem value="Shop" url="xhtml/shop.xhtml" icon="ui-icon ui-icon-star" />  
+                            <p:menuitem value="View Cart" url="xhtml/viewCart.xhtml" icon="ui-icon ui-icon-extlink" />  
+                            <p:menuitem value="About Us" url="xhtml/pay.xhtml" icon="ui-icon ui-icon-arrowrefresh" /> 
                         </p:menubar>  
                     </h:form>  
 
@@ -52,7 +50,9 @@
                 </div>
             </div>
             <div id="bottom">
-                <ui:insert name="bottom">Bottom</ui:insert>
+                <ui:insert name="bottom">
+                    <h:outputText value="Time: #{dateTime.currentDateTime}" id="footer"></h:outputText>
+                </ui:insert>
             </div>
         </div>
 
