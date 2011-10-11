@@ -7,6 +7,16 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
     xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-facesconfig_2_0.xsd">
     <managed-bean>
+        <managed-bean-name>shopBackingBean</managed-bean-name>
+        <managed-bean-class>com.chalmers.beans.ShopBackingBean</managed-bean-class>
+        <managed-bean-scope>request</managed-bean-scope>
+    </managed-bean>
+    <managed-bean>
+        <managed-bean-name>payBackingBean</managed-bean-name>
+        <managed-bean-class>com.chalmers.beans.PayBackingBean</managed-bean-class>
+        <managed-bean-scope>request</managed-bean-scope>
+    </managed-bean>
+    <managed-bean>
         <managed-bean-name>viewCartBackingBean</managed-bean-name>
         <managed-bean-class>com.chalmers.beans.ViewCartBackingBean</managed-bean-class>
         <managed-bean-scope>request</managed-bean-scope>
