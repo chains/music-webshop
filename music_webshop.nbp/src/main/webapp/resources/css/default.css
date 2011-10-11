@@ -27,3 +27,29 @@ a:link:hover, a:visited:hover  {
   font-weight : bold;
   text-decoration : underline;
 }
+#cdmenu{
+    width:7em;
+    float:left;
+    list-style-type:none;
+    margin:0;
+    padding:0;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align:center;
+}
+
+#cdmenu a
+{
+    color: #fff;
+    text-decoration: none;
+    font-size: 14px;
+    display: block;
+    padding: 3px;
+    width: 7em;
+    background-color: #686C7A;
+    border-bottom: 1px solid #eee;
+}
+#cdmenu a:hover
+{
+    background-color: #00BEE4;
+    color: #fff;
+}

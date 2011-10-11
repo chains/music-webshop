@@ -1,6 +1,7 @@
 
 #main{
     width: 60em;
+    height:50em;
     margin-left:auto;
     margin-right:auto;
 }
@@ -8,12 +9,18 @@
 #top {
     position: relative;
     background-color: #036fab;
+    height:7em;
     color: white;
     padding: 5px;
     margin: 0px 0px 10px 0px;
 }
 
+#content{
+    height:40em;
+}
+
 #bottom {
+    height:7em;
     position: relative;
     background-color: #c2dfef;
     padding: 5px;
@@ -25,6 +32,7 @@
     background-color: #ece3a5;
     padding: 5px;
     width: 150px;
+    height: 40em;
 }
 
 #right {
@@ -32,9 +40,11 @@
     background-color: #ece3a5;
     padding: 5px;
     width: 150px;
+    height:40em; 
 }
 
 .center_content {
+    
     position: relative;
     background-color: #dddddd;
     padding: 5px;
@@ -63,5 +73,6 @@
   font-weight : bold;
   text-decoration : underline;
 }
+
 
 
