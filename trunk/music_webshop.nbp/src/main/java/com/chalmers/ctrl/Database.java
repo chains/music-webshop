@@ -14,12 +14,12 @@ import javax.persistence.Persistence;
  */
 public class Database {
 
-    private EntityManagerFactory emf = Persistence.createEntityManagerFactory("webshop_pu");
+    private static EntityManagerFactory emf = Persistence.createEntityManagerFactory("webshop_pu");
 
     public Database() {
     }
 
-    public DBCtrl<CD> getCDController() {
+    public static DBCtrl<CD> getCDController() {
         return new DBCDControl(emf);
 //        return new ProductJpaController(emf);
     }
