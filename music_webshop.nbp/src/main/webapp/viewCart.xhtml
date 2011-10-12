@@ -13,7 +13,6 @@
 
     <ui:param name="title" value="View Cart"></ui:param>
     <ui:define name="content">
-
         <h:form>  
             <p:dataTable var="order" value="#{cartBean.cart}">  
                 <f:facet name="header">  
@@ -41,15 +40,15 @@
                     <h:outputText value="#{order.product.artist}" />  
                 </p:column> 
                 <p:column>  
-                    <p:commandButton value="Delete one from cart" action="#{viewCartControllerBean.removeOneProduct(order.product)}"/>
+                    <p:commandButton value="Delete one from cart" action="#{viewCartControllerBean.removeOneProduct(order.product)}" update=":cartForm"/>
                 </p:column> 
                 <p:column>  
-                    <p:commandButton value="Delete all from cart" action="#{viewCartControllerBean.removeProduct(order.product)}"/>
+                    <p:commandButton value="Delete all from cart" 
+                                     action="#{viewCartControllerBean.removeProduct(order.product)}" update=":cartForm"/>
                 </p:column> 
 
             </p:dataTable>  
         </h:form>  
-
     </ui:define>
 
 
