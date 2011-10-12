@@ -15,24 +15,38 @@
     <ui:define name="content">
 
         <h:form>  
-            <p:dataTable var="cd" value="#{cartBean.cart}">  
+            <p:dataTable var="order" value="#{cartBean.cart}">  
                 <f:facet name="header">  
                     Your Shopping Cart  
                 </f:facet>  
 
                 <p:column>  
                     <f:facet name="header">  
-                        <h:outputText value="Album" />  
+                        <h:outputText value="Quantity" />  
                     </f:facet>  
-                    <h:outputText value="#{cd.name}" />  
-                </p:column>  
+                    <h:outputText value="#{order.qty}" />  
+                </p:column> 
 
                 <p:column>  
                     <f:facet name="header">  
-                        <h:outputText value="Artist" />  
+                        <h:outputText value="Album" />  
                     </f:facet>  
-                    <h:outputText value="#{cd.artist}" />  
-                </p:column>  
+                    <h:outputText value="#{order.product.name}" />  
+                </p:column> 
+
+                <p:column>  
+                    <f:facet name="header">  
+                        <h:outputText value="Album" />  
+                    </f:facet>  
+                    <h:outputText value="#{order.product.artist}" />  
+                </p:column> 
+                <p:column>  
+                    <p:commandButton value="Delete one from cart" action="#{cartBean.removeOneProduct(prod)}"/>
+                </p:column> 
+                <p:column>  
+                    <p:commandButton value="Delete all from cart" action="#{cartBean.removeProduct(prod)}"/>
+                </p:column> 
+
             </p:dataTable>  
         </h:form>  
 

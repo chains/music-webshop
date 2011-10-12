@@ -10,7 +10,7 @@ package com.chalmers.beans;
  */
 
 public class ViewCartBackingBean {
-
+    
     /** Creates a new instance of ViewCartBackingBean */
     public ViewCartBackingBean() {
     }
