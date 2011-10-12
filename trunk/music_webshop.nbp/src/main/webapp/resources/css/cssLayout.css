@@ -7,8 +7,9 @@
 }
 
 #top {
+    text-align: center;
     position: relative;
-    background-color: #036fab;
+    background-color: #ffffff;
     height:11em;
     padding: 5px;
     margin: 0px 0px 10px 0px;
