@@ -62,13 +62,17 @@ public class ShoppingCartModelBean {
             }
         }
     }
+
     public void removeOneProduct(CD cd) {
 
         for (OrderItem dummy : cart) {
 
             Long id = dummy.getProduct().getId();
             if (id == cd.getId()) {
-                dummy.setQty(dummy.getQty() -1);
+                if ((dummy.getQty() - 1) == 0) {
+                    cart.remove(dummy);
+                }
+                dummy.setQty(dummy.getQty() - 1);
             }
         }
     }
