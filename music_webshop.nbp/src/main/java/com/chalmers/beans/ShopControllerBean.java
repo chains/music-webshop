@@ -5,6 +5,7 @@
 package com.chalmers.beans;
 
 import com.chalmers.core.CD;
+import javax.faces.bean.ManagedProperty;
 
 /**
  *
@@ -12,12 +13,25 @@ import com.chalmers.core.CD;
  */
 public class ShopControllerBean {
 
+    @ManagedProperty(value = "#{cartBean}")
+    private ShoppingCartModelBean cart;
+
     /** Creates a new instance of ShopControllerBean */
-    public ShopControllerBean(){
+    public ShopControllerBean() {
     }
-    
-    public void buyProduct(CD cd){
-        
-        //TODO something!
+    /*
+     * Adds CD to shopping cart
+     */
+
+    public void buyProduct(CD cd) {
+        cart.addProduct(cd);
+    }
+
+    public ShoppingCartModelBean getCart() {
+        return cart;
+    }
+
+    public void setCart(ShoppingCartModelBean bean) {
+        this.cart = bean;
     }
 }
