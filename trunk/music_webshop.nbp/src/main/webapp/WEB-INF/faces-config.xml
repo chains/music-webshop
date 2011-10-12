@@ -25,6 +25,11 @@
         <managed-bean-name>viewCartBackingBean</managed-bean-name>
         <managed-bean-class>com.chalmers.beans.ViewCartBackingBean</managed-bean-class>
         <managed-bean-scope>request</managed-bean-scope>
+        <managed-property>
+            <property-name>cart</property-name>
+            <property-class>com.chalmers.beans.ShoppingCartModelBean</property-class>
+            <value>#{cartBean}</value>
+        </managed-property>
     </managed-bean>
     <managed-bean>
         <managed-bean-name>confirmBackingBean</managed-bean-name>

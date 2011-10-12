@@ -9,7 +9,7 @@ package com.chalmers.beans;
  * @author Johan Sandström
  */
 public class ViewCartControllerBean {
-
+   
     /** Creates a new instance of ViewCartControllerBean */
     public ViewCartControllerBean() {
     }
