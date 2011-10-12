@@ -26,16 +26,45 @@
     </ui:define>
     <ui:define name="content">
         <h1>shop.xhtml</h1>
-        
-                    <h:form>  
+
+        <h:form>  
+
+            <p:dataTable var="prod" value="#{shopBackingBean.products}">  
+                <f:facet name="header">  
+                    Products  
+                </f:facet>  
+
+                <p:column>  
+                    <f:facet name="header">  
+                        <h:outputText value="Album" />  
+                    </f:facet>  
+                    <h:outputText value="#{prod.name}" />  
+                </p:column>  
+
+                <p:column sortBy="#{prod.artist}">  
+                    <f:facet name="header">  
+                        <h:outputText value="Artist" />  
+                    </f:facet>  
+                    <h:outputText value="#{prod.artist}" />  
+                </p:column>  
+
+                <p:column>  
+                    <f:facet name="header">  
+                        <h:outputText value="Genre" />  
+                    </f:facet>  
+                    <h:outputText value="#{prod.genre}" />  
+                </p:column>  
+                <p:column>  
+                    <!--                    <f:facet name="header">  
+                                            <h:outputText value="Genre" />  
+                                        </f:facet>  -->
+                    <p:commandButton value="Buy"/>
+                </p:column>  
 
 
-                        <p:menubar autoSubmenuDisplay="true">  
-                            <p:menuitem value="Quit" url="http://www.primefaces.org" icon="ui-icon ui-icon-close" />  
-                             <p:menuitem value="Quit" url="http://www.primefaces.org" icon="ui-icon ui-icon-close" />  
-                        </p:menubar>  
+            </p:dataTable>  
 
-                    </h:form>  
+        </h:form>  
     </ui:define>
 
 

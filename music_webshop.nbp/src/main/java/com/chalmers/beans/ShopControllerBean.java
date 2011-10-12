@@ -4,6 +4,8 @@
  */
 package com.chalmers.beans;
 
+import com.chalmers.core.CD;
+
 /**
  *
  * @author Johan Sandström
@@ -12,5 +14,10 @@ public class ShopControllerBean {
 
     /** Creates a new instance of ShopControllerBean */
     public ShopControllerBean(){
+    }
+    
+    public void buyProduct(CD cd){
+        
+        //TODO something!
     }
 }

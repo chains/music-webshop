@@ -17,6 +17,8 @@ public class ShopBackingBean {
 
     private List<CD> products;
     private DBCDControl dbControl;
+    //The genre that is selected in the left menu. All is default
+    private String selectedGenre = "all";
 
     /** Creates a new instance of ShopBackingBean */
     public ShopBackingBean() {
@@ -30,5 +32,13 @@ public class ShopBackingBean {
         //TODO: Make it possible to return list with only specific genre.
         products = dbControl.findEntities();
         return products;
+    }
+
+    public String getSelectedGenre() {
+        return selectedGenre;
+    }
+
+    public void setSelectedGenre(String selectedGenre) {
+        this.selectedGenre = selectedGenre;
     }
 }
