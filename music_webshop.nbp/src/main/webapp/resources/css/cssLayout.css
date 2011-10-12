@@ -9,10 +9,12 @@
 #top {
     position: relative;
     background-color: #036fab;
-    height:7em;
-    color: white;
+    height:11em;
     padding: 5px;
     margin: 0px 0px 10px 0px;
+    border-style:solid;
+    border-width: 1px;
+    border-color:#000000;
 }
 
 #content{
@@ -25,6 +27,9 @@
     background-color: #c2dfef;
     padding: 5px;
     margin: 10px 0px 0px 0px;
+    border-style:solid;
+    border-width: 1px;
+    border-color:#000000;
 }
 
 #left {
@@ -33,6 +38,9 @@
     padding: 5px;
     width: 150px;
     height: 40em;
+    border-style:solid;
+    border-width: 1px;
+    border-color:#000000;
 }
 
 #right {
@@ -41,10 +49,13 @@
     padding: 5px;
     width: 150px;
     height:40em; 
+    border-style:solid;
+    border-width: 1px;
+    border-color:#000000;
 }
 
 .center_content {
-    
+
     position: relative;
     background-color: #dddddd;
     padding: 5px;
@@ -60,18 +71,6 @@
     background-color: #dddddd;
     padding: 5px;
     margin: 0px 170px 0px 170px;
-}
-
-#top a:link, #top a:visited {
-  color: white;
-  font-weight : bold;
-  text-decoration: none;
-}
-
-#top a:link:hover, #top a:visited:hover  {
-  color: black;
-  font-weight : bold;
-  text-decoration : underline;
 }
 
 
