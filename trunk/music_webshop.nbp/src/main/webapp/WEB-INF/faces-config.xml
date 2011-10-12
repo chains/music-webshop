@@ -61,4 +61,15 @@
         <managed-bean-class>com.chalmers.beans.LoginBean</managed-bean-class>
         <managed-bean-scope>request</managed-bean-scope>
     </managed-bean>
+    <navigation-rule>
+        <from-view-id>/index.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>goToAdminPage</from-outcome>
+            <to-view-id>/admin.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>loginFailed</from-outcome>
+            <to-view-id>/index.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
 </faces-config>
