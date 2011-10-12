@@ -8,6 +8,8 @@
     xmlns:f="http://java.sun.com/jsf/core"
     template="WEB-INF/facelets/template.xhtml">
 
+    <h:outputScript library="js" name="handlelogin.js" />
+
 
 
     <ui:param name="title" value="Music webshop"></ui:param>
@@ -32,45 +34,25 @@
 
         <p>Admin login:</p>
         <h:outputLink id="loginLink" value="javascript:void(0)" onclick="dlg.show()" title="login">     
-            <p:graphicImage value="/images/login.png" />  
-        </h:outputLink>  
+            
+            <p:graphicImage value="/images/admin-login-button.gif" />  
 
-        <p:growl id="growl" showDetail="true" life="3000" />  
+        </h:outputLink> 
 
         <p:dialog id="dialog" header="Login" widgetVar="dlg">  
             <h:form>  
-
                 <h:panelGrid columns="2" cellpadding="5">  
                     <h:outputLabel for="username" value="Username: *" />  
                     <p:inputText value="#{loginBean.username}"   
-                                 id="username" required="true" label="username" />  
-
+                                 id="username" required="true" label="username"/>
                     <h:outputLabel for="password" value="Password: * " />  
                     <h:inputSecret value="#{loginBean.password}"   
-                                   id="password" required="true" label="password" />  
-
-                    <f:facet name="footer">  
-                        <p:commandButton value="Login" update="growl"   
-                                         actionListener="#{loginBean.login}"   
-                                         oncomplete="handleLoginRequest(xhr, status, args)"/>  
+                                   id="password" required="true" label="password"/>
+                    <f:facet name="footer">
+                        <p:commandButton value="Login" action="#{loginBean.login}" ajax="false"></p:commandButton>  
                     </f:facet>  
                 </h:panelGrid>  
-
             </h:form>  
         </p:dialog>  
-
-        <script type="text/javascript">  
-            function handleLoginRequest(xhr, status, args) {  
-                if(args.validationFailed || !args.loggedIn) {  
-                    jQuery('#dialog').parent().effect("shake", { times:3 }, 100);  
-                } else {  
-                    dlg.hide();  
-                    jQuery('#loginLink').fadeOut();  
-                }  
-            }  
-        </script>  
-
     </ui:define>
-
-
 </ui:composition>
