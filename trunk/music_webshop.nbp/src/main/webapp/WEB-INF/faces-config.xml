@@ -50,6 +50,11 @@
         <managed-bean-name>viewCartControllerBean</managed-bean-name>
         <managed-bean-class>com.chalmers.beans.ViewCartControllerBean</managed-bean-class>
         <managed-bean-scope>request</managed-bean-scope>
+        <managed-property>
+            <property-name>cart</property-name>
+            <property-class>com.chalmers.beans.ShoppingCartModelBean</property-class>
+            <value>#{cartBean}</value>
+        </managed-property>
     </managed-bean>
     <managed-bean>
         <managed-bean-name>loginBean</managed-bean-name>

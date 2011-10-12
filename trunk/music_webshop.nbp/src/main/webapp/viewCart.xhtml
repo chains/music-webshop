@@ -41,10 +41,10 @@
                     <h:outputText value="#{order.product.artist}" />  
                 </p:column> 
                 <p:column>  
-                    <p:commandButton value="Delete one from cart" action="#{cartBean.removeOneProduct(prod)}"/>
+                    <p:commandButton value="Delete one from cart" action="#{viewCartControllerBean.removeOneProduct(order.product)}"/>
                 </p:column> 
                 <p:column>  
-                    <p:commandButton value="Delete all from cart" action="#{cartBean.removeProduct(prod)}"/>
+                    <p:commandButton value="Delete all from cart" action="#{viewCartControllerBean.removeProduct(order.product)}"/>
                 </p:column> 
 
             </p:dataTable>  
