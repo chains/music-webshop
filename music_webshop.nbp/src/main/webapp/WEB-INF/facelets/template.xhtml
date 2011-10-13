@@ -41,10 +41,24 @@
                 </div>
                 <div>
                     <div id="right">
-                        <ui:insert name="right">Right</ui:insert>
+                        <ui:insert name="right">
+
+                            <p:panel header="REA på följande produkter: ">
+                                <p:imageSwitch effect="fade">  
+                                    <ui:repeat value="#{imageSwitchBean.images}" var="image">  
+                                        <p:graphicImage value="/images/#{image}"/>  
+                                    </ui:repeat>  
+                                </p:imageSwitch>
+                                <p/>
+                                <h:form>
+                                    <p:commandButton value="Alla 99 kr" action="shop.xhtml" ajax="false" />
+                                </h:form>
+                            </p:panel>
+                        </ui:insert>
                     </div>
                     <div id="content" class="center_content">
-                        <ui:insert name="content">Content</ui:insert>
+                        <ui:insert name="content">Center
+                        </ui:insert>
                     </div>
                 </div>
             </div>
