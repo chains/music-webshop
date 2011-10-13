@@ -4,6 +4,7 @@
  */
 package com.chalmers.beans;
 
+import javax.faces.bean.ApplicationScoped;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 
@@ -13,7 +14,7 @@ import javax.faces.bean.SessionScoped;
  */
 
 @ManagedBean(name = "loginBean")
-@SessionScoped
+@ApplicationScoped
 
 public class LoginBean {
 
@@ -56,6 +57,16 @@ public class LoginBean {
 
     public void setLoggedIn(boolean loggedIn) {
         this.loggedIn = loggedIn;
+    }
+    
+    public String checkLogin(){
+        if(loggedIn){
+            return "Logged in as Admin";
+        }
+        else{
+            // Return nullstring, admin not logged in
+            return "";
+        }
     }
     
     
