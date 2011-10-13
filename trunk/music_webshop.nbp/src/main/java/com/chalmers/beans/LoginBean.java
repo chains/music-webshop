@@ -4,7 +4,6 @@
  */
 package com.chalmers.beans;
 
-import javax.faces.bean.ApplicationScoped;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 
@@ -14,7 +13,7 @@ import javax.faces.bean.SessionScoped;
  */
 
 @ManagedBean(name = "loginBean")
-@ApplicationScoped
+@SessionScoped
 
 public class LoginBean {
 
@@ -61,6 +60,8 @@ public class LoginBean {
     
     public String checkLogin(){
         if(loggedIn){
+            
+//            jQuery('#loginLink').fadeOut();  
             return "Logged in as Admin";
         }
         else{

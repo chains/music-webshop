@@ -51,7 +51,31 @@
             <div id="bottom">
                 <ui:insert name="bottom">
                     <h:outputText value="Time: #{dateTime.currentDateTime}"></h:outputText>
-                    <h:outputText value="Admin: #{loginBean.checkLogin}"></h:outputText>
+                    <p/>
+                    <h:outputText value="#{loginBean.checkLogin()}"></h:outputText>
+
+                    <h:outputLink id="loginLink" value="javascript:void(0)" onclick="dlg.show()" title="login">     
+
+                        <p:graphicImage id="adminloginpic" value="/images/login.png"/>  
+                                    
+                    </h:outputLink> 
+
+                    <p:dialog id="dialog" header="Login" widgetVar="dlg">  
+                        <h:form>  
+                            <h:panelGrid columns="2" cellpadding="5">  
+                                <h:outputLabel for="username" value="Username: *" />  
+                                <p:inputText value="#{loginBean.username}"   
+                                             id="username" required="true" label="username"/>
+                                <h:outputLabel for="password" value="Password: * " />  
+                                <h:inputSecret value="#{loginBean.password}"   
+                                               id="password" required="true" label="password"/>
+                                <f:facet name="footer">
+                                    <p:commandButton value="Login" action="#{loginBean.login}" ajax="false"></p:commandButton>  
+                                </f:facet>  
+                            </h:panelGrid>  
+                        </h:form>  
+                    </p:dialog>  
+
                 </ui:insert>
             </div>
         </div>
