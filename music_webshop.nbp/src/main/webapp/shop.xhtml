@@ -11,72 +11,95 @@
     <ui:define name="left">
 
         <h:form>
-            <p:menu>  
 
-                <p:submenu label="Genres">  
-<!--                    <p:menuitem value="Shop Front" url="shop.xhtml" icon="ui-icon ui-icon-home"/> -->
-                    <p:menuitem value="Show all genres" icon="ui-icon ui-icon-home" action="#{shopBackingBean.setSelectedGenre()}" update=":shopForm">
-                        <f:param name="genre" value="all"/>
-                    </p:menuitem>
-                    <p:menuitem value="Pop" icon="ui-icon ui-icon-star" action="#{shopBackingBean.setSelectedGenre()}" update=":shopForm">
-                        <f:param name="genre" value="pop"/>
-                    </p:menuitem>
-                    <p:menuitem value="Rock" icon="ui-icon ui-icon-star" action="#{shopBackingBean.setSelectedGenre()}" update=":shopForm">
-                        <f:param name="genre" value="rock"/>
-                    </p:menuitem>  
-                    <p:menuitem value="Metal" icon="ui-icon ui-icon-star" action="#{shopBackingBean.setSelectedGenre()}" update=":shopForm"> 
-                        <f:param name="genre" value="metal"/>
-                    </p:menuitem>
-                    <p:menuitem value="Jazz" icon="ui-icon ui-icon-star" action="#{shopBackingBean.setSelectedGenre()}" update=":shopForm"> 
-                        <f:param name="genre" value="jazz"/>
-                    </p:menuitem>
-                    <p:menuitem value="Other" icon="ui-icon ui-icon-star" action="#{shopBackingBean.setSelectedGenre()}" update=":shopForm">
-                        <f:param name="genre" value="other"/>
-                    </p:menuitem>
-                </p:submenu>  
-            </p:menu>  
-        </h:form>
-    </ui:define>
-    <ui:define name="content">
-        <p:panel header="shop.xhtml ">
-        <p/>
-        <h:form id="shopForm">  
-            <p:dataTable var="prod" value="#{shopBackingBean.products}">  
+            <p:dataTable var="genre" value="#{shopBackingBean.genres}">  
                 <f:facet name="header">  
-                    Products  
+                    Music  
                 </f:facet>  
 
-                <p:column>  
-                    <f:facet name="header">  
-                        <h:outputText value="Album" />  
-                    </f:facet>  
-                    <h:outputText value="#{prod.name}" />  
-                </p:column>  
-
-                <p:column sortBy="#{prod.artist}">  
-                    <f:facet name="header">  
-                        <h:outputText value="Artist" />  
-                    </f:facet>  
-                    <h:outputText value="#{prod.artist}" />  
-                </p:column>  
 
                 <p:column>  
                     <f:facet name="header">  
                         <h:outputText value="Genre" />  
                     </f:facet>  
-                    <h:outputText value="#{prod.genre}" />  
-                </p:column>  
-                <p:column>  
-                    <!--                    <f:facet name="header">  
-                                            <h:outputText value="Genre" />  
-                                        </f:facet>  -->
-                    <p:commandButton value="Buy" action="#{shopControllerBean.buyProduct(prod)}"/>
-                </p:column>  
 
+                    <p:commandLink update="shopForm" actionListener="#{shopBackingBean.setSelectedGenre()}">  
+<!--                        <h:outputText value="#{genre}" />-->
+                        <p:graphicText value="#{genre}" fontName="Arial" fontSize="16" />
+                        <f:param name="genre" value="#{genre}"/>
+                    </p:commandLink>
 
+                </p:column>  
             </p:dataTable>  
 
-        </h:form>  
+            <!--            <p:menu>  
+            
+                            <p:submenu label="Genres"> 
+                                <p:menuitem value="Show all genres" icon="ui-icon ui-icon-home" action="#{shopBackingBean.setSelectedGenre()}" update=":shopForm">
+                                    <f:param name="genre" value="all"/>
+                                </p:menuitem>
+                                <p:menuitem value="Pop" icon="ui-icon ui-icon-star" action="#{shopBackingBean.setSelectedGenre()}" update=":shopForm">
+                                    <f:param name="genre" value="pop"/>
+                                </p:menuitem>
+                                <p:menuitem value="Rock" icon="ui-icon ui-icon-star" action="#{shopBackingBean.setSelectedGenre()}" update=":shopForm">
+                                    <f:param name="genre" value="rock"/>
+                                </p:menuitem>  
+                                <p:menuitem value="Metal" icon="ui-icon ui-icon-star" action="#{shopBackingBean.setSelectedGenre()}" update=":shopForm"> 
+                                    <f:param name="genre" value="metal"/>
+                                </p:menuitem>
+                                <p:menuitem value="Jazz" icon="ui-icon ui-icon-star" action="#{shopBackingBean.setSelectedGenre()}" update=":shopForm"> 
+                                    <f:param name="genre" value="jazz"/>
+                                </p:menuitem>
+                                <p:menuitem value="Other" icon="ui-icon ui-icon-star" action="#{shopBackingBean.setSelectedGenre()}" update=":shopForm">
+                                    <f:param name="genre" value="other"/>
+                                </p:menuitem>
+                            </p:submenu>  
+                        </p:menu>  -->
+        </h:form>
+    </ui:define>
+    <ui:define name="content">
+        <p:panel header="shop.xhtml ">
+            <p/>
+            <h:form id="shopForm">  
+                <p:dataTable var="prod" value="#{shopBackingBean.products}"
+                             paginator="true" rows="10"
+                         paginatorTemplate="{CurrentPageReport}  {FirstPageLink} 
+                         {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink}">  
+                    <f:facet name="header">  
+                        Products  
+                    </f:facet>  
+
+                    <p:column>  
+                        <f:facet name="header">  
+                            <h:outputText value="Album" />  
+                        </f:facet>  
+                        <h:outputText value="#{prod.name}" />  
+                    </p:column>  
+
+                    <p:column sortBy="#{prod.artist}">  
+                        <f:facet name="header">  
+                            <h:outputText value="Artist" />  
+                        </f:facet>  
+                        <h:outputText value="#{prod.artist}" />  
+                    </p:column>  
+
+                    <p:column>  
+                        <f:facet name="header">  
+                            <h:outputText value="Genre" />  
+                        </f:facet>  
+                        <h:outputText value="#{prod.genre}" />  
+                    </p:column>  
+                    <p:column>  
+                        <!--                    <f:facet name="header">  
+                                                <h:outputText value="Genre" />  
+                                            </f:facet>  -->
+                        <p:commandButton value="Buy" action="#{shopControllerBean.buyProduct(prod)}"/>
+                    </p:column>  
+
+
+                </p:dataTable>  
+
+            </h:form>  
         </p:panel>
     </ui:define>
 
