@@ -76,6 +76,18 @@ public class ShoppingCartModelBean {
             }
         }
     }
+    
+    /*
+     * Gets the total price of all the items in the shoppingcart.
+     */
+    public double getTotal(){
+        
+        double price = 0;
+        for(OrderItem order : cart){
+            price += order.getQty()*order.getProduct().getPrice();
+        }
+        return price;
+    }
 
     public List<OrderItem> getCart() {
         return cart;
