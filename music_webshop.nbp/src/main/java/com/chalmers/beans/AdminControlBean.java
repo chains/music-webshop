@@ -19,7 +19,7 @@ import javax.faces.bean.RequestScoped;
 @RequestScoped
 public class AdminControlBean {
     
-    @ManagedProperty(value = "#{addProductBackingBean}")
+    @ManagedProperty(value = "#{adminBackingBean}")
     private AdminBackingBean adminBackingbean;
 
     /** Creates a new instance of AdminControlBean */
