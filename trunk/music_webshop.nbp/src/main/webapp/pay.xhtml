@@ -9,6 +9,51 @@
 
     <ui:define name="content">
         <p:panel header="pay.xhtml ">
+
+            <h:form id="cartForm">  
+                <p:dataTable var="order" value="#{shoppingCartModelBean.cart}">  
+                    <f:facet name="header">  
+                        Checkout
+                    </f:facet>  
+
+                    <p:column>  
+                        <f:facet name="header">  
+                            <h:outputText value="Quantity" />  
+                        </f:facet>  
+                        <h:outputText value="#{order.qty}" />  
+                    </p:column> 
+
+                    <p:column>  
+                        <f:facet name="header">  
+                            <h:outputText value="Album" />  
+                        </f:facet>  
+                        <h:outputText value="#{order.product.name}" />  
+                    </p:column> 
+
+                    <p:column>  
+                        <f:facet name="header">  
+                            <h:outputText value="Album" />  
+                        </f:facet>  
+                        <h:outputText value="#{order.product.artist}" />  
+                    </p:column> 
+                    <p:column>  
+                        <p:commandButton value="Delete one from cart" 
+                                         actionListener="#{viewCartControllerBean.removeOneProduct(order.product)}" action="removeOneProduct" update=":cartForm"/>
+                    </p:column> 
+                    <p:column>  
+                        <p:commandButton value="Delete all from cart" 
+                                         actionListener="#{viewCartControllerBean.removeProduct(order.product)}" action="emptyCart" update=":cartForm"/>
+                    </p:column> 
+                </p:dataTable>  
+
+
+                <p:commandButton value="Pay" 
+                                 actionListener="#{payControlBean.confirmOrder()}" action="confirmOrder"/>
+
+            </h:form>  
+
+
+
         </p:panel>
     </ui:define>
 

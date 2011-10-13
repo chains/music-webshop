@@ -80,7 +80,7 @@ public class Mailer extends HttpServlet {
 
             sendMail(request.getParameter("message"), RECIEVERTEMP);
 
-            response.sendRedirect("cs?action=confirm");
+//            response.sendRedirect("cs?action=confirm");
 
         } catch (AddressException ex) {
             Logger.getLogger(Mailer.class.getName()).log(Level.SEVERE, null, ex);
