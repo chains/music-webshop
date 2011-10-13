@@ -25,13 +25,8 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author Daniel Nicklasson
  */
-@ManagedBean(name = "filterBean")
-@RequestScoped
 public class AdminLoginFilter implements Filter {
 
-    @ManagedProperty(value = "#{loginBean}")
-    private LoginBean login;
-    
     private static final boolean debug = true;
     private boolean adminRights;
     // The filter configuration object we are associated with.  If
@@ -100,8 +95,8 @@ public class AdminLoginFilter implements Filter {
             FilterChain chain)
             throws IOException, ServletException {
 
-        
-        
+
+
         HttpServletRequest req = (HttpServletRequest) request;
         HttpServletResponse resp = (HttpServletResponse) response;
 
@@ -110,13 +105,8 @@ public class AdminLoginFilter implements Filter {
             log("AdminLoginFilter:doFilter()");
         }
 
-        adminRights = login.isLoggedIn();
-
-        if (adminRights) {
-            resp.sendRedirect("/admin.xhtml");
-        } else {
-            resp.sendRedirect("/index.xhtml");
-        }
+        // Always redirect to index if this filter is reached
+        resp.sendRedirect("/index.xhtml");
 
         doBeforeProcessing(request, response);
 
@@ -240,13 +230,5 @@ public class AdminLoginFilter implements Filter {
 
     public void log(String msg) {
         filterConfig.getServletContext().log(msg);
-    }
-
-    public LoginBean getLogin() {
-        return login;
-    }
-
-    public void setLogin(LoginBean bean) {
-        this.login = bean;
     }
 }

@@ -50,7 +50,8 @@
             </div>
             <div id="bottom">
                 <ui:insert name="bottom">
-                    <h:outputText value="Time: #{dateTime.currentDateTime}" id="footer"></h:outputText>
+                    <h:outputText value="Time: #{dateTime.currentDateTime}"></h:outputText>
+                    <h:outputText value="Admin: #{loginBean.checkLogin}"></h:outputText>
                 </ui:insert>
             </div>
         </div>
