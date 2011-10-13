@@ -12,7 +12,7 @@ import javax.faces.bean.SessionScoped;
  * @author Daniel Nicklasson
  */
 
-@ManagedBean(name = "loginBean")
+@ManagedBean
 @SessionScoped
 
 public class LoginBean {

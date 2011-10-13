@@ -18,7 +18,7 @@ import javax.faces.context.FacesContext;
  *
  * @author Johan Sandström
  */
-@ManagedBean(name = "shopBackingBean")
+@ManagedBean
 @SessionScoped
 public class ShopBackingBean {
 

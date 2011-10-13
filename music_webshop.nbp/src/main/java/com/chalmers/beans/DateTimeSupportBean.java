@@ -18,7 +18,7 @@ import javax.faces.bean.SessionScoped;
 
 
 
-@ManagedBean(name = "dateTime")
+@ManagedBean
 @SessionScoped
 public class DateTimeSupportBean implements Serializable{
     
@@ -29,7 +29,7 @@ public class DateTimeSupportBean implements Serializable{
     public DateTimeSupportBean() {
     }
     
-    public String getCurrentDateTime(){
+    public String getCurrentDateTimeSupportBean(){
         DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
         Date d = new Date();
         return dateFormat.format(d);

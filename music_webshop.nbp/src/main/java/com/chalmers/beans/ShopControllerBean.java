@@ -13,7 +13,7 @@ import javax.faces.bean.ManagedProperty;
  */
 public class ShopControllerBean {
 
-    @ManagedProperty(value = "#{cartBean}")
+    @ManagedProperty(value = "#{shoppingCartModelBean}")
     private ShoppingCartModelBean cart;
 
     /** Creates a new instance of ShopControllerBean */

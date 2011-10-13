@@ -15,7 +15,7 @@ import javax.faces.bean.SessionScoped;
  *
  * @author Johan Sandström
  */
-@ManagedBean(name = "cartBean")
+@ManagedBean
 @SessionScoped
 public class ShoppingCartModelBean {
 
