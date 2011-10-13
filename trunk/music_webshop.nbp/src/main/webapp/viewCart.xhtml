@@ -9,11 +9,10 @@
     xmlns:f="http://java.sun.com/jsf/core"
     template="WEB-INF/facelets/template.xhtml">
 
-
-
-    <ui:param name="title" value="View Cart"></ui:param>
     <ui:define name="content">
-        <h:form>  
+        <h1>shop.xhtml</h1>
+        <p/>
+        <h:form id="cartForm">  
             <p:dataTable var="order" value="#{cartBean.cart}">  
                 <f:facet name="header">  
                     Your Shopping Cart  
@@ -40,13 +39,13 @@
                     <h:outputText value="#{order.product.artist}" />  
                 </p:column> 
                 <p:column>  
-                    <p:commandButton value="Delete one from cart" action="#{viewCartControllerBean.removeOneProduct(order.product)}" update=":cartForm"/>
+                    <p:commandButton value="Delete one from cart" 
+                                     action="#{viewCartControllerBean.removeOneProduct(order.product)}" update=":cartForm"/>
                 </p:column> 
                 <p:column>  
                     <p:commandButton value="Delete all from cart" 
                                      action="#{viewCartControllerBean.removeProduct(order.product)}" update=":cartForm"/>
                 </p:column> 
-
             </p:dataTable>  
         </h:form>  
     </ui:define>
