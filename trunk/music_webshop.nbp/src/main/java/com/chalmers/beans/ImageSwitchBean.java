@@ -6,11 +6,15 @@ package com.chalmers.beans;
 
 import java.util.ArrayList;
 import java.util.List;
+import javax.faces.bean.ManagedBean;
+import javax.faces.bean.RequestScoped;
 
 /**
  *
  * @author Daniel Nicklasson
  */
+@ManagedBean
+@RequestScoped
 public class ImageSwitchBean {
 
      private List<String> images;  
