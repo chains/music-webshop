@@ -13,7 +13,7 @@
         <h1>shop.xhtml</h1>
         <p/>
         <h:form id="cartForm">  
-            <p:dataTable var="order" value="#{cartBean.cart}">  
+            <p:dataTable var="order" value="#{shoppingCartModelBean.cart}">  
                 <f:facet name="header">  
                     Your Shopping Cart  
                 </f:facet>  
@@ -40,11 +40,11 @@
                 </p:column> 
                 <p:column>  
                     <p:commandButton value="Delete one from cart" 
-                                     action="#{viewCartControllerBean.removeOneProduct(order.product)}" update=":cartForm"/>
+                                     actionListener="#{viewCartControllerBean.removeOneProduct(order.product)}" action="removeOneProduct" update=":cartForm"/>
                 </p:column> 
                 <p:column>  
                     <p:commandButton value="Delete all from cart" 
-                                     action="#{viewCartControllerBean.removeProduct(order.product)}" update=":cartForm"/>
+                                     actionListener="#{viewCartControllerBean.removeProduct(order.product)}" action="emptyCart" update=":cartForm"/>
                 </p:column> 
             </p:dataTable>  
         </h:form>  

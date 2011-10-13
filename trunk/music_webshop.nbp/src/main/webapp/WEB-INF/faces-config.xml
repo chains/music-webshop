@@ -6,21 +6,7 @@
     xmlns="http://java.sun.com/xml/ns/javaee" 
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
     xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-facesconfig_2_0.xsd">
-    <managed-bean>
-        <managed-bean-name>shoppingCartModelBean</managed-bean-name>
-        <managed-bean-class>com.chalmers.beans.ShoppingCartModelBean</managed-bean-class>
-        <managed-bean-scope>session</managed-bean-scope>
-    </managed-bean>
-    <managed-bean>
-        <managed-bean-name>shopBackingBean</managed-bean-name>
-        <managed-bean-class>com.chalmers.beans.ShopBackingBean</managed-bean-class>
-        <managed-bean-scope>session</managed-bean-scope>
-    </managed-bean>
-    <managed-bean>
-        <managed-bean-name>payBackingBean</managed-bean-name>
-        <managed-bean-class>com.chalmers.beans.PayBackingBean</managed-bean-class>
-        <managed-bean-scope>request</managed-bean-scope>
-    </managed-bean>
+  
     <managed-bean>
         <managed-bean-name>viewCartBackingBean</managed-bean-name>
         <managed-bean-class>com.chalmers.beans.ViewCartBackingBean</managed-bean-class>
@@ -28,14 +14,10 @@
         <managed-property>
             <property-name>cart</property-name>
             <property-class>com.chalmers.beans.ShoppingCartModelBean</property-class>
-            <value>#{cartBean}</value>
+            <value>#{shoppingCartModelBean}</value>
         </managed-property>
     </managed-bean>
-    <managed-bean>
-        <managed-bean-name>confirmBackingBean</managed-bean-name>
-        <managed-bean-class>com.chalmers.beans.ConfirmBackingBean</managed-bean-class>
-        <managed-bean-scope>request</managed-bean-scope>
-    </managed-bean>
+
     <managed-bean>
         <managed-bean-name>shopControllerBean</managed-bean-name>
         <managed-bean-class>com.chalmers.beans.ShopControllerBean</managed-bean-class>
@@ -43,7 +25,7 @@
         <managed-property>
             <property-name>cart</property-name>
             <property-class>com.chalmers.beans.ShoppingCartModelBean</property-class>
-            <value>#{cartBean}</value>
+            <value>#{shoppingCartModelBean}</value>
         </managed-property>
     </managed-bean>
     <managed-bean>
@@ -53,14 +35,10 @@
         <managed-property>
             <property-name>cart</property-name>
             <property-class>com.chalmers.beans.ShoppingCartModelBean</property-class>
-            <value>#{cartBean}</value>
+            <value>#{shoppingCartModelBean}</value>
         </managed-property>
     </managed-bean>
-    <managed-bean>
-        <managed-bean-name>loginBean</managed-bean-name>
-        <managed-bean-class>com.chalmers.beans.LoginBean</managed-bean-class>
-        <managed-bean-scope>session</managed-bean-scope>
-    </managed-bean>
+  
 
     <navigation-rule>
         <from-view-id>/index.xhtml</from-view-id>
@@ -73,6 +51,8 @@
             <to-view-id>/index.xhtml</to-view-id>
         </navigation-case>
     </navigation-rule>
+    
+    
     <managed-bean>
         <managed-bean-name>adminBackingBean</managed-bean-name>
         <managed-bean-class>com.chalmers.beans.AdminBackingBean</managed-bean-class>
@@ -88,4 +68,14 @@
             <value>#{adminBackingBean}</value>
         </managed-property>
     </managed-bean>
+    
+    
+    
+    <navigation-rule>
+        <from-view-id>/viewCart.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>emptyCart</from-outcome>
+            <to-view-id>/viewCart.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
 </faces-config>
