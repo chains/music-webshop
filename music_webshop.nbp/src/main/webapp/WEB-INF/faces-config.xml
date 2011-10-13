@@ -14,7 +14,7 @@
     <managed-bean>
         <managed-bean-name>shopBackingBean</managed-bean-name>
         <managed-bean-class>com.chalmers.beans.ShopBackingBean</managed-bean-class>
-        <managed-bean-scope>request</managed-bean-scope>
+        <managed-bean-scope>session</managed-bean-scope>
     </managed-bean>
     <managed-bean>
         <managed-bean-name>payBackingBean</managed-bean-name>
