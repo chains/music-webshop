@@ -7,12 +7,16 @@ package com.chalmers.beans;
 import com.chalmers.core.CD;
 import com.chalmers.ctrl.DBCDControl;
 import com.chalmers.ctrl.Database;
+import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
+import javax.faces.bean.RequestScoped;
 
 /**
  *
  * @author Johan Sandström
  */
+@ManagedBean
+@RequestScoped
 public class AdminControlBean {
     
     @ManagedProperty(value = "#{addProductBackingBean}")
@@ -24,10 +28,11 @@ public class AdminControlBean {
     
     public void addCD(){
         DBCDControl cdControl = (DBCDControl)Database.getCDController();
-        cdControl.create(new CD(new Long(0), adminBackingbean.getName(), 
+        CD cd = new CD(new Long(0), adminBackingbean.getName(), 
                 adminBackingbean.getPrice(), adminBackingbean.getGenre(), 
                 adminBackingbean.getDescription(), adminBackingbean.getNoInStock(), 
-                adminBackingbean.getPlaytime(), adminBackingbean.getArtist()));
+                adminBackingbean.getPlaytime(), adminBackingbean.getArtist());
+        cdControl.create(cd);
         
     }
     
@@ -35,7 +40,7 @@ public class AdminControlBean {
         return adminBackingbean;
     }
 
-    public void setAdmingBackingbean(AdminBackingBean backingbean) {
+    public void setAdminBackingbean(AdminBackingBean backingbean) {
         this.adminBackingbean = backingbean;
     }
 }

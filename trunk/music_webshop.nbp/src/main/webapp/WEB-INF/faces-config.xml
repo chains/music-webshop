@@ -83,7 +83,7 @@
         <managed-bean-class>com.chalmers.beans.AdminControlBean</managed-bean-class>
         <managed-bean-scope>request</managed-bean-scope>
         <managed-property>
-            <property-name>adminBackingBean</property-name>
+            <property-name>adminBackingbean</property-name>
             <property-class>com.chalmers.beans.AdminBackingBean</property-class>
             <value>#{adminBackingBean}</value>
         </managed-property>
