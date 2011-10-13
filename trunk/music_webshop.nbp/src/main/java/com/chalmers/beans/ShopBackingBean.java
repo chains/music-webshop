@@ -7,6 +7,7 @@ package com.chalmers.beans;
 import com.chalmers.core.CD;
 import com.chalmers.ctrl.DBCDControl;
 import com.chalmers.ctrl.Database;
+import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
@@ -22,6 +23,7 @@ import javax.faces.context.FacesContext;
 @SessionScoped
 public class ShopBackingBean {
 
+    private List<String> genres = new ArrayList<String>();
     private List<CD> products;
     private DBCDControl dbControl;
     //The genre that is selected in the left menu. All is default
@@ -29,10 +31,19 @@ public class ShopBackingBean {
 
     /** Creates a new instance of ShopBackingBean */
     public ShopBackingBean() {
-
-
         dbControl = (DBCDControl) Database.getCDController();
         products = dbControl.findEntities();
+        
+        //Add a "genre" for all genres
+        genres.add("All Genres");
+        //Get the genres from the products.
+        for(CD cd : products){
+           if(!genres.contains(cd.getGenre())){
+               genres.add(cd.getGenre());
+           }
+            
+        }
+        
     }
 
     public List<CD> getProducts() {
@@ -45,7 +56,7 @@ public class ShopBackingBean {
         List<CD> cds = dbControl.findEntities();
         //Remove CD's with wrong genre
         Iterator<CD> it = cds.iterator();
-        if (!genre.equalsIgnoreCase("all")) {
+        if (!genre.equalsIgnoreCase("All Genres")) {
             while (it.hasNext()) {
                 CD cd = it.next();
                 if (!cd.getGenre().equalsIgnoreCase(genre)) {
@@ -57,6 +68,7 @@ public class ShopBackingBean {
         products = cds;
     }
 
+    
     public String getSelectedGenre() {
         return selectedGenre;
     }
@@ -73,4 +85,13 @@ public class ShopBackingBean {
         this.selectedGenre = genre;
         setProducts(genre);
     }
+
+    public List<String> getGenres() {
+        return genres;
+    }
+
+    public void setGenres(List<String> genres) {
+        this.genres = genres;
+    }
+    
 }
