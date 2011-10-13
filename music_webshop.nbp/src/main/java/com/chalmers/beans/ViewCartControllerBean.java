@@ -5,12 +5,16 @@
 package com.chalmers.beans;
 
 import com.chalmers.core.CD;
+import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
+import javax.faces.bean.RequestScoped;
 
 /**
  *
  * @author Johan Sandström
  */
+@ManagedBean
+@RequestScoped
 public class ViewCartControllerBean {
    
     @ManagedProperty(value = "#{shoppingCartModelBean}")
