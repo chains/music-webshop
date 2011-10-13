@@ -7,26 +7,17 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
     xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-facesconfig_2_0.xsd">
   
-    <managed-bean>
-        <managed-bean-name>viewCartBackingBean</managed-bean-name>
-        <managed-bean-class>com.chalmers.beans.ViewCartBackingBean</managed-bean-class>
-        <managed-bean-scope>request</managed-bean-scope>
-        <managed-property>
-            <property-name>cart</property-name>
-            <property-class>com.chalmers.beans.ShoppingCartModelBean</property-class>
-            <value>#{shoppingCartModelBean}</value>
-        </managed-property>
-    </managed-bean>
-
     <navigation-rule>
         <from-view-id>/index.xhtml</from-view-id>
         <navigation-case>
             <from-outcome>goToAdminPage</from-outcome>
             <to-view-id>/admin.xhtml</to-view-id>
+            <redirect/>
         </navigation-case>
         <navigation-case>
             <from-outcome>loginFailed</from-outcome>
             <to-view-id>/index.xhtml</to-view-id>
+            <redirect/>
         </navigation-case>
     </navigation-rule>
     <navigation-rule>
@@ -34,6 +25,7 @@
         <navigation-case>
             <from-outcome>emptyCart</from-outcome>
             <to-view-id>/viewCart.xhtml</to-view-id>
+            <redirect/>
         </navigation-case>
     </navigation-rule>
 </faces-config>
