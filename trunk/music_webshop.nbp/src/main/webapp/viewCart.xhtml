@@ -10,7 +10,7 @@
     template="WEB-INF/facelets/template.xhtml">
 
     <ui:define name="content">
-        <h1>shop.xhtml</h1>
+        <p:panel header="viewCart.xhtml">
         <p/>
         <h:form id="cartForm">  
             <p:dataTable var="order" value="#{shoppingCartModelBean.cart}">  
@@ -48,6 +48,7 @@
                 </p:column> 
             </p:dataTable>  
         </h:form>  
+        </p:panel>
     </ui:define>
 
 
