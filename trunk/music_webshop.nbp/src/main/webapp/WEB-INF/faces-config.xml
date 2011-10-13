@@ -61,6 +61,21 @@
         <managed-bean-class>com.chalmers.beans.LoginBean</managed-bean-class>
         <managed-bean-scope>request</managed-bean-scope>
     </managed-bean>
+    
+    
+        <managed-bean>
+        <managed-bean-name>filterBean</managed-bean-name>
+        <managed-bean-class>com.chalmers.beans.AdminLoginFilter</managed-bean-class>
+        <managed-bean-scope>request</managed-bean-scope>
+        
+        <managed-property>
+            <property-name>login</property-name>
+            <property-class>com.chalmers.beans.LoginBean</property-class>
+            <value>#{loginBean}</value>
+        </managed-property>
+        
+    </managed-bean>
+    
     <navigation-rule>
         <from-view-id>/index.xhtml</from-view-id>
         <navigation-case>

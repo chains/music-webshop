@@ -8,6 +8,16 @@
         <param-name>javax.faces.FACELETS_SKIP_COMMENTS</param-name>
         <param-value>true</param-value>
     </context-param>
+    <filter>
+        <filter-name>AdminLoginFilter</filter-name>
+        <filter-class>com.chalmers.ctrl.AdminLoginFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>AdminLoginFilter</filter-name>
+        <url-pattern>/admin.xhtml</url-pattern>
+        <dispatcher>REQUEST</dispatcher>
+        <dispatcher>FORWARD</dispatcher>
+    </filter-mapping>
     <servlet>
         <servlet-name>Faces Servlet</servlet-name>
         <servlet-class>javax.faces.webapp.FacesServlet</servlet-class>

@@ -4,15 +4,22 @@
  */
 package com.chalmers.beans;
 
+import javax.faces.bean.ManagedBean;
+import javax.faces.bean.SessionScoped;
+
 /**
  *
- * @author Daniel
+ * @author Daniel Nicklasson
  */
+
+@ManagedBean(name = "loginBean")
+@SessionScoped
 
 public class LoginBean {
 
     private String username;
     private String password;
+    private boolean loggedIn;
 
     public String getUsername() {
         return username;
@@ -32,7 +39,7 @@ public class LoginBean {
 
     public String login() {
 
-        boolean loggedIn = false;
+        loggedIn = false;
 
         if (username != null && username.equals("admin") && password != null && password.equals("12345")) {
             loggedIn = true;
@@ -42,4 +49,14 @@ public class LoginBean {
             return "loginFailed";
         }
     }
+
+    public boolean isLoggedIn() {
+        return loggedIn;
+    }
+
+    public void setLoggedIn(boolean loggedIn) {
+        this.loggedIn = loggedIn;
+    }
+    
+    
 }
