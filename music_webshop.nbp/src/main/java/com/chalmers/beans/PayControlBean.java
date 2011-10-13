@@ -4,9 +4,11 @@
  */
 package com.chalmers.beans;
 
+import com.chalmers.ctrl.Mail;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.RequestScoped;
+import javax.faces.context.FacesContext;
 
 /**
  *
@@ -29,5 +31,16 @@ public class PayControlBean {
 
     public void setCart(ShoppingCartModelBean bean) {
         this.cart = bean;
+    }
+
+    public String confirmOrder() throws Exception {
+        String message = cart.toString();
+
+        //Call mailer
+        Mail mailtest = new Mail(message);
+        
+        mailtest.sendMail();
+
+        return "goToConfirm";
     }
 }
