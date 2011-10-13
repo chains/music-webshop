@@ -18,28 +18,6 @@
         </managed-property>
     </managed-bean>
 
-    <managed-bean>
-        <managed-bean-name>shopControllerBean</managed-bean-name>
-        <managed-bean-class>com.chalmers.beans.ShopControllerBean</managed-bean-class>
-        <managed-bean-scope>request</managed-bean-scope>
-        <managed-property>
-            <property-name>cart</property-name>
-            <property-class>com.chalmers.beans.ShoppingCartModelBean</property-class>
-            <value>#{shoppingCartModelBean}</value>
-        </managed-property>
-    </managed-bean>
-    <managed-bean>
-        <managed-bean-name>viewCartControllerBean</managed-bean-name>
-        <managed-bean-class>com.chalmers.beans.ViewCartControllerBean</managed-bean-class>
-        <managed-bean-scope>request</managed-bean-scope>
-        <managed-property>
-            <property-name>cart</property-name>
-            <property-class>com.chalmers.beans.ShoppingCartModelBean</property-class>
-            <value>#{shoppingCartModelBean}</value>
-        </managed-property>
-    </managed-bean>
-  
-
     <navigation-rule>
         <from-view-id>/index.xhtml</from-view-id>
         <navigation-case>
@@ -51,26 +29,6 @@
             <to-view-id>/index.xhtml</to-view-id>
         </navigation-case>
     </navigation-rule>
-    
-    
-    <managed-bean>
-        <managed-bean-name>adminBackingBean</managed-bean-name>
-        <managed-bean-class>com.chalmers.beans.AdminBackingBean</managed-bean-class>
-        <managed-bean-scope>session</managed-bean-scope>
-    </managed-bean>
-    <managed-bean>
-        <managed-bean-name>adminControlBean</managed-bean-name>
-        <managed-bean-class>com.chalmers.beans.AdminControlBean</managed-bean-class>
-        <managed-bean-scope>request</managed-bean-scope>
-        <managed-property>
-            <property-name>adminBackingbean</property-name>
-            <property-class>com.chalmers.beans.AdminBackingBean</property-class>
-            <value>#{adminBackingBean}</value>
-        </managed-property>
-    </managed-bean>
-    
-    
-    
     <navigation-rule>
         <from-view-id>/viewCart.xhtml</from-view-id>
         <navigation-case>
