@@ -77,6 +77,15 @@ public class ShoppingCartModelBean {
         }
     }
     
+    public int getCartCount(){
+        
+        int count = 0;
+        for (OrderItem dummy : cart) {
+            count =+ dummy.getQty();
+        }
+        return count;
+    }
+    
     /*
      * Gets the total price of all the items in the shoppingcart.
      */

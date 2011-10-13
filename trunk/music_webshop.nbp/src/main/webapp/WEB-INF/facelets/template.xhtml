@@ -32,15 +32,12 @@
                             <p:menuitem value="View Cart" url="viewCart.xhtml" icon="ui-icon ui-icon-extlink"></p:menuitem> 
                             <p:menuitem value="About Us" url="pay.xhtml" icon="ui-icon ui-icon-arrowrefresh"></p:menuitem> 
                         </p:menubar>  
-                    </h:form>  
+                    </h:form>
                 </ui:insert>
             </div>
             <div>
                 <div id="left">
                     <ui:insert name="left">
-
-
-
                         <p:panel header="Handla så mycket du kan!">
                             <p>Tja</p>
                             <p>Tja</p>
@@ -69,6 +66,11 @@
                                     <p:commandButton value="Alla 99 kr" action="shop.xhtml" ajax="false" />
                                 </h:form>
                             </p:panel>
+                            
+                            <p:panel header="Din kundvagn">
+                                <h:outputText value="Du har #{shoppingCartModelBean.getCartCount()} artiklar i din kundvagn."></h:outputText>
+                                <h:outputText value="Total kostnad #{shoppingCartModelBean.getTotal()} kr."></h:outputText>
+                            </p:panel>
                         </ui:insert>
                     </div>
                     <div id="content" class="center_content">
@@ -88,6 +90,7 @@
                             <p:graphicImage id="adminloginpic" value="/images/login.png"/>  
                         </h:outputLink> 
                     </div>
+
 
                     <p:dialog id="dialog" header="Login" widgetVar="dlg">  
                         <h:form>  
