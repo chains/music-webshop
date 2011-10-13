@@ -69,6 +69,14 @@ public class LoginBean {
             return "";
         }
     }
+    public String buttonVisibility(){
+        if(loggedIn){
+            return "hidden";
+        }
+        else{
+            return "visible";
+        }
+    }
     
     
 }

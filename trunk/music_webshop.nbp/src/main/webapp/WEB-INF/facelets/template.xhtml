@@ -54,11 +54,11 @@
                     <p/>
                     <h:outputText value="#{loginBean.checkLogin()}"></h:outputText>
 
-                    <h:outputLink id="loginLink" value="javascript:void(0)" onclick="dlg.show()" title="login">     
-
-                        <p:graphicImage id="adminloginpic" value="/images/login.png"/>  
-                                    
-                    </h:outputLink> 
+                    <div id="pic" style="visibility: #{loginBean.buttonVisibility()}">
+                        <h:outputLink id="loginLink" value="javascript:void(0)" onclick="dlg.show()" title="login">     
+                            <p:graphicImage id="adminloginpic" value="/images/login.png"/>  
+                        </h:outputLink> 
+                    </div>
 
                     <p:dialog id="dialog" header="Login" widgetVar="dlg">  
                         <h:form>  
