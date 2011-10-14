@@ -17,10 +17,10 @@ import javax.faces.bean.RequestScoped;
 @ManagedBean
 @RequestScoped
 public class ViewCartControllerBean {
-   
+
     @ManagedProperty(value = "#{shoppingCartModelBean}")
     private ShoppingCartModelBean cart;
-    
+
     /** Creates a new instance of ViewCartControllerBean */
     public ViewCartControllerBean() {
     }
@@ -32,23 +32,23 @@ public class ViewCartControllerBean {
     public void setCart(ShoppingCartModelBean bean) {
         this.cart = bean;
     }
-    
-    public void removeProduct(CD cd){
+
+    public void removeProduct(CD cd) {
         cart.removeProduct(cd);
     }
-    public void removeOneProduct(CD cd){
+
+    public void removeOneProduct(CD cd) {
         cart.removeOneProduct(cd);
     }
-    
-        public String confirmOrder() throws Exception {
+
+    public String confirmOrder() throws Exception {
         String message = cart.toString();
 
         //Call mailer
         Mail mailtest = new Mail(message);
-        
+
         mailtest.sendMail();
 
         return "goToConfirm";
     }
-    
 }
