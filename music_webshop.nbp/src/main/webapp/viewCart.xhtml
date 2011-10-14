@@ -40,11 +40,11 @@
                     </p:column> 
                     <p:column>  
                         <p:commandButton value="Remove one" 
-                                         actionListener="#{viewCartControllerBean.removeOneProduct(order.product)}" action="removeOneProduct" update=":cartForm"/>
+                                         actionListener="#{viewCartControllerBean.removeOneProduct(order.product)}" action="removeOneProduct" update="@form"/>
                     </p:column> 
                     <p:column>  
                         <p:commandButton value="Remove all" 
-                                         actionListener="#{viewCartControllerBean.removeProduct(order.product)}" action="emptyCart" update=":cartForm"/>
+                                         actionListener="#{viewCartControllerBean.removeProduct(order.product)}" action="emptyCart" update="@form"/>
                     </p:column> 
                 </p:dataTable>  
                 <p:commandButton value="Pay" 
