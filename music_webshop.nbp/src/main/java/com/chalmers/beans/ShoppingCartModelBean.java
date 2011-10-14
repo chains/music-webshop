@@ -119,6 +119,7 @@ public class ShoppingCartModelBean {
             b.append(this.getTotal() );
             b.append("\n");
         }
+        
         return b.toString();
     }
 }
