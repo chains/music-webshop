@@ -82,10 +82,14 @@ public class ShoppingCart {
         
         for(OrderItem item : products){
             CD tempcd = item.getProduct();
+            b.append("Quantity: " + item.getQty() +" ");
             b.append(tempcd.toString() );
-            b.append(this.getTotalCost() );
-            b.append("\n");
+            
+            b.append(System.getProperty("line.separator"));
         }
+        b.append("--------------------------------");
+        b.append(System.getProperty("line.separator"));
+        b.append("Total cost:"+this.getTotalCost() );
         return b.toString();
     }
 }

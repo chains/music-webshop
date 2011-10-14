@@ -116,6 +116,6 @@ public class CD implements Serializable {
     
     @Override
     public String toString(){
-        return artist + " " + name + " " + genre + " " + price;
+        return "Artist" +artist + " - " + "Album" + name + " Genre: " + genre + " price: " + price;
     }
 }
