@@ -115,11 +115,14 @@ public class ShoppingCartModelBean {
         
         for(OrderItem item : cart){
             CD tempcd = item.getProduct();
+            b.append("Quantity: " + item.getQty() +" ");
             b.append(tempcd.toString() );
-            b.append(this.getTotal() );
-            b.append("\n");
+            
+            b.append(System.getProperty("line.separator"));
         }
-
+        b.append("--------------------------------");
+        b.append(System.getProperty("line.separator"));
+        b.append("Total cost:"+ this.getTotal() );
         return b.toString();
     }
 }
