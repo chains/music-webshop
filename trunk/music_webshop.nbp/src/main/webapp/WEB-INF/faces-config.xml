@@ -28,4 +28,12 @@
             <redirect/>
         </navigation-case>
     </navigation-rule>
+    <navigation-rule>
+        <from-view-id>/shop.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>buyProduct</from-outcome>
+            <to-view-id>/shop.xhtml</to-view-id>
+            <redirect/>
+        </navigation-case>
+    </navigation-rule>
 </faces-config>
