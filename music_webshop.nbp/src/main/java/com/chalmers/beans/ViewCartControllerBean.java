@@ -5,6 +5,7 @@
 package com.chalmers.beans;
 
 import com.chalmers.core.CD;
+import com.chalmers.ctrl.Mail;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.RequestScoped;
@@ -37,6 +38,17 @@ public class ViewCartControllerBean {
     }
     public void removeOneProduct(CD cd){
         cart.removeOneProduct(cd);
+    }
+    
+        public String confirmOrder() throws Exception {
+        String message = cart.toString();
+
+        //Call mailer
+        Mail mailtest = new Mail(message);
+        
+        mailtest.sendMail();
+
+        return "goToConfirm";
     }
     
 }

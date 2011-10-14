@@ -30,7 +30,7 @@
                             <p:menuitem value="Home" url="index.xhtml" icon="ui-icon ui-icon-home"></p:menuitem>
                             <p:menuitem value="Shop" url="shop.xhtml" icon="ui-icon ui-icon-star"></p:menuitem>
                             <p:menuitem value="View Cart" url="viewCart.xhtml" icon="ui-icon ui-icon-extlink"></p:menuitem> 
-                            <p:menuitem value="About Us" url="pay.xhtml" icon="ui-icon ui-icon-arrowrefresh"></p:menuitem> 
+                            <p:menuitem value="About Us" url="about.xhtml" icon="ui-icon ui-icon-arrowrefresh"></p:menuitem> 
                         </p:menubar>  
                     </h:form>
                 </ui:insert>
@@ -55,7 +55,7 @@
                     <div id="right">
                         <ui:insert name="right">
 
-                            <p:panel header="REA på följande produkter: ">
+                            <p:panel header="Sale on the following products: ">
                                 <p:imageSwitch effect="fade">  
                                     <ui:repeat value="#{imageSwitchBean.images}" var="image">  
                                         <p:graphicImage value="/images/#{image}"/>  
@@ -63,13 +63,14 @@
                                 </p:imageSwitch>
                                 <p/>
                                 <h:form>
-                                    <p:commandButton value="Alla 99 kr" action="shop.xhtml" ajax="false" />
+                                    <p:commandButton value="99 kr" action="shop.xhtml" ajax="false" />
                                 </h:form>
                             </p:panel>
                             
-                            <p:panel header="Din kundvagn">
-                                <h:outputText value="Du har #{shoppingCartModelBean.getCartCount()} artiklar i din kundvagn."></h:outputText>
-                                <h:outputText value="Total kostnad #{shoppingCartModelBean.getTotal()} kr."></h:outputText>
+                            <p:panel header="Your shopping cart">
+                                <h:outputText value="You have #{shoppingCartModelBean.getCartCount()} articles in your shopping cart"></h:outputText>
+                                <p/>
+                                <h:outputText value="Total cost: #{shoppingCartModelBean.getTotal()} kr."></h:outputText>
                             </p:panel>
                         </ui:insert>
                     </div>
