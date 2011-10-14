@@ -105,4 +105,20 @@ public class ShoppingCartModelBean {
     public void setCart(List<OrderItem> cart) {
         this.cart = cart;
     }
+    
+        @Override
+    public String toString() {
+        
+        // Help method for Mailer class
+        StringBuilder b = new StringBuilder();
+        
+        
+        for(OrderItem item : cart){
+            CD tempcd = item.getProduct();
+            b.append(tempcd.toString() );
+            b.append(this.getTotal() );
+            b.append("\n");
+        }
+        return b.toString();
+    }
 }
