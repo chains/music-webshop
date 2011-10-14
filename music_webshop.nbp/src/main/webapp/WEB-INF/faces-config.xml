@@ -39,7 +39,12 @@
             <to-view-id>/confirm.xhtml</to-view-id>
             <redirect/>
         </navigation-case>
-        
+        <from-view-id>/viewCart.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>goToAdminPage</from-outcome>
+            <to-view-id>/admin.xhtml</to-view-id>
+            <redirect/>
+        </navigation-case>
     </navigation-rule>
     
     <navigation-rule>
@@ -47,6 +52,19 @@
         <navigation-case>
             <from-outcome>buyProduct</from-outcome>
             <to-view-id>/shop.xhtml</to-view-id>
+            <redirect/>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>goToAdminPage</from-outcome>
+            <to-view-id>/admin.xhtml</to-view-id>
+            <redirect/>
+        </navigation-case>
+    </navigation-rule>
+    <navigation-rule>
+        <from-view-id>/confirm.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>goToAdminPage</from-outcome>
+            <to-view-id>/admin.xhtml</to-view-id>
             <redirect/>
         </navigation-case>
     </navigation-rule>

@@ -9,6 +9,8 @@ import com.chalmers.ctrl.Mail;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.RequestScoped;
+import javax.faces.context.FacesContext;
+import javax.servlet.http.HttpSession;
 
 /**
  *
@@ -48,6 +50,9 @@ public class ViewCartControllerBean {
         Mail mailtest = new Mail(message);
 
         mailtest.sendMail();
+
+        HttpSession session = (HttpSession) FacesContext.getCurrentInstance().getExternalContext().getSession(false);
+        session.invalidate();
 
         return "goToConfirm";
     }
