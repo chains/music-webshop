@@ -34,8 +34,7 @@ public class Mail {
    
     public void sendMail() throws Exception {
         InitialContext ctx = new InitialContext();
-        Session session =
-            (Session) ctx.lookup("mail/mailserver");
+        Session session = (Session) ctx.lookup("mail/mailserver");
         // Or by injection.
         //@Resource(name = "mail/<name>")
         //private Session session;
@@ -47,13 +46,9 @@ public class Mail {
                          new InternetAddress(
                          "dixtre@gmail.com",
                          "Daniel"));
-        msg.setRecipient(RecipientType.CC,
-                         new InternetAddress(
-                         "michelle@email.com",
-                         "Michelle"));
         msg.setFrom(new InternetAddress(
-                    "jack@email.com",
-                    "Jack"));
+                    "music.webshop.mailer@gmail.com",
+                    "Jack from Lost"));
 
         // Body text.
         BodyPart messageBodyPart = new MimeBodyPart();

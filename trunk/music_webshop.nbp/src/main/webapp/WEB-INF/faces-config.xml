@@ -27,6 +27,16 @@
             <to-view-id>/viewCart.xhtml</to-view-id>
             <redirect/>
         </navigation-case>
+       <navigation-case>
+            <from-outcome>removeOneProduct</from-outcome>
+            <to-view-id>/viewCart.xhtml</to-view-id>
+            <redirect/>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>confirmOrder</from-outcome>
+            <to-view-id>/confirm.xhtml</to-view-id>
+            <redirect/>
+        </navigation-case>
     </navigation-rule>
     <navigation-rule>
         <from-view-id>/shop.xhtml</from-view-id>
