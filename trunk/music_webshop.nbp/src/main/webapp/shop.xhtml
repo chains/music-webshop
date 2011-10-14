@@ -21,8 +21,8 @@
                         <h:outputText value="Genre" />  
                     </f:facet>  
 
-                    <p:commandLink update="shopForm" actionListener="#{shopBackingBean.setSelectedGenre()}">  
-                        <p:graphicText id="shopForm" value="#{genre}" fontName="Arial" fontSize="16" />
+                    <p:commandLink id="adminloginpic" update="shopForm" actionListener="#{shopBackingBean.setSelectedGenre()}">  
+                        <p:graphicText value="#{genre}" fontName="Arial" fontSize="16" />
                         <f:param name="genre" value="#{genre}"/>
                     </p:commandLink>
 
