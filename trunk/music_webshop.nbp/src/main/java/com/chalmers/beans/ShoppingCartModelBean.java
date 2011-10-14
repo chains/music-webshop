@@ -112,12 +112,12 @@ public class ShoppingCartModelBean {
         // Help method for Mailer class
         StringBuilder b = new StringBuilder();
         
-        
+        b.append(System.getProperty("line.separator"));
         for(OrderItem item : cart){
+            
             CD tempcd = item.getProduct();
             b.append("Quantity: " + item.getQty() +" ");
             b.append(tempcd.toString() );
-            
             b.append(System.getProperty("line.separator"));
         }
         b.append("--------------------------------");
