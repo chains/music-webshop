@@ -42,6 +42,10 @@ public class ViewCartControllerBean {
     public void removeOneProduct(CD cd) {
         cart.removeOneProduct(cd);
     }
+    
+    public void emptyCart(){
+        cart.emptyCart();
+    }
 
     public String confirmOrder() throws Exception {
         String message = cart.toString();

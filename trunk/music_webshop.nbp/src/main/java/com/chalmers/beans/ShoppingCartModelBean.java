@@ -51,6 +51,10 @@ public class ShoppingCartModelBean {
             cart.add(item);
         }
     }
+    
+    public void emptyCart(){
+        cart = new ArrayList<OrderItem>();
+    }
 
     public void removeProduct(CD cd) {
 
@@ -81,7 +85,7 @@ public class ShoppingCartModelBean {
         
         int count = 0;
         for (OrderItem dummy : cart) {
-            count =+ dummy.getQty();
+            count += dummy.getQty();
         }
         return count;
     }

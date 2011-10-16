@@ -49,6 +49,8 @@
                 </p:dataTable>  
                 <p:commandButton value="Pay" 
                                  actionListener="#{viewCartControllerBean.confirmOrder()}" action="confirmOrder"/>
+                <p:commandButton value="Empty Cart" 
+                                 actionListener="#{viewCartControllerBean.emptyCart()}" action="emptyCart"/>
             </h:form>  
         </p:panel>
     </ui:define>

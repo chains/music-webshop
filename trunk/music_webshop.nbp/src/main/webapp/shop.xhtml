@@ -32,19 +32,16 @@
         </h:form>
     </ui:define>
     <ui:define name="content">
-        <p:panel header="shop.xhtml ">
+        <p:panel header="Products ">
             <p/>
             <h:form id="shopForm">  
                 <p:dataTable var="prod" value="#{shopBackingBean.products}"
                              paginator="true" rows="10"
                              paginatorTemplate="{CurrentPageReport}  {FirstPageLink} 
-                             {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink}">  
-                    <f:facet name="header">  
-                        Products  
-                    </f:facet>  
+                             {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink}">
 
                     <h:outputText value="#{prod.genre}" />  
-                
+
                     <p:column>  
                         <f:facet name="header">  
                             <h:outputText value="Album" />  
@@ -65,6 +62,12 @@
                         </f:facet>  
                         <h:outputText value="#{prod.genre}" />  
                     </p:column>  
+                    <p:column sortBy="#{prod.price}">  
+                        <f:facet name="header">  
+                            <h:outputText value="Cost" />  
+                        </f:facet>  
+                        <h:outputText value="#{prod.price} kr" />  
+                    </p:column> 
                     <p:column>  
                         <p:commandButton value="Buy" update="@form" actionListener="#{shopControllerBean.buyProduct(prod)}" action="buyProduct"/>
                     </p:column>  
