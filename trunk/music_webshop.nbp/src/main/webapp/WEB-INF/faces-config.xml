@@ -22,9 +22,15 @@
         <navigation-case>
             <from-outcome>toRegister</from-outcome>
             <to-view-id>/register.xhtml</to-view-id>
-            <redirect />
+            <redirect/>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>refreshpage</from-outcome>
+            <to-view-id>/index.xhtml</to-view-id>
+            <redirect/>
         </navigation-case>
     </navigation-rule>
+    
     <navigation-rule>
         <from-view-id>/viewCart.xhtml</from-view-id>
         <from-view-id>/viewCart.xhtml</from-view-id>
@@ -60,6 +66,12 @@
             <to-view-id>/register.xhtml</to-view-id>
             <redirect/>
         </navigation-case>
+        <navigation-case>
+            <from-outcome>refreshpage</from-outcome>
+            <to-view-id>/viewCart.xhtml</to-view-id>
+            <redirect />
+        </navigation-case>
+        
     </navigation-rule>
     
     <navigation-rule>
@@ -84,7 +96,13 @@
             <to-view-id>/register.xhtml</to-view-id>
             <redirect/>
         </navigation-case>
+        <navigation-case>
+            <from-outcome>refreshpage</from-outcome>
+            <to-view-id>/shop.xhtml</to-view-id>
+            <redirect />
+        </navigation-case>
     </navigation-rule>
+    
     <navigation-rule>
         <from-view-id>/confirm.xhtml</from-view-id>
         <navigation-case>
@@ -97,7 +115,13 @@
             <to-view-id>/register.xhtml</to-view-id>
             <redirect />
         </navigation-case>
+                <navigation-case>
+            <from-outcome>refreshpage</from-outcome>
+            <to-view-id>/about.xhtml</to-view-id>
+            <redirect />
+        </navigation-case>
     </navigation-rule>
+    
     <navigation-rule>
         <from-view-id>/admin.xhtml</from-view-id>
         <navigation-case>
@@ -105,7 +129,13 @@
             <to-view-id>/register.xhtml</to-view-id>
             <redirect />
         </navigation-case>
+                <navigation-case>
+            <from-outcome>refreshpage</from-outcome>
+            <to-view-id>/about.xhtml</to-view-id>
+            <redirect />
+        </navigation-case>
     </navigation-rule>
+    
     <navigation-rule>
         <from-view-id>/about.xhtml</from-view-id>
         <navigation-case>
@@ -123,7 +153,13 @@
             <to-view-id>/register.xhtml</to-view-id>
             <redirect/>
         </navigation-case>
+        <navigation-case>
+            <from-outcome>refreshpage</from-outcome>
+            <to-view-id>/about.xhtml</to-view-id>
+            <redirect />
+        </navigation-case>
     </navigation-rule>
+    
     <navigation-rule>
         <from-view-id>/register.xhtml</from-view-id>
         <navigation-case>
@@ -135,6 +171,11 @@
             <from-outcome>loginFailed</from-outcome>
             <to-view-id>/register.xhtml</to-view-id>
             <redirect/>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>refreshpage</from-outcome>
+            <to-view-id>/register.xhtml</to-view-id>
+            <redirect />
         </navigation-case>
     </navigation-rule>
 </faces-config>

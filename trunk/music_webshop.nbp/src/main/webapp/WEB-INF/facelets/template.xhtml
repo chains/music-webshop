@@ -57,18 +57,20 @@
                             <div id="logindiv" style="display: #{loginBean.loginDivVisibility()}">
                                 <p:panel header="Register">
                                     <h:form>
-                                        E-Mail: <h:inputText value="#{loginBean.username}" required="true" validatorMessage="Must be at least 3 chars"/>
-                                        Password: <h:inputSecret value="#{loginBean.password}" required="true" validatorMessage="Must be at least 3 chars"/>
-                                        <p:commandButton value="Login" actionListener="#{loginBean.login()}" update="logindiv" ></p:commandButton>
-                                        <p>Not registered yet?</p>
-                                        <p:commandButton value="Join now!" action="toRegister" ></p:commandButton>
+                                        E-Mail: <h:inputText value="#{loginBean.username}" size="16" required="true" validatorMessage="Must be at least 3 chars"/>
+                                        Password: <h:inputSecret value="#{loginBean.password}" size="16" required="true" validatorMessage="Must be at least 3 chars"/>
+                                        <p:commandButton value="Login" action="#{loginBean.login()}" ></p:commandButton>
                                     </h:form>
+                                    <h:form>
+                                        <p>Not registered yet?</p>
+                                        <p:commandButton value="Join now!" action="toRegister" ></p:commandButton></h:form>
                                 </p:panel>
                             </div>
                             <div id="logggedindiv" style="display: #{loginBean.loggedinDivVisibility()}">
                                 <p:panel header="Logged In">
                                     <h:form>
                                         <p>You are logged in</p>
+                                        <p:commandButton value="Log Out" action="#{loginBean.logout()}" ></p:commandButton>
                                     </h:form>
                                 </p:panel>
                             </div>
@@ -103,29 +105,16 @@
                     <p/>
                     <h:outputText value="#{loginBean.checkLogin()}"></h:outputText>
 
-                    <div id="pic" style="visibility: #{loginBean.buttonVisibility()}">
-                        <h:outputLink id="loginLink" value="javascript:void(0)" onclick="dlg.show()" title="login">     
-                            <p:graphicImage id="adminloginpic" value="/images/login.png"/>  
-                        </h:outputLink> 
+                    <div id="pic" style="visibility: #{loginBean.adminButtonVisibility()}">
+                        <h:link outcome="goToAdminPage" >
+                            <h:graphicImage  value="/images/login.png" />
+                        </h:link>
+                        <!--                        <h:form>
+                                                <h:commandLink action="goToAdminPage">     
+                                                    <p:graphicImage id="adminloginpic" value="/images/login.png"/>  
+                                                </h:commandLink> 
+                                                </h:form>-->
                     </div>
-
-
-                    <p:dialog id="dialog" header="Login" widgetVar="dlg">  
-                        <h:form>  
-                            <h:panelGrid columns="2" cellpadding="5">  
-                                <h:outputLabel for="username" value="Username: *" />  
-                                <p:inputText value="#{loginBean.username}"   
-                                             id="username" required="true" label="username"/>
-                                <h:outputLabel for="password" value="Password: * " />  
-                                <h:inputSecret value="#{loginBean.password}"   
-                                               id="password" required="true" label="password"/>
-                                <f:facet name="footer">
-                                    <p:commandButton value="Login" action="#{loginBean.login}" ajax="false"></p:commandButton>  
-                                </f:facet>  
-                            </h:panelGrid>  
-                        </h:form>  
-                    </p:dialog>  
-
                 </ui:insert>
             </div>
         </div>

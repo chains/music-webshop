@@ -59,24 +59,23 @@ public class LoginBean {
             if (username != null && username.equals(shopUser.getEmail()) && password != null && password.equals(shopUser.getPasswd())) {
                 loggedIn = true;
                 user = shopUser;
-                if(shopUser.getIsAdmin())
+                if (shopUser.getIsAdmin()) {
                     isAdmin = true;
-                    return "";
+                }
+                return "refreshpage";
             }
         }
         user = null;
         loggedIn = false;
         isAdmin = false;
         return "loginFailed";
-//        loggedIn = false;
-//        
-//        if (username != null && username.equals("admin") && password != null && password.equals("12345")) {
-//            loggedIn = true;
-//            return "goToAdminPage";
-//        } else {
-//            loggedIn = false;
-//            return "loginFailed";
-//        }
+    }
+
+    public String logout() {
+        user = null;
+        loggedIn = false;
+        isAdmin = false;
+        return "refreshpage";
     }
 
     public boolean isLoggedIn() {
@@ -88,9 +87,7 @@ public class LoginBean {
     }
 
     public String checkLogin() {
-        if (loggedIn) {
-
-//            jQuery('#loginLink').fadeOut();  
+        if (isAdmin) { 
             return "Logged in as Admin";
         } else {
             // Return nullstring, admin not logged in
@@ -98,27 +95,27 @@ public class LoginBean {
         }
     }
 
-        public String loginDivVisibility() {
+    public String loginDivVisibility() {
         if (loggedIn) {
             return "none";
         } else {
             return "block";
         }
     }
-        
-                public String loggedinDivVisibility() {
+
+    public String loggedinDivVisibility() {
         if (!loggedIn) {
             return "none";
         } else {
             return "block";
         }
     }
-    
-    public String buttonVisibility() {
-        if (loggedIn) {
-            return "hidden";
-        } else {
+
+    public String adminButtonVisibility() {
+        if (isAdmin) {
             return "visible";
+        } else {
+            return "hidden";
         }
     }
 }
