@@ -4,6 +4,7 @@
  */
 package com.chalmers.beans;
 
+import com.chalmers.core.ShopUser;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 
@@ -17,6 +18,7 @@ import javax.faces.bean.SessionScoped;
 
 public class LoginBean {
 
+    private ShopUser user;
     private String username;
     private String password;
     private boolean loggedIn;
@@ -29,6 +31,16 @@ public class LoginBean {
         this.username = username;
     }
 
+    public ShopUser getUser() {
+        return user;
+    }
+
+    public void setUser(ShopUser user) {
+        this.user = user;
+    }
+
+    
+    
     public String getPassword() {
         return password;
     }
