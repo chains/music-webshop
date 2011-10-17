@@ -94,7 +94,7 @@ public class LoginBean {
             return "";
         }
     }
-
+    //Div with buttons to login and register only visible when not logged in.
     public String loginDivVisibility() {
         if (loggedIn) {
             return "none";
@@ -102,7 +102,7 @@ public class LoginBean {
             return "block";
         }
     }
-
+    //Div with information about who is logged in is only visible when logged in
     public String loggedinDivVisibility() {
         if (!loggedIn) {
             return "none";
@@ -110,7 +110,7 @@ public class LoginBean {
             return "block";
         }
     }
-
+    //Button with link to adminpage is only visible when admin logged in.
     public String adminButtonVisibility() {
         if (isAdmin) {
             return "visible";
