@@ -3,8 +3,8 @@
     <Scope Scope="Faces Configuration Only"/>
     <Scope Scope="Project">
         <Node id="shop.xhtml" x="15" y="58" zoom="true"/>
-        <Node id="register.xhtml" x="432" y="-275" zoom="true"/>
-        <Node id="index.xhtml" x="746" y="-227" zoom="true"/>
+        <Node id="register.xhtml" x="434" y="-257" zoom="true"/>
+        <Node id="index.xhtml" x="743" y="-205" zoom="true"/>
         <Node id="confirm.xhtml" x="227" y="91" zoom="true"/>
         <Node id="about.xhtml" x="472" y="70" zoom="true"/>
         <Node id="viewCart.xhtml" x="189" y="-189" zoom="true"/>
