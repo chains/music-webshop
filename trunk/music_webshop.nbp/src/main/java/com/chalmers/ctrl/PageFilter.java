@@ -1,0 +1,76 @@
+/*
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package com.chalmers.ctrl;
+
+import com.chalmers.beans.LoginBean;
+import java.io.IOException;
+import javax.faces.bean.ManagedProperty;
+import javax.servlet.Filter;
+import javax.servlet.FilterChain;
+import javax.servlet.FilterConfig;
+import javax.servlet.ServletException;
+import javax.servlet.ServletRequest;
+import javax.servlet.ServletResponse;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
+/**
+ *
+ * @author Johans
+ */
+public class PageFilter implements Filter{
+
+    FilterConfig fc;
+//    @ManagedProperty(value = "#{loginBean}")
+    private LoginBean loginBean;
+    
+    @Override
+    public void init(FilterConfig fc) throws ServletException {
+        this.fc = fc;
+
+    }
+
+    @Override
+    public void doFilter(ServletRequest sr, ServletResponse sr1, FilterChain chain) throws IOException, ServletException {
+        HttpServletRequest req = (HttpServletRequest) sr;
+        HttpServletResponse resp = (HttpServletResponse) sr1;
+        HttpSession session = req.getSession(true);
+        String pageRequested = req.getRequestURL().toString();
+        
+    // Get the bean from the session  
+    loginBean = (LoginBean)session.getAttribute("loginBean");  
+    // if the bean is not in session instantiate a new bean  
+    if (loginBean == null)  
+    {  
+        loginBean = new LoginBean();
+    }   
+        if(loginBean.isAdmin() == false && pageRequested.contains("admin.xhtml")){
+            resp.sendRedirect("index.xhtml");
+            
+        }else if(loginBean.isLoggedIn() == false && pageRequested.contains("confirm.xhtml")){
+            resp.sendRedirect("index.xhtml");
+            
+        }else{
+            chain.doFilter(sr, sr1);
+        }
+            session.setAttribute("loginBean", loginBean);
+    }
+
+    @Override
+    public void destroy() {
+        throw new UnsupportedOperationException("Not supported yet.");
+    }
+
+//    public LoginBean getLoginBean() {
+//        return loginBean;
+//    }
+//
+//    public void setLoginBean(LoginBean loginBean) {
+//        this.loginBean = loginBean;
+//    }
+    
+    
+}

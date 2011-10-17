@@ -118,4 +118,13 @@ public class LoginBean {
             return "hidden";
         }
     }
+
+    public boolean isAdmin() {
+        return isAdmin;
+    }
+
+    public void setAdmin(boolean isAdmin) {
+        this.isAdmin = isAdmin;
+    }
+    
 }
