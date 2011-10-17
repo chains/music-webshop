@@ -61,7 +61,7 @@ public class LoginBean {
                 user = shopUser;
                 if(shopUser.getIsAdmin())
                     isAdmin = true;
-                return "loginSuccess";
+                    return "";
             }
         }
         user = null;

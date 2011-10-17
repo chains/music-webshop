@@ -59,7 +59,7 @@
                                     <h:form>
                                         E-Mail: <h:inputText value="#{loginBean.username}" required="true" validatorMessage="Must be at least 3 chars"/>
                                         Password: <h:inputSecret value="#{loginBean.password}" required="true" validatorMessage="Must be at least 3 chars"/>
-                                        <p:commandButton value="Login" actionListener="#{loginBean.login()}" action="toRegister" ></p:commandButton>
+                                        <p:commandButton value="Login" actionListener="#{loginBean.login()}" update="logindiv" ></p:commandButton>
                                         <p>Not registered yet?</p>
                                         <p:commandButton value="Join now!" action="toRegister" ></p:commandButton>
                                     </h:form>
