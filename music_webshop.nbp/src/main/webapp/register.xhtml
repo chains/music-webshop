@@ -10,31 +10,27 @@
 
     <ui:define name="content">
                 <h:form>
-
-            <p:panel>
-                <p>E-Mail(*): <h:inputText value="#{adminBackingBean.name}" required="true" validatorMessage="Must be at least 3 chars">
-                        <f:validateLength minimum="3"/>
+                    
+            <p:panel header="Every field is required!">
+                <p>E-Mail: <h:inputText value="#{registerBackingBean.email}" required="true" validatorMessage="Must be at least 3 chars">
+                        
                     </h:inputText> </p>
-                <p>Artist name: <h:inputText value="#{adminBackingBean.artist}" required="true" validatorMessage="Must be at least 3 chars">
-                        <f:validateLength minimum="3"/>
+                <p>Name: <h:inputText value="#{registerBackingBean.name}" required="true" validatorMessage="Must be at least 3 chars">
+                        
                     </h:inputText> </p>
-                <p>Album genre: <h:inputText value="#{adminBackingBean.genre}" required="true" validatorMessage="Must be at least 2 chars">
-                        <f:validateLength minimum="2"/>
+                <p>Password: <h:inputSecret value="#{registerBackingBean.passwd}" required="true" validatorMessage="Must be at least 2 chars">
+                        
+                    </h:inputSecret> </p>
+                <p>Street: <h:inputText value="#{registerBackingBean.street}" required="true" validatorMessage="Must be less than 200 chars">
+                        
                     </h:inputText> </p>
-                <p>Description: <h:inputText value="#{adminBackingBean.description}" required="true" validatorMessage="Must be less than 200 chars">
-                        <f:validateLength maximum="200"/>
+                <p>City: <h:inputText value="#{registerBackingBean.city}" required="true">
                     </h:inputText> </p>
-                <p> Number of albums in stock: <h:inputText value="#{adminBackingBean.noInStock}" required="true">
+                <p>Country: <h:inputText value="#{registerBackingBean.country}" required="true">
                     </h:inputText> </p>
-                <p>Album playtime: <h:inputText value="#{adminBackingBean.playtime}" required="true">
-                    </h:inputText> </p>
-                <p>Price: <h:inputText value="#{adminBackingBean.price}" required="true" validatorMessage="Must be at least 2 chars">
-                        <f:validateLength minimum="2"/>
-                    </h:inputText> </p>
-
             </p:panel>
 
-            <h:commandButton value="Add Product" action="#{adminControlBean.addCD}" />
+            <h:commandButton value="Register" actionListener="#{registerControllerBean.addShopUser()}" action="goHome" />
 
 
         </h:form>
