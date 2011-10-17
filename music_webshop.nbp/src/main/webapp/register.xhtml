@@ -15,19 +15,23 @@
                 <p>E-Mail: <h:inputText value="#{registerBackingBean.email}" required="true" validatorMessage="Must be at least 3 chars">
                         
                     </h:inputText> </p>
-                <p>Name: <h:inputText value="#{registerBackingBean.name}" required="true" validatorMessage="Must be at least 3 chars">
+                <p>Name: <h:inputText value="#{registerBackingBean.name}" required="true">
                         
                     </h:inputText> </p>
-                <p>Password: <h:inputSecret value="#{registerBackingBean.passwd}" required="true" validatorMessage="Must be at least 2 chars">
+                <p>Password: <h:inputSecret value="#{registerBackingBean.passwd}" required="true">
                         
                     </h:inputSecret> </p>
-                <p>Street: <h:inputText value="#{registerBackingBean.street}" required="true" validatorMessage="Must be less than 200 chars">
+                <p>Street: <h:inputText value="#{registerBackingBean.street}" required="true">
                         
                     </h:inputText> </p>
                 <p>City: <h:inputText value="#{registerBackingBean.city}" required="true">
                     </h:inputText> </p>
                 <p>Country: <h:inputText value="#{registerBackingBean.country}" required="true">
                     </h:inputText> </p>
+                
+                <p:messages showDetail="true">
+                    
+                </p:messages>
             </p:panel>
 
             <h:commandButton value="Register" actionListener="#{registerControllerBean.addShopUser()}" action="goHome" />
