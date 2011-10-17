@@ -16,20 +16,22 @@ import javax.persistence.Id;
  * @author Johan
  */
 @Entity
-public class Customer implements Serializable {
+public class User implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    @Column(name = "customer_name", nullable = false)
+    @Column(name = "user_name", nullable = false)
     private String email;
-    @Column(name = "customer_passwd", nullable = false)
+    @Column(name = "user_passwd", nullable = false)
     private String passwd;
-    @Column(name = "customer_street", nullable = false)
+    @Column(name = "user_street", nullable = false)
     private String street;
-    @Column(name = "customer_city", nullable = false)
+    @Column(name = "user_city", nullable = false)
     private String city;
-    @Column(name = "customer_country", nullable = false)
+    @Column(name = "user_country", nullable = false)
     private String country;
+    @Column(name = "user_admin", nullable = false)
+    private Boolean isAdmin;
     //Does not need shoppingcart in database. Only in session.
     //private ShoppingCart cart;
 
