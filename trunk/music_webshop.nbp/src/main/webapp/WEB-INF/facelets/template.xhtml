@@ -69,7 +69,7 @@
                             <div id="logggedindiv" style="display: #{loginBean.loggedinDivVisibility()}">
                                 <p:panel header="Logged In">
                                     <h:form>
-                                        <p>You are logged in</p>
+                                        <p>Welcome <h:outputText value="#{loginBean.user.name}"></h:outputText></p>
                                         <p:commandButton value="Log Out" action="#{loginBean.logout()}" ></p:commandButton>
                                     </h:form>
                                 </p:panel>
@@ -109,11 +109,6 @@
                         <h:link outcome="goToAdminPage" >
                             <h:graphicImage  value="/images/login.png" />
                         </h:link>
-                        <!--                        <h:form>
-                                                <h:commandLink action="goToAdminPage">     
-                                                    <p:graphicImage id="adminloginpic" value="/images/login.png"/>  
-                                                </h:commandLink> 
-                                                </h:form>-->
                     </div>
                 </ui:insert>
             </div>
