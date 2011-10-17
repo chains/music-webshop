@@ -5,6 +5,7 @@
 package com.chalmers.ctrl;
 
 import com.chalmers.core.CD;
+import com.chalmers.core.ShopUser;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
@@ -21,7 +22,8 @@ public class Database {
 
     public static DBCtrl<CD> getCDController() {
         return new DBCDControl(emf);
-//        return new ProductJpaController(emf);
     }
-    
+    public static DBCtrl<ShopUser> getShopUserController(){
+        return new DBShopUserControl(emf);
+    }
 }

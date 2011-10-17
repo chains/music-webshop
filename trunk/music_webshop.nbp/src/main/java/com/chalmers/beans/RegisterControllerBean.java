@@ -4,6 +4,9 @@
  */
 package com.chalmers.beans;
 
+import com.chalmers.core.ShopUser;
+import com.chalmers.ctrl.DBShopUserControl;
+import com.chalmers.ctrl.Database;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.RequestScoped;
@@ -15,8 +18,7 @@ import javax.faces.bean.RequestScoped;
 @ManagedBean
 @RequestScoped
 public class RegisterControllerBean {
-    
-    
+
     @ManagedProperty(value = "#{registerBackingBean}")
     private RegisterBackingBean registerBackingBean;
 
@@ -28,14 +30,16 @@ public class RegisterControllerBean {
         return registerBackingBean;
     }
 
-    public void addShopUser(){
-        //TODO implement method
+    public void addShopUser() {
+        DBShopUserControl shopUserControl = (DBShopUserControl) Database.getShopUserController();
+        ShopUser user = new ShopUser(new Long(0), registerBackingBean.getEmail(), 
+                registerBackingBean.getName(), registerBackingBean.getPasswd(), 
+                registerBackingBean.getStreet(), registerBackingBean.getCity(), 
+                registerBackingBean.getCountry(), false);
+        shopUserControl.create(user);
     }
-    
+
     public void setRegisterBackingBean(RegisterBackingBean registerBackingBean) {
         this.registerBackingBean = registerBackingBean;
     }
-    
-    
-    
 }

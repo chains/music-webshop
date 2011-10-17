@@ -37,6 +37,23 @@ public class ShopUser implements Serializable {
     //Does not need shoppingcart in database. Only in session.
     //private ShoppingCart cart;
 
+    public ShopUser() {
+    }
+    
+
+    public ShopUser(Long id, String email, String name, String passwd, String street, String city, String country, Boolean isAdmin) {
+        this.id = id;
+        this.email = email;
+        this.name = name;
+        this.passwd = passwd;
+        this.street = street;
+        this.city = city;
+        this.country = country;
+        this.isAdmin = isAdmin;
+    }
+
+    
+    
     public Long getId() {
         return id;
     }
