@@ -1,6 +1,6 @@
 /*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
+ * Below is the URL to register a mail server NOTE: must be named: mail/mailserver
+ * http://javaeenotes.blogspot.com/2010/04/using-javamail-api-with-glassfish-and.html
  */
 package com.chalmers.ctrl;
 
