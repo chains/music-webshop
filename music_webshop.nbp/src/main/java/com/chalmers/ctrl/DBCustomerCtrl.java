@@ -4,7 +4,7 @@
  */
 package com.chalmers.ctrl;
 
-import com.chalmers.core.Customer;
+import com.chalmers.core.User;
 import java.util.List;
 import java.util.NoSuchElementException;
 import javax.persistence.EntityManager;
@@ -17,7 +17,7 @@ import javax.persistence.criteria.CriteriaQuery;
  *
  * @author Johan Sandström
  */
-public class DBCustomerCtrl implements DBCtrl<Customer>{
+public class DBCustomerCtrl implements DBCtrl<User>{
 
     private EntityManager em;
     private final EntityManagerFactory emf;
@@ -31,7 +31,7 @@ public class DBCustomerCtrl implements DBCtrl<Customer>{
     }
     
     @Override
-    public void create(Customer t) {
+    public void create(User t) {
         em = null;
 
         em = getEntityManager();
@@ -48,10 +48,10 @@ public class DBCustomerCtrl implements DBCtrl<Customer>{
 
         em = getEntityManager();
         em.getTransaction().begin();
-        Customer customer;
+        User customer;
        
         try {
-            customer = em.getReference(Customer.class, id);
+            customer = em.getReference(User.class, id);
             customer.getId();
         } catch (EntityNotFoundException enfe) {
             throw new NoSuchElementException();
@@ -61,7 +61,7 @@ public class DBCustomerCtrl implements DBCtrl<Customer>{
     }
 
     @Override
-    public void edit(Customer t) {
+    public void edit(User t) {
                 em = null;
         try {
             em = getEntityManager();
@@ -82,35 +82,35 @@ public class DBCustomerCtrl implements DBCtrl<Customer>{
     }
 
     @Override
-    public Customer findEntity(Long id) {
+    public User findEntity(Long id) {
         em = getEntityManager();
 
-        return em.find(Customer.class, id);
+        return em.find(User.class, id);
     }
 
     @Override
-    public List<Customer> findEntities() {
+    public List<User> findEntities() {
         em = getEntityManager();
 
         CriteriaQuery cq = em.getCriteriaBuilder().createQuery();
-        cq.select(cq.from(Customer.class));
+        cq.select(cq.from(User.class));
         Query q = em.createQuery(cq);
  
-        return (List<Customer>) q.getResultList();
+        return (List<User>) q.getResultList();
     }
 
     @Override
-    public List<Customer> findEntities(int maxResults, int firstResult) {
+    public List<User> findEntities(int maxResults, int firstResult) {
         em = getEntityManager();
 
         CriteriaQuery cq = em.getCriteriaBuilder().createQuery();
-        cq.select(cq.from(Customer.class));
+        cq.select(cq.from(User.class));
         Query q = em.createQuery(cq);
 
         q.setMaxResults(maxResults);
         q.setFirstResult(firstResult);
 
-        return (List<Customer>) q.getResultList();
+        return (List<User>) q.getResultList();
     }
 
     @Override

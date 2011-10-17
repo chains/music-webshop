@@ -42,7 +42,7 @@
 
                     <h:outputText value="#{prod.genre}" />  
 
-                    <p:column>  
+                    <p:column sortBy="#{prod.name}">  
                         <f:facet name="header">  
                             <h:outputText value="Album" />  
                         </f:facet>  
@@ -56,7 +56,7 @@
                         <h:outputText value="#{prod.artist}" />  
                     </p:column>  
 
-                    <p:column>  
+                    <p:column sortBy="#{prod.genre}">  
                         <f:facet name="header">  
                             <h:outputText value="Genre" />  
                         </f:facet>  
