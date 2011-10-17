@@ -6,6 +6,8 @@ package com.chalmers.beans;
 
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.RequestScoped;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
 /**
  *
@@ -15,11 +17,17 @@ import javax.faces.bean.RequestScoped;
 @RequestScoped
 public class RegisterBackingBean {
     
+    @NotNull @Size(min=1, max=50, message="Must use 1-50 chars")
     private String email;
+    @NotNull @Size(min=1, max=30, message="Must use 1-30 chars")
     private String name;
+    @NotNull @Size(min=1, max=15, message="Must use 1-15 chars")
     private String passwd;
+    @NotNull @Size(min=1, max=30, message="Must use 1-30 chars")
     private String street;
+    @NotNull @Size(min=1, max=15, message="Must use 1-15 chars")
     private String city;
+    @NotNull @Size(min=1, max=15, message="Must use 1-15 chars")
     private String country;
     private Boolean isAdmin;
 
