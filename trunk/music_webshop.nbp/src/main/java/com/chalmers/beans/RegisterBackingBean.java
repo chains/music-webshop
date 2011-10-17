@@ -11,23 +11,23 @@ import javax.validation.constraints.Size;
 
 /**
  *
- * @author Johans
+ * @author Daniel Nicklasson & Mikael Andersson Ynghammar
  */
 @ManagedBean
 @RequestScoped
 public class RegisterBackingBean {
     
-    @NotNull @Size(min=1, max=50, message="Must use 1-50 chars")
+    @NotNull @Size(min=5, max=50, message="Email must be 5-50 chars long!")
     private String email;
-    @NotNull @Size(min=1, max=30, message="Must use 1-30 chars")
+    @NotNull @Size(min=5, max=30, message="Name must be 5-30 chars long!")
     private String name;
-    @NotNull @Size(min=1, max=15, message="Must use 1-15 chars")
+    @NotNull @Size(min=3, max=15, message="Your password must be between 3 to 15 chars long!")
     private String passwd;
-    @NotNull @Size(min=1, max=30, message="Must use 1-30 chars")
+    @NotNull @Size(min=5, max=30, message="Street adress must be between 5 to 30 chars long!")
     private String street;
-    @NotNull @Size(min=1, max=15, message="Must use 1-15 chars")
+    @NotNull @Size(min=2, max=30, message="City name must be between 2 to 30 chars long!")
     private String city;
-    @NotNull @Size(min=1, max=15, message="Must use 1-15 chars")
+    @NotNull @Size(min=5, max=15, message="Country must be between 5 to 15 chars long!")
     private String country;
     private Boolean isAdmin;
 
