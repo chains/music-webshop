@@ -17,12 +17,12 @@ import javax.persistence.criteria.CriteriaQuery;
  *
  * @author Johan Sandström
  */
-public class DBCustomerCtrl implements DBCtrl<ShopUser>{
+public class DBShopUserControl implements DBCtrl<ShopUser>{
 
     private EntityManager em;
     private final EntityManagerFactory emf;
 
-    public DBCustomerCtrl(EntityManagerFactory emf) {
+    public DBShopUserControl(EntityManagerFactory emf) {
         this.emf = emf;
     }
 
