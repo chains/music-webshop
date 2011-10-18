@@ -17,14 +17,11 @@
 
     <ui:define name="left">
 
-        <p:panel header="Header" footer="Footer">  
-            <h:outputText value="Lorem ipsum dolor sit amet, consectetur adipiscing elit. " />
-            <p>Tja</p>
-            <p>Tja</p>
-            <p>Tja</p>
-            <p>Tja</p>
-            <p>Tja</p>
-        </p:panel>  
+        <p:panel header="Your shopping cart">
+            <h:outputText value="You have #{shoppingCartModelBean.getCartCount()} articles in your shopping cart"></h:outputText>
+            <p/>
+            <h:outputText value="Total cost: #{shoppingCartModelBean.getTotal()} kr."></h:outputText>
+        </p:panel>
     </ui:define>
 
 
