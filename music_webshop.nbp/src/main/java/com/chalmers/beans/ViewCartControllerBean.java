@@ -60,7 +60,10 @@ public class ViewCartControllerBean {
     }
 
     public String confirmOrder() throws Exception {
-        
+        //Can not buy if not logged in or cart empty
+        if(cart.getCart().isEmpty() || !loginbean.isLoggedIn()){
+            return "refreshpage";
+        }
         // Get all needed text to send mail
         String message = cart.toString();
         ShopUser user = loginbean.getUser();
@@ -72,9 +75,6 @@ public class ViewCartControllerBean {
 
         mailer.sendMail();
 
-//        // Invalidate session, user has ordered the items in the shoppingcart
-//        HttpSession session = (HttpSession) FacesContext.getCurrentInstance().getExternalContext().getSession(false);
-//        session.invalidate();
 
         return "goToConfirm";
     }
