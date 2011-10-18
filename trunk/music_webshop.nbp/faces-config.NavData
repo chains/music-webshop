@@ -6,8 +6,8 @@
         <Node id="register.xhtml" x="434" y="-257" zoom="true"/>
         <Node id="index.xhtml" x="743" y="-205" zoom="true"/>
         <Node id="confirm.xhtml" x="227" y="91" zoom="true"/>
-        <Node id="about.xhtml" x="472" y="70" zoom="true"/>
-        <Node id="viewCart.xhtml" x="189" y="-189" zoom="true"/>
+        <Node id="about.xhtml" x="477" y="74" zoom="true"/>
+        <Node id="viewCart.xhtml" x="147" y="-214" zoom="true"/>
         <Node id="admin.xhtml" x="770" y="-78" zoom="true"/>
     </Scope>
     <Scope Scope="All Faces Configurations"/>

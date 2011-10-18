@@ -23,9 +23,13 @@ import javax.naming.InitialContext;
 public class Mail {
     
     private String message;
+    private String receiver;
+    private String name;
     
-    public Mail(String message){
+    public Mail(String message, String receiver, String name){
         this.message = message;
+        this.receiver = receiver;
+        this.name = name;
     }
    
     public void sendMail() throws Exception {
@@ -38,7 +42,7 @@ public class Mail {
         msg.setSubject("Confirmation email");
         msg.setRecipient(RecipientType.TO,
                          new InternetAddress(
-                         "dixtre@gmail.com",
+                         receiver,
                          "Customer"));
         
         msg.setFrom(new InternetAddress(
@@ -48,7 +52,7 @@ public class Mail {
         // Body text.
         BodyPart messageBodyPart = new MimeBodyPart();
         
-        messageBodyPart.setText("Here is your order confirmation " + message);
+        messageBodyPart.setText("Hello " + name + "! Here is your order confirmation " + message);
 
          Multipart multipart = new MimeMultipart();  
          multipart.addBodyPart(messageBodyPart); 

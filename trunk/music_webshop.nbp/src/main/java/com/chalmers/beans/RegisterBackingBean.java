@@ -19,7 +19,7 @@ public class RegisterBackingBean {
     
     @NotNull @Size(min=5, max=50, message="Email must be 5-50 chars long!")
     private String email;
-    @NotNull @Size(min=5, max=30, message="Name must be 5-30 chars long!")
+    @NotNull @Size(min=2, max=30, message="Name must be 2-30 chars long!")
     private String name;
     @NotNull @Size(min=3, max=15, message="Your password must be between 3 to 15 chars long!")
     private String passwd;

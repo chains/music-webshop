@@ -63,6 +63,5 @@ public class PageFilter implements Filter {
 
     @Override
     public void destroy() {
-        throw new UnsupportedOperationException("Not supported yet.");
     }
 }

@@ -47,7 +47,7 @@
             <redirect/>
         </navigation-case>
         <navigation-case>
-            <from-outcome>confirmOrder</from-outcome>
+            <from-outcome>goToConfirm</from-outcome>
             <to-view-id>/confirm.xhtml</to-view-id>
             <redirect/>
         </navigation-case>
@@ -117,7 +117,7 @@
         </navigation-case>
                 <navigation-case>
             <from-outcome>refreshpage</from-outcome>
-            <to-view-id>/about.xhtml</to-view-id>
+            <to-view-id>/confirm.xhtml</to-view-id>
             <redirect />
         </navigation-case>
     </navigation-rule>
