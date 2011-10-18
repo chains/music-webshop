@@ -19,14 +19,13 @@ import javax.servlet.http.HttpSession;
 
 /**
  *
- * @author Johans
+ * @author Johan Sandström
  */
-public class PageFilter implements Filter{
+public class PageFilter implements Filter {
 
     FilterConfig fc;
-//    @ManagedProperty(value = "#{loginBean}")
     private LoginBean loginBean;
-    
+
     @Override
     public void init(FilterConfig fc) throws ServletException {
         this.fc = fc;
@@ -39,38 +38,31 @@ public class PageFilter implements Filter{
         HttpServletResponse resp = (HttpServletResponse) sr1;
         HttpSession session = req.getSession(true);
         String pageRequested = req.getRequestURL().toString();
-        
-    // Get the bean from the session  
-    loginBean = (LoginBean)session.getAttribute("loginBean");  
-    // if the bean is not in session instantiate a new bean  
-    if (loginBean == null)  
-    {  
-        loginBean = new LoginBean();
-    }   
-        if(loginBean.isAdmin() == false && pageRequested.contains("admin.xhtml")){
+
+        // Get the bean from the session  
+        loginBean = (LoginBean) session.getAttribute("loginBean");
+        // if the bean is not in session instantiate a new bean  
+        if (loginBean == null) {
+            loginBean = new LoginBean();
+        }
+
+        if (loginBean.isAdmin() == false && pageRequested.contains("admin.xhtml")) {
+            //Can't go to admin page if not logged in as admin.
             resp.sendRedirect("index.xhtml");
-            
-        }else if(loginBean.isLoggedIn() == false && pageRequested.contains("confirm.xhtml")){
+
+        } else if (loginBean.isLoggedIn() == false && pageRequested.contains("confirm.xhtml")) {
+            //Can't go to confirm if not logged in.
             resp.sendRedirect("index.xhtml");
-            
-        }else{
+
+        } else {
+            //Everything is OK!
             chain.doFilter(sr, sr1);
         }
-            session.setAttribute("loginBean", loginBean);
+        session.setAttribute("loginBean", loginBean);
     }
 
     @Override
     public void destroy() {
         throw new UnsupportedOperationException("Not supported yet.");
     }
-
-//    public LoginBean getLoginBean() {
-//        return loginBean;
-//    }
-//
-//    public void setLoginBean(LoginBean loginBean) {
-//        this.loginBean = loginBean;
-//    }
-    
-    
 }
