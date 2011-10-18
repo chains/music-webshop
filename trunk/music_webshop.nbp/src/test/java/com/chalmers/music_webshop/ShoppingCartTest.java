@@ -68,7 +68,7 @@ public class ShoppingCartTest {
         
         // Lastly, test to see that cart is empty when it's emptied
         cart.emptyCart();
-        List<OrderItem> testlist = new ArrayList<OrderItem>();
+        List<OrderItem> testlist;
         testlist = cart.getCart();
         assertTrue(testlist.isEmpty());
         
@@ -85,8 +85,8 @@ public class ShoppingCartTest {
     @Before
     public void setUp() {
         
-        cd1 = new CD(new Long(0), "SuperCD", 20 , "Rock", "description", 10, 40, "Rammstein");
-        cd2 = new CD(new Long(0), "CoolCD", 100 , "Pop", "description", 10, 40, "Metallica");
+        cd1 = new CD(Long.valueOf(0), "SuperCD", 20 , "Rock", "description", 10, 40, "Rammstein");
+        cd2 = new CD(Long.valueOf(1), "CoolCD", 100 , "Pop", "description", 10, 40, "Metallica");
         
         item1 = new OrderItem(3, cd1);
         item2 = new OrderItem(1, cd2);

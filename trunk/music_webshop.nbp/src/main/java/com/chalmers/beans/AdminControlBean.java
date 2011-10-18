@@ -28,7 +28,7 @@ public class AdminControlBean {
     
     public void addCD(){
         DBCDControl cdControl = (DBCDControl)Database.getCDController();
-        CD cd = new CD(new Long(0), adminBackingbean.getName(), 
+        CD cd = new CD(Long.valueOf(0), adminBackingbean.getName(), 
                 adminBackingbean.getPrice(), adminBackingbean.getGenre(), 
                 adminBackingbean.getDescription(), adminBackingbean.getNoInStock(), 
                 adminBackingbean.getPlaytime(), adminBackingbean.getArtist());
