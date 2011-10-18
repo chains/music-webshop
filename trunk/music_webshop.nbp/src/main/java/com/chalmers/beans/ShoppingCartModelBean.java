@@ -129,4 +129,11 @@ public class ShoppingCartModelBean {
         b.append("Total cost:"+ this.getTotal() );
         return b.toString();
     }
+    public String paybuttonDivVisibility() {
+        if (cart.isEmpty()) {
+            return "none";
+        } else {
+            return "block";
+        }
+    }
 }
