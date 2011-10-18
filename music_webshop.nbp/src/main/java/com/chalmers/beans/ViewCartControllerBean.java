@@ -72,9 +72,9 @@ public class ViewCartControllerBean {
 
         mailer.sendMail();
 
-        // Invalidate session, user has ordered the items in the shoppingcart
-        HttpSession session = (HttpSession) FacesContext.getCurrentInstance().getExternalContext().getSession(false);
-        session.invalidate();
+//        // Invalidate session, user has ordered the items in the shoppingcart
+//        HttpSession session = (HttpSession) FacesContext.getCurrentInstance().getExternalContext().getSession(false);
+//        session.invalidate();
 
         return "goToConfirm";
     }

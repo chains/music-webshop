@@ -9,6 +9,7 @@ import com.chalmers.ctrl.DBShopUserControl;
 import com.chalmers.ctrl.Database;
 import java.util.List;
 import javax.faces.bean.ManagedBean;
+import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.SessionScoped;
 import javax.faces.context.FacesContext;
 import javax.servlet.http.HttpSession;
@@ -78,9 +79,6 @@ public class LoginBean {
         loggedIn = false;
         isAdmin = false;
 
-        // Invalidate session, user has ordered the items in the shoppingcart
-        HttpSession session = (HttpSession) FacesContext.getCurrentInstance().getExternalContext().getSession(false);
-        session.invalidate();
 
         return "refreshpage";
     }
