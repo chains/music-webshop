@@ -20,13 +20,12 @@ public class ShopControllerBean {
     @ManagedProperty(value = "#{shoppingCartModelBean}")
     private ShoppingCartModelBean cart;
 
-    /** Creates a new instance of ShopControllerBean */
     public ShopControllerBean() {
     }
+    
     /*
      * Adds CD to shopping cart
      */
-
     public void buyProduct(CD cd) {
         cart.addProduct(cd);
     }
