@@ -40,7 +40,7 @@ public class ShoppingCartModelBean {
         for (OrderItem dummy : cart) {
 
             Long tmp = dummy.getProduct().getId();
-            if (tmp == c.getId()) {
+            if (tmp.equals(c.getId() )) {
                 int i = dummy.getQty();
                 i++;
                 dummy.setQty(i);
@@ -64,7 +64,7 @@ public class ShoppingCartModelBean {
         for (OrderItem dummy : cart) {
 
             Long id = dummy.getProduct().getId();
-            if (id == cd.getId()) {
+            if (id.equals( cd.getId())) {
                 cart.remove(dummy);
             }
         }
@@ -75,7 +75,7 @@ public class ShoppingCartModelBean {
         for (OrderItem dummy : cart) {
 
             Long id = dummy.getProduct().getId();
-            if (id == cd.getId()) {
+            if (id.equals(cd.getId() )) {
                 if ((dummy.getQty() - 1) == 0) {
                     cart.remove(dummy);
                 }

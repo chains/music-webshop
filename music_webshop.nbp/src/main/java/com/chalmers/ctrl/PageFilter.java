@@ -23,12 +23,12 @@ import javax.servlet.http.HttpSession;
  */
 public class PageFilter implements Filter {
 
-    FilterConfig fc;
+  
     private LoginBean loginBean;
 
     @Override
     public void init(FilterConfig fc) throws ServletException {
-        this.fc = fc;
+       
 
     }
 

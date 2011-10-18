@@ -17,7 +17,7 @@ import javax.persistence.criteria.CriteriaQuery;
  *
  * @author Johan Sandström
  */
-public class DBShopUserControl implements DBCtrl<ShopUser>{
+public class DBShopUserControl implements DBCtrl<ShopUser> {
 
     private EntityManager em;
     private final EntityManagerFactory emf;
@@ -29,7 +29,7 @@ public class DBShopUserControl implements DBCtrl<ShopUser>{
     public EntityManager getEntityManager() {
         return emf.createEntityManager();
     }
-    
+
     @Override
     public void create(ShopUser t) {
         em = null;
@@ -42,14 +42,14 @@ public class DBShopUserControl implements DBCtrl<ShopUser>{
 
     @Override
     public void destroy(Long id) {
-        
+
 
         em = null;
 
         em = getEntityManager();
         em.getTransaction().begin();
         ShopUser customer;
-       
+
         try {
             customer = em.getReference(ShopUser.class, id);
             customer.getId();
@@ -62,7 +62,7 @@ public class DBShopUserControl implements DBCtrl<ShopUser>{
 
     @Override
     public void edit(ShopUser t) {
-                em = null;
+        em = null;
         try {
             em = getEntityManager();
             em.getTransaction().begin();
@@ -72,7 +72,8 @@ public class DBShopUserControl implements DBCtrl<ShopUser>{
             String msg = ex.getLocalizedMessage();
             if (msg == null || msg.length() == 0) {
 
-                Long id = new Long((long) t.getId());
+//                Long id = new Long((long) t.getId());
+                Long id = Long.valueOf(t.getId());
 
                 if (findEntity(id) == null) {
                     throw new NoSuchElementException();
@@ -95,7 +96,7 @@ public class DBShopUserControl implements DBCtrl<ShopUser>{
         CriteriaQuery cq = em.getCriteriaBuilder().createQuery();
         cq.select(cq.from(ShopUser.class));
         Query q = em.createQuery(cq);
- 
+
         return (List<ShopUser>) q.getResultList();
     }
 
@@ -117,7 +118,4 @@ public class DBShopUserControl implements DBCtrl<ShopUser>{
     public int getEntityCount() {
         throw new UnsupportedOperationException("Not supported yet.");
     }
-
- 
-    
 }
