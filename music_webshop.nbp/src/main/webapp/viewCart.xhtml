@@ -47,8 +47,10 @@
                                          actionListener="#{viewCartControllerBean.removeProduct(order.product)}" action="emptyCart"  update="@form"/>
                     </p:column> 
                 </p:dataTable>  
-                <p:commandButton value="Pay" 
-                                 actionListener="#{viewCartControllerBean.confirmOrder()}" action="confirmOrder"/>
+                <!--                <p:commandButton value="Pay" 
+                                                 actionListener="#{viewCartControllerBean.confirmOrder()}" action="goToConfirm"/>-->
+
+                <p:commandButton value="Pay" action="#{viewCartControllerBean.confirmOrder()}"></p:commandButton>
                 <p:commandButton value="Empty Cart" 
                                  actionListener="#{viewCartControllerBean.emptyCart()}" action="emptyCart"/>
             </h:form>  

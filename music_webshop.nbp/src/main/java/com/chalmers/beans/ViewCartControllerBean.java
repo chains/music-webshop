@@ -5,6 +5,7 @@
 package com.chalmers.beans;
 
 import com.chalmers.core.CD;
+import com.chalmers.core.ShopUser;
 import com.chalmers.ctrl.Mail;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
@@ -14,7 +15,7 @@ import javax.servlet.http.HttpSession;
 
 /**
  *
- * @author Johan Sandström
+ * @author Johan Sandström, Daniel Nicklasson
  */
 @ManagedBean
 @RequestScoped
@@ -22,6 +23,9 @@ public class ViewCartControllerBean {
 
     @ManagedProperty(value = "#{shoppingCartModelBean}")
     private ShoppingCartModelBean cart;
+    
+    @ManagedProperty(value = "#{loginBean}")
+    private LoginBean loginbean;
 
     /** Creates a new instance of ViewCartControllerBean */
     public ViewCartControllerBean() {
@@ -42,19 +46,33 @@ public class ViewCartControllerBean {
     public void removeOneProduct(CD cd) {
         cart.removeOneProduct(cd);
     }
-    
-    public void emptyCart(){
+
+    public void emptyCart() {
         cart.emptyCart();
     }
 
+    public LoginBean getLoginbean() {
+        return loginbean;
+    }
+
+    public void setLoginbean(LoginBean loginbean) {
+        this.loginbean = loginbean;
+    }
+
     public String confirmOrder() throws Exception {
+        
+        // Get all needed text to send mail
         String message = cart.toString();
+        ShopUser user = loginbean.getUser();
+        String receiver = user.getEmail();
+        String name = user.getName();
 
         //Call mailer
-        Mail mailtest = new Mail(message);
+        Mail mailer = new Mail(message, receiver, name);
 
-        mailtest.sendMail();
+        mailer.sendMail();
 
+        // Invalidate session, user has ordered the items in the shoppingcart
         HttpSession session = (HttpSession) FacesContext.getCurrentInstance().getExternalContext().getSession(false);
         session.invalidate();
 

@@ -10,10 +10,12 @@ import com.chalmers.ctrl.Database;
 import java.util.List;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
+import javax.faces.context.FacesContext;
+import javax.servlet.http.HttpSession;
 
 /**
  *
- * @author Daniel Nicklasson
+ * @author Daniel Nicklasson, Johan Sandström
  */
 @ManagedBean
 @SessionScoped
@@ -75,6 +77,11 @@ public class LoginBean {
         user = null;
         loggedIn = false;
         isAdmin = false;
+
+        // Invalidate session, user has ordered the items in the shoppingcart
+        HttpSession session = (HttpSession) FacesContext.getCurrentInstance().getExternalContext().getSession(false);
+        session.invalidate();
+
         return "refreshpage";
     }
 
@@ -87,7 +94,7 @@ public class LoginBean {
     }
 
     public String checkLogin() {
-        if (isAdmin) { 
+        if (isAdmin) {
             return "Logged in as Admin";
         } else {
             // Return nullstring, admin not logged in
@@ -95,6 +102,7 @@ public class LoginBean {
         }
     }
     //Div with buttons to login and register only visible when not logged in.
+
     public String loginDivVisibility() {
         if (loggedIn) {
             return "none";
@@ -103,6 +111,7 @@ public class LoginBean {
         }
     }
     //Div with information about who is logged in is only visible when logged in
+
     public String loggedinDivVisibility() {
         if (!loggedIn) {
             return "none";
@@ -111,6 +120,7 @@ public class LoginBean {
         }
     }
     //Button with link to adminpage is only visible when admin logged in.
+
     public String adminButtonVisibility() {
         if (isAdmin) {
             return "visible";
@@ -126,5 +136,4 @@ public class LoginBean {
     public void setAdmin(boolean isAdmin) {
         this.isAdmin = isAdmin;
     }
-    
 }
