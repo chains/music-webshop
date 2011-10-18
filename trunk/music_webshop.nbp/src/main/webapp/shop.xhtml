@@ -11,7 +11,6 @@
     <ui:define name="left">
 
         <h:form>
-
             <p:dataTable var="genre" value="#{shopBackingBean.genres}">  
                 <f:facet name="header">  
                     Music  
@@ -28,8 +27,12 @@
 
                 </p:column>  
             </p:dataTable>  
-
         </h:form>
+        <p:panel header="Your shopping cart">
+            <h:outputText value="You have #{shoppingCartModelBean.getCartCount()} articles in your shopping cart"></h:outputText>
+            <p/>
+            <h:outputText value="Total cost: #{shoppingCartModelBean.getTotal()} kr."></h:outputText>
+        </p:panel>
     </ui:define>
     <ui:define name="content">
         <p:panel header="Products ">
