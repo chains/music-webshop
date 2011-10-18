@@ -46,13 +46,12 @@
                         <p:commandButton value="Remove all" 
                                          actionListener="#{viewCartControllerBean.removeProduct(order.product)}" action="emptyCart"  update="@form"/>
                     </p:column> 
-                </p:dataTable>  
-                <!--                <p:commandButton value="Pay" 
-                                                 actionListener="#{viewCartControllerBean.confirmOrder()}" action="goToConfirm"/>-->
-
-                <p:commandButton value="Pay" action="#{viewCartControllerBean.confirmOrder()}"></p:commandButton>
-                <p:commandButton value="Empty Cart" 
-                                 actionListener="#{viewCartControllerBean.emptyCart()}" action="emptyCart"/>
+                </p:dataTable>
+                    <div id="paybuttondiv" style="display: #{shoppingCartModelBean.paybuttonDivVisibility()}">
+                        <p:commandButton value="Pay" action="#{viewCartControllerBean.confirmOrder()}"></p:commandButton>
+                    </div>
+                    <p:commandButton value="Empty Cart" 
+                                     actionListener="#{viewCartControllerBean.emptyCart()}" action="emptyCart"/>
             </h:form>  
         </p:panel>
     </ui:define>
