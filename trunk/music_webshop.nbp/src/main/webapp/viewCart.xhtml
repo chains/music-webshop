@@ -47,9 +47,9 @@
                                          actionListener="#{viewCartControllerBean.removeProduct(order.product)}" action="emptyCart"  update="@form"/>
                     </p:column> 
                 </p:dataTable>
-                    <div id="paybuttondiv" style="display: #{shoppingCartModelBean.paybuttonDivVisibility()}">
+                   
                         <p:commandButton value="Pay" action="#{viewCartControllerBean.confirmOrder()}"></p:commandButton>
-                    </div>
+                   
                     <p:commandButton value="Empty Cart" 
                                      actionListener="#{viewCartControllerBean.emptyCart()}" action="emptyCart"/>
             </h:form>  

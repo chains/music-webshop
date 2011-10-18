@@ -9,6 +9,7 @@ import com.chalmers.core.OrderItem;
 import java.util.ArrayList;
 import java.util.List;
 import javax.faces.bean.ManagedBean;
+import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.SessionScoped;
 
 /**
@@ -20,6 +21,8 @@ import javax.faces.bean.SessionScoped;
 public class ShoppingCartModelBean {
 
     private List<OrderItem> cart = new ArrayList<OrderItem>();
+    @ManagedProperty(value = "#{loginBean}")
+    private LoginBean loginbean;
 
     /** Creates a new instance of ShoppingCartModelBean */
     public ShoppingCartModelBean() {
@@ -129,11 +132,13 @@ public class ShoppingCartModelBean {
         b.append("Total cost:"+ this.getTotal() );
         return b.toString();
     }
-    public String paybuttonDivVisibility() {
-        if (cart.isEmpty()) {
-            return "none";
-        } else {
-            return "block";
-        }
+
+    public LoginBean getLoginbean() {
+        return loginbean;
     }
+
+    public void setLoginbean(LoginBean loginbean) {
+        this.loginbean = loginbean;
+    }
+    
 }
