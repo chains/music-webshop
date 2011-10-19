@@ -74,7 +74,7 @@ public class ViewCartControllerBean {
         Mail mailer = new Mail(message, receiver, name);
 
         mailer.sendMail();
-
+        cart.emptyCart();
 
         return "goToConfirm";
     }
