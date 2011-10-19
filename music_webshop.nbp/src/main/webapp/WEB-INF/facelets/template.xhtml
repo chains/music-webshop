@@ -51,11 +51,11 @@
                             <div id="logindiv" style="display: #{loginBean.loginDivVisibility()}">
                                 <p:panel header="Login">
                                     <h:form>
-                                        E-Mail: <h:inputText id="pwdinput" value="#{loginBean.username}" size="16" required="true" validatorMessage="Must be at least 3 chars"/>
-                                        Password: <h:inputSecret value="#{loginBean.password}" size="16" required="true" validatorMessage="Must be at least 3 chars"/>
+                                        E-Mail: <h:inputText id="mailinput" value="#{loginBean.username}" size="16" required="true" validatorMessage="Must be at least 3 chars"/>
+                                        Password: <h:inputSecret id="pwdinput" value="#{loginBean.password}" size="16" required="true" validatorMessage="Must be at least 3 chars"/>
                                         <!--                                        <p:messages id="msgs" showDetail="true" showSummary="true"/> -->
-                                        <p:message for="pwdinput" showDetail="true" showSummary="false"/>
-                                        <p:commandButton value="Login" action="#{loginBean.login()}" update="@form" ></p:commandButton>
+                                        <p:messages showDetail="true" showSummary="false"/>
+                                        <p:commandButton id="loginbtn" value="Login" action="#{loginBean.login()}" update="@form" ></p:commandButton>
                                     </h:form>
                                     <h:form>
                                         <p>Not registered yet?</p>
