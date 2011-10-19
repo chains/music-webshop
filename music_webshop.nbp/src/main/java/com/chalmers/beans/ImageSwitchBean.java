@@ -1,6 +1,5 @@
 /*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
+ * Gives imageswitchers on xhtml pages images to switch between.
  */
 package com.chalmers.beans;
 

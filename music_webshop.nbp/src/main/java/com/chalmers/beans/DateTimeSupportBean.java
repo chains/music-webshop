@@ -1,6 +1,5 @@
 /*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
+ * Returns current date in format yyyy/MM/dd HH:mm:ss
  */
 package com.chalmers.beans;
 

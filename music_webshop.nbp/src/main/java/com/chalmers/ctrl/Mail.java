@@ -1,4 +1,6 @@
 /*
+ * Sends confirmation emails to customers when they make a purchase.
+ * 
  * Below is the URL to register a mail server NOTE: must be named: mail/mailserver
  * http://javaeenotes.blogspot.com/2010/04/using-javamail-api-with-glassfish-and.html
  */

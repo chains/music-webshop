@@ -1,6 +1,6 @@
 /*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
+ * Handles all login/logout functions.
+ * Can also be used to validate if a user is still logged in.
  */
 package com.chalmers.beans;
 
@@ -10,15 +10,13 @@ import com.chalmers.ctrl.Database;
 import java.util.List;
 import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
-import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.SessionScoped;
 import javax.faces.context.FacesContext;
-import javax.faces.validator.ValidatorException;
-import javax.servlet.http.HttpSession;
+
 
 /**
  *
- * @author Daniel Nicklasson, Johan Sandström
+ * @author Daniel Nicklasson, Johan Sandström, Mikael Andersson Ynghammar
  */
 @ManagedBean
 @SessionScoped

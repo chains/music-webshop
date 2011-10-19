@@ -1,6 +1,5 @@
 /*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
+ * Sends register request to Databasehandler, in this case DBShopUserControl.
  */
 package com.chalmers.beans;
 

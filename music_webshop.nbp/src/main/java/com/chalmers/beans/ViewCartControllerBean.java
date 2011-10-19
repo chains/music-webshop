@@ -1,6 +1,7 @@
 /*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
+ * Handles cart interaction from view cart to update the cart model.
+ * Can remove and add items from cart. 
+ * Also able to confirm order and sending mail to the shopper.
  */
 package com.chalmers.beans;
 
@@ -12,7 +13,6 @@ import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.RequestScoped;
 import javax.faces.context.FacesContext;
-import javax.servlet.http.HttpSession;
 
 /**
  *
