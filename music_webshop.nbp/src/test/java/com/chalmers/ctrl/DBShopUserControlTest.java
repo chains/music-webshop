@@ -1,4 +1,3 @@
-
 package com.chalmers.ctrl;
 
 import com.chalmers.core.ShopUser;
@@ -46,5 +45,4 @@ public class DBShopUserControlTest {
         result = instance.findEntity(t.getId());
         assertNull(result);
     }
-
 }

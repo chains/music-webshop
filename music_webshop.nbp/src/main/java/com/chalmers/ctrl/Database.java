@@ -22,7 +22,8 @@ public class Database {
     public static DBCtrl<CD> getCDController() {
         return new DBCDControl(emf);
     }
-    public static DBCtrl<ShopUser> getShopUserController(){
+
+    public static DBCtrl<ShopUser> getShopUserController() {
         return new DBShopUserControl(emf);
     }
 }

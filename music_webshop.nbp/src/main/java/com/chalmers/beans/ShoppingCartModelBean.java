@@ -15,7 +15,7 @@ import javax.faces.bean.SessionScoped;
 
 /**
  *
- * @author Johan Sandström
+ * @author Johan Sandström, Jonas Ekström, Mikael Andersson Ynghammar
  */
 @ManagedBean
 @SessionScoped

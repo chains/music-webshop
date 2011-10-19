@@ -23,48 +23,47 @@ import javax.naming.InitialContext;
  * @author Daniel Nicklasson
  */
 public class Mail {
-    
+
     private String message;
     private String receiver;
     private String name;
-    
-    public Mail(String message, String receiver, String name){
+
+    public Mail(String message, String receiver, String name) {
         this.message = message;
         this.receiver = receiver;
         this.name = name;
     }
-   
+
     public void sendMail() throws Exception {
 
         InitialContext ctx = new InitialContext();
         Session session =
-            (Session) ctx.lookup("mail/mailserver");
+                (Session) ctx.lookup("mail/mailserver");
 
         Message msg = new MimeMessage(session);
         msg.setSubject("Confirmation email");
         msg.setRecipient(RecipientType.TO,
-                         new InternetAddress(
-                         receiver,
-                         "Customer"));
-        
+                new InternetAddress(
+                receiver,
+                "Customer"));
+
         msg.setFrom(new InternetAddress(
-                    "mailer.music.webshop@gmail.com",
-                    "MailerRobot at MusicWebshop"));
+                "mailer.music.webshop@gmail.com",
+                "MailerRobot at MusicWebshop"));
 
         // Body text.
         BodyPart messageBodyPart = new MimeBodyPart();
-        
+
         messageBodyPart.setText("Hello " + name + "! Here is your order confirmation " + message);
 
-         Multipart multipart = new MimeMultipart();  
-         multipart.addBodyPart(messageBodyPart); 
-   
-         // Add multipart message to email.  
-         msg.setContent(multipart); 
-        
+        Multipart multipart = new MimeMultipart();
+        multipart.addBodyPart(messageBodyPart);
+
+        // Add multipart message to email.  
+        msg.setContent(multipart);
+
         // Send email.
         Transport.send(msg);
-        
-    }
 
+    }
 }

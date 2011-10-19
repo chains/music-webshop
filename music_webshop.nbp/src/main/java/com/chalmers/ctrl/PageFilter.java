@@ -21,13 +21,10 @@ import javax.servlet.http.HttpSession;
  */
 public class PageFilter implements Filter {
 
-  
     private LoginBean loginBean;
 
     @Override
     public void init(FilterConfig fc) throws ServletException {
-       
-
     }
 
     @Override

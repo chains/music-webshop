@@ -16,7 +16,7 @@ import javax.faces.context.FacesContext;
 
 /**
  *
- * @author Johan Sandström, Daniel Nicklasson
+ * @author Johan Sandström, Daniel Nicklasson, Jonas Ekström, Mikael Andersson Ynghammar
  */
 @ManagedBean
 @RequestScoped

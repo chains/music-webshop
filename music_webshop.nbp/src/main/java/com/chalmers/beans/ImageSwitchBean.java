@@ -10,7 +10,7 @@ import javax.faces.bean.RequestScoped;
 
 /**
  *
- * @author Daniel Nicklasson
+ * @author Daniel Nicklasson, Jonas Ekström, Mikael Andersson Ynghammar
  */
 @ManagedBean
 @RequestScoped
