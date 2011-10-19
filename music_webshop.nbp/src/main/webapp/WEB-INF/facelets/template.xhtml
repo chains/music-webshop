@@ -51,9 +51,11 @@
                             <div id="logindiv" style="display: #{loginBean.loginDivVisibility()}">
                                 <p:panel header="Register">
                                     <h:form>
-                                        E-Mail: <h:inputText value="#{loginBean.username}" size="16" required="true" validatorMessage="Must be at least 3 chars"/>
+                                        E-Mail: <h:inputText id="pwdinput" value="#{loginBean.username}" size="16" required="true" validatorMessage="Must be at least 3 chars"/>
                                         Password: <h:inputSecret value="#{loginBean.password}" size="16" required="true" validatorMessage="Must be at least 3 chars"/>
-                                        <p:commandButton value="Login" action="#{loginBean.login()}" ></p:commandButton>
+<!--                                        <p:messages id="msgs" showDetail="true" showSummary="true"/> -->
+                                         <p:messages showDetail="true" showSummary="false"/>
+                                        <p:commandButton value="Login" action="#{loginBean.login()}" update="@form" ></p:commandButton>
                                     </h:form>
                                     <h:form>
                                         <p>Not registered yet?</p>
@@ -68,7 +70,7 @@
                                     </h:form>
                                 </p:panel>
                             </div>
-                            <p:panel header="Sale on the following products: ">
+                            <p:panel header="We offer these CD's and many more: ">
                                 <p:imageSwitch effect="fade">  
                                     <ui:repeat value="#{imageSwitchBean.images}" var="image">  
                                         <p:graphicImage value="/images/#{image}"/>  
@@ -76,7 +78,7 @@
                                 </p:imageSwitch>
                                 <p/>
                                 <h:form>
-                                    <p:commandButton value="99 kr" action="shop.xhtml" ajax="false" />
+                                    <p:commandButton value="Go to shop!" action="shop.xhtml" ajax="false" ></p:commandButton>
                                 </h:form>
                             </p:panel>
 
@@ -96,7 +98,7 @@
                     <h:outputText value="#{loginBean.checkLogin()}"></h:outputText>
 
                     <div id="pic" style="visibility: #{loginBean.adminButtonVisibility()}">
-                        <h:link outcome="goToAdminPage" >
+                        <h:link style="border: none" outcome="goToAdminPage" >
                             <h:graphicImage  value="/images/login.png" />
                         </h:link>
                     </div>

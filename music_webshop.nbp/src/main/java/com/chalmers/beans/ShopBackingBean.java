@@ -12,6 +12,7 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import javax.faces.bean.ManagedBean;
+import javax.faces.bean.RequestScoped;
 import javax.faces.bean.SessionScoped;
 import javax.faces.context.FacesContext;
 
@@ -20,14 +21,14 @@ import javax.faces.context.FacesContext;
  * @author Johan Sandström
  */
 @ManagedBean
-@SessionScoped
+@RequestScoped
 public class ShopBackingBean {
 
     private List<String> genres = new ArrayList<String>();
     private List<CD> products;
     private DBCDControl dbControl;
     //The genre that is selected in the left menu. All is default
-    private String selectedGenre = "all";
+    private String selectedGenre;
 
     /** Creates a new instance of ShopBackingBean */
     public ShopBackingBean() {
