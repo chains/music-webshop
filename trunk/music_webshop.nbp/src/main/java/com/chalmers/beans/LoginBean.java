@@ -8,10 +8,12 @@ import com.chalmers.core.ShopUser;
 import com.chalmers.ctrl.DBShopUserControl;
 import com.chalmers.ctrl.Database;
 import java.util.List;
+import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.SessionScoped;
 import javax.faces.context.FacesContext;
+import javax.faces.validator.ValidatorException;
 import javax.servlet.http.HttpSession;
 
 /**
@@ -65,13 +67,16 @@ public class LoginBean {
                 if (shopUser.getIsAdmin()) {
                     isAdmin = true;
                 }
+//                return;
                 return "refreshpage";
             }
         }
+        
         user = null;
         loggedIn = false;
         isAdmin = false;
-        return "loginFailed";
+        FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR,"Login failure", "Your email or password is incorrect!"));
+        return "";
     }
 
     public String logout() {
