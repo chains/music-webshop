@@ -17,24 +17,24 @@ import javax.faces.bean.RequestScoped;
 @ManagedBean
 @RequestScoped
 public class AdminControlBean {
-    
+
     @ManagedProperty(value = "#{adminBackingBean}")
     private AdminBackingBean adminBackingbean;
 
     /** Creates a new instance of AdminControlBean */
     public AdminControlBean() {
     }
-    
-    public void addCD(){
-        DBCDControl cdControl = (DBCDControl)Database.getCDController();
-        CD cd = new CD(Long.valueOf(0), adminBackingbean.getName(), 
-                adminBackingbean.getPrice(), adminBackingbean.getGenre(), 
-                adminBackingbean.getDescription(), adminBackingbean.getNoInStock(), 
+
+    public void addCD() {
+        DBCDControl cdControl = (DBCDControl) Database.getCDController();
+        CD cd = new CD(Long.valueOf(0), adminBackingbean.getName(),
+                adminBackingbean.getPrice(), adminBackingbean.getGenre(),
+                adminBackingbean.getDescription(), adminBackingbean.getNoInStock(),
                 adminBackingbean.getPlaytime(), adminBackingbean.getArtist());
         cdControl.create(cd);
-        
+
     }
-    
+
     public AdminBackingBean getAdminBackingbean() {
         return adminBackingbean;
     }

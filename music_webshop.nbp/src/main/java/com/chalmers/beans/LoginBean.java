@@ -13,7 +13,6 @@ import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 import javax.faces.context.FacesContext;
 
-
 /**
  *
  * @author Daniel Nicklasson, Johan Sandström, Mikael Andersson Ynghammar
@@ -65,15 +64,14 @@ public class LoginBean {
                 if (shopUser.getIsAdmin()) {
                     isAdmin = true;
                 }
-//                return;
                 return "refreshpage";
             }
         }
-        
+
         user = null;
         loggedIn = false;
         isAdmin = false;
-        FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR,"Login failure", "Your email or password is incorrect!"));
+        FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR, "Login failure", "Your email or password is incorrect!"));
         return "";
     }
 

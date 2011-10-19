@@ -24,7 +24,6 @@ public class ViewCartControllerBean {
 
     @ManagedProperty(value = "#{shoppingCartModelBean}")
     private ShoppingCartModelBean cart;
-    
     @ManagedProperty(value = "#{loginBean}")
     private LoginBean loginbean;
 
@@ -62,12 +61,11 @@ public class ViewCartControllerBean {
 
     public String confirmOrder() throws Exception {
         //Can not buy if not logged in or cart empty
-        if(cart.getCart().isEmpty()){
-            FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR,"Pay failure", "You don't have any items in your cart! "));
+        if (cart.getCart().isEmpty()) {
+            FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR, "Pay failure", "You don't have any items in your cart! "));
             return "";
-        }
-        else if(!loginbean.isLoggedIn()){
-            FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR,"Pay failure", "You are not logged in. Log in before you press pay. "));
+        } else if (!loginbean.isLoggedIn()) {
+            FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR, "Pay failure", "You are not logged in. Log in before you press pay. "));
             return "";
         }
         // Get all needed text to send mail

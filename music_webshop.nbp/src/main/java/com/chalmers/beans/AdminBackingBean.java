@@ -1,4 +1,3 @@
-
 package com.chalmers.beans;
 
 import javax.faces.bean.ManagedBean;
@@ -19,7 +18,7 @@ public class AdminBackingBean {
     private int noInStock;
     private double playtime;
     private String artist;
-    
+
     /** Creates a new instance of AdminBackingBean */
     public AdminBackingBean() {
     }
@@ -79,6 +78,4 @@ public class AdminBackingBean {
     public void setPrice(double price) {
         this.price = price;
     }
-    
-    
 }

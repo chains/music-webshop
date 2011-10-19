@@ -31,9 +31,9 @@ public class RegisterControllerBean {
 
     public void addShopUser() {
         DBShopUserControl shopUserControl = (DBShopUserControl) Database.getShopUserController();
-        ShopUser user = new ShopUser(Long.valueOf(0), registerBackingBean.getEmail(), 
-                registerBackingBean.getName(), registerBackingBean.getPasswd(), 
-                registerBackingBean.getStreet(), registerBackingBean.getCity(), 
+        ShopUser user = new ShopUser(Long.valueOf(0), registerBackingBean.getEmail(),
+                registerBackingBean.getName(), registerBackingBean.getPasswd(),
+                registerBackingBean.getStreet(), registerBackingBean.getCity(),
                 registerBackingBean.getCountry(), false);
         shopUserControl.create(user);
     }
