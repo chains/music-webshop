@@ -33,7 +33,7 @@ public class DBCDControlTest {
     }
 
     /**
-     * Test of findEntity method, of class DBCDControl.
+     * Test of create, find and destroy methods, of class DBCDControl.
      */
     @Test
     public void testCreateFindAndDestroy() {
@@ -47,7 +47,6 @@ public class DBCDControlTest {
         instance.destroy(t.getId());
         result = instance.findEntity(t.getId());
         assertNull(result);
-    }
 
-    
+    }
 }
