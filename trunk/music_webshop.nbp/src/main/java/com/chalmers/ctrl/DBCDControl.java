@@ -98,7 +98,6 @@ public class DBCDControl implements DBCtrl<CD> {
 
         return (List<CD>) q.getResultList();
     }
-    
 
     @Override
     public List<CD> findEntities(int maxResults, int firstResult) {
@@ -117,5 +116,15 @@ public class DBCDControl implements DBCtrl<CD> {
     @Override
     public int getEntityCount() {
         throw new UnsupportedOperationException("Not supported yet.");
+    }
+
+    public List<CD> findByGenre(String genre) {
+        em = getEntityManager();
+        
+        String request = "select c from CD c where c.genre='"+ genre +"' ";
+        Query q = em.createQuery(request);
+        List<CD> cds = q.getResultList();
+        return cds;
+
     }
 }
