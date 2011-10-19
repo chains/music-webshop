@@ -1,12 +1,10 @@
 /*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
+ * Filters restrics users without the correct permissions to reach certain pages.
  */
 package com.chalmers.ctrl;
 
 import com.chalmers.beans.LoginBean;
 import java.io.IOException;
-import javax.faces.bean.ManagedProperty;
 import javax.servlet.Filter;
 import javax.servlet.FilterChain;
 import javax.servlet.FilterConfig;

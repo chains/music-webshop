@@ -1,6 +1,6 @@
 /*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
+ * The actual cart the user stores the products in when using the webshop
+ * Methods for adding and removing items from the cart.
  */
 package com.chalmers.beans;
 

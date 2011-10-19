@@ -1,6 +1,5 @@
 /*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
+ *   Sending request to cart to add product.
  */
 package com.chalmers.beans;
 
@@ -22,7 +21,7 @@ public class ShopControllerBean {
 
     public ShopControllerBean() {
     }
-    
+
     /*
      * Adds CD to shopping cart
      */

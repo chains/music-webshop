@@ -1,6 +1,5 @@
 /*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
+ * Gives admins the functionality to add new CDs to the database.
  */
 package com.chalmers.beans;
 

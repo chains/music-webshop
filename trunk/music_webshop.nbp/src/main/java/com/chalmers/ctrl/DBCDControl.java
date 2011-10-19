@@ -1,6 +1,5 @@
 /*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
+ * Interacts with database to create/change/delete/find users
  */
 package com.chalmers.ctrl;
 
