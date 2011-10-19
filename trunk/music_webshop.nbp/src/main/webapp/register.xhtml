@@ -13,32 +13,28 @@
 
             <p:panel header="Every field is required!">
                 <h:panelGrid columns="3">
-                    E-Mail: <h:inputText id="regemail" value="#{registerBackingBean.email}" required="true">
+                    E-Mail: <h:inputText id="regemail" value="#{registerBackingBean.email}">
 
                     </h:inputText>
                     <p:message for="regemail" showDetail="false" showSummary="true"></p:message>
-                    <p>Name: <h:inputText id="regname" value="#{registerBackingBean.name}" required="true">
+                    <p>Name: <h:inputText id="regname" value="#{registerBackingBean.name}">
 
                         </h:inputText> 
                         <p:message for="regname" showDetail="false" showSummary="true"></p:message></p>
-                    <p>Password: <h:inputSecret id="regpwd" value="#{registerBackingBean.passwd}" required="true">
+                    <p>Password: <h:inputSecret id="regpwd" value="#{registerBackingBean.passwd}">
 
                         </h:inputSecret> 
                         <p:message for="regpwd" showDetail="false" showSummary="true"></p:message></p>
-                    <p>Street: <h:inputText id="regstreet" value="#{registerBackingBean.street}" required="true">
+                    <p>Street: <h:inputText id="regstreet" value="#{registerBackingBean.street}">
 
                         </h:inputText> 
                         <p:message for="regstreet" showDetail="false" showSummary="true"></p:message></p>
-                    <p>City: <h:inputText id="regcity" value="#{registerBackingBean.city}" required="true">
+                    <p>City: <h:inputText id="regcity" value="#{registerBackingBean.city}">
                         </h:inputText> 
                         <p:message for="regcity" showDetail="false" showSummary="true"></p:message></p>
-                    <p>Country: <h:inputText id="regcountry" value="#{registerBackingBean.country}" required="true">
+                    <p>Country: <h:inputText id="regcountry" value="#{registerBackingBean.country}">
                         </h:inputText> 
                         <p:message for="regcountry" showDetail="false" showSummary="true"></p:message></p>
-
-                    <!--                <p:messages showDetail="false" showSummary="true">
-                                        
-                                    </p:messages>-->
                 </h:panelGrid>
             </p:panel>
 

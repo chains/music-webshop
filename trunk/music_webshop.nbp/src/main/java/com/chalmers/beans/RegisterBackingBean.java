@@ -24,7 +24,7 @@ public class RegisterBackingBean {
     private String street;
     @NotNull @Size(min=2, max=30, message="City name must be between 2 to 30 chars long!")
     private String city;
-    @NotNull @Size(min=5, max=15, message="Country must be between 5 to 15 chars long!")
+    @NotNull @Size(min=3, max=15, message="Country must be between 3 to 15 chars long!")
     private String country;
     private Boolean isAdmin;
 

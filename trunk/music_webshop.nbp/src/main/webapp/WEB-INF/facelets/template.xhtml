@@ -49,12 +49,12 @@
                     <div id="right">
                         <ui:insert name="right">
                             <div id="logindiv" style="display: #{loginBean.loginDivVisibility()}">
-                                <p:panel header="Register">
+                                <p:panel header="Login">
                                     <h:form>
                                         E-Mail: <h:inputText id="pwdinput" value="#{loginBean.username}" size="16" required="true" validatorMessage="Must be at least 3 chars"/>
                                         Password: <h:inputSecret value="#{loginBean.password}" size="16" required="true" validatorMessage="Must be at least 3 chars"/>
-<!--                                        <p:messages id="msgs" showDetail="true" showSummary="true"/> -->
-                                         <p:messages showDetail="true" showSummary="false"/>
+                                        <!--                                        <p:messages id="msgs" showDetail="true" showSummary="true"/> -->
+                                        <p:message for="pwdinput" showDetail="true" showSummary="false"/>
                                         <p:commandButton value="Login" action="#{loginBean.login()}" update="@form" ></p:commandButton>
                                     </h:form>
                                     <h:form>
