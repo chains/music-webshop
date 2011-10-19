@@ -1,4 +1,3 @@
-
 package com.chalmers.ctrl;
 
 import com.chalmers.core.CD;
@@ -34,7 +33,7 @@ public class DBCDControlTest {
      */
     @Test
     public void testCreateFindAndDestroy() {
-     
+
         System.out.println("create");
         instance.create(t);
         System.out.println("findEntity");

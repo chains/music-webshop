@@ -12,7 +12,7 @@ import javax.faces.context.FacesContext;
 
 /**
  *
- * @author Johan Sandström
+ * @author Johan Sandström, Jonas Ekström
  */
 @ManagedBean
 @RequestScoped

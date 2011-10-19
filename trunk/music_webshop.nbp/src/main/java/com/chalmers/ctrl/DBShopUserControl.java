@@ -71,7 +71,6 @@ public class DBShopUserControl implements DBCtrl<ShopUser> {
             String msg = ex.getLocalizedMessage();
             if (msg == null || msg.length() == 0) {
 
-//                Long id = new Long((long) t.getId());
                 Long id = Long.valueOf(t.getId());
 
                 if (findEntity(id) == null) {

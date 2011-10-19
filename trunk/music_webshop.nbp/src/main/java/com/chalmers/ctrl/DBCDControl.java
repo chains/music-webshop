@@ -70,7 +70,6 @@ public class DBCDControl implements DBCtrl<CD> {
             String msg = ex.getLocalizedMessage();
             if (msg == null || msg.length() == 0) {
 
-//                Long id = new Long((long) t.getId());
                 Long id = Long.valueOf(t.getId());
 
                 if (findEntity(id) == null) {
@@ -119,8 +118,8 @@ public class DBCDControl implements DBCtrl<CD> {
 
     public List<CD> findByGenre(String genre) {
         em = getEntityManager();
-        
-        String request = "select c from CD c where c.genre='"+ genre +"' ";
+
+        String request = "select c from CD c where c.genre='" + genre + "' ";
         Query q = em.createQuery(request);
         List<CD> cds = q.getResultList();
         return cds;

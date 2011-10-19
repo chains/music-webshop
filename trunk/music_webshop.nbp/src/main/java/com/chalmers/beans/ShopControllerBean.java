@@ -10,7 +10,7 @@ import javax.faces.bean.RequestScoped;
 
 /**
  *
- * @author Johan Sandström
+ * @author Johan Sandström, Jonas Ekström, Mikael Andersson Ynghammar
  */
 @ManagedBean
 @RequestScoped
