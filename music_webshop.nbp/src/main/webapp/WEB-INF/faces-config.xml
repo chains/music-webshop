@@ -33,9 +33,6 @@
     
     <navigation-rule>
         <from-view-id>/viewCart.xhtml</from-view-id>
-        <from-view-id>/viewCart.xhtml</from-view-id>
-        <from-view-id>/viewCart.xhtml</from-view-id>
-        <from-view-id>/viewCart.xhtml</from-view-id>
         <navigation-case>
             <from-outcome>emptyCart</from-outcome>
             <to-view-id>/viewCart.xhtml</to-view-id>
