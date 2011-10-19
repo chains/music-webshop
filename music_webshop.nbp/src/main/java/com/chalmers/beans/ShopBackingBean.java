@@ -34,17 +34,17 @@ public class ShopBackingBean {
     public ShopBackingBean() {
         dbControl = (DBCDControl) Database.getCDController();
         products = dbControl.findEntities();
-        
+
         //Add a "genre" for all genres
         genres.add("All Genres");
         //Get the genres from the products.
-        for(CD cd : products){
-           if(!genres.contains(cd.getGenre())){
-               genres.add(cd.getGenre());
-           }
-            
+        for (CD cd : products) {
+            if (!genres.contains(cd.getGenre())) {
+                genres.add(cd.getGenre());
+            }
+
         }
-        
+
     }
 
     public List<CD> getProducts() {
@@ -54,22 +54,32 @@ public class ShopBackingBean {
 
     public void setProducts(String genre) {
         //TODO: Make it possible to return list with only specific genre.
-        List<CD> cds = dbControl.findEntities();
-        //Remove CD's with wrong genre
-        Iterator<CD> it = cds.iterator();
-        if (!genre.equalsIgnoreCase("All Genres")) {
-            while (it.hasNext()) {
-                CD cd = it.next();
-                if (!cd.getGenre().equalsIgnoreCase(genre)) {
-                    it.remove();
-                }
-            }
+        List<CD> cds;
+
+        if (genre.equals("All Genres")) {
+            cds = dbControl.findEntities();
         }
+        else{
+            cds = dbControl.findByGenre(genre);
+        }
+        
+        
+        
+        
+        //Remove CD's with wrong genre
+//        Iterator<CD> it = cds.iterator();
+//        if (!genre.equalsIgnoreCase("All Genres")) {
+//            while (it.hasNext()) {
+//                CD cd = it.next();
+//                if (!cd.getGenre().equalsIgnoreCase(genre)) {
+//                    it.remove();
+//                }
+//            }
+//        }
 
         products = cds;
     }
 
-    
     public String getSelectedGenre() {
         return selectedGenre;
     }
@@ -94,5 +104,4 @@ public class ShopBackingBean {
     public void setGenres(List<String> genres) {
         this.genres = genres;
     }
-    
 }
