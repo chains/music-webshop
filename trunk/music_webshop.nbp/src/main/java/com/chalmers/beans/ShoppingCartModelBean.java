@@ -7,6 +7,7 @@ package com.chalmers.beans;
 import com.chalmers.core.CD;
 import com.chalmers.core.OrderItem;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
@@ -61,8 +62,9 @@ public class ShoppingCartModelBean {
 
     public void removeProduct(CD cd) {
 
-        for (OrderItem dummy : cart) {
-
+        Iterator<OrderItem> it = cart.iterator();
+        while(it.hasNext()){
+            OrderItem dummy = it.next();
             Long id = dummy.getProduct().getId();
             if (id.equals( cd.getId())) {
                 cart.remove(dummy);
@@ -71,13 +73,14 @@ public class ShoppingCartModelBean {
     }
 
     public void removeOneProduct(CD cd) {
-
-        for (OrderItem dummy : cart) {
-
+        Iterator<OrderItem> it = cart.iterator();
+//        for (OrderItem dummy : cart) {
+        while(it.hasNext()){ 
+            OrderItem dummy = it.next();
             Long id = dummy.getProduct().getId();
             if (id.equals(cd.getId() )) {
                 if ((dummy.getQty() - 1) == 0) {
-                    cart.remove(dummy);
+                    it.remove();
                 }
                 dummy.setQty(dummy.getQty() - 1);
             }
