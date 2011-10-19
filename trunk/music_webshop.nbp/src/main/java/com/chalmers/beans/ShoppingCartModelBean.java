@@ -41,7 +41,7 @@ public class ShoppingCartModelBean {
         for (OrderItem dummy : cart) {
 
             Long tmp = dummy.getProduct().getId();
-            if (tmp.equals(c.getId() )) {
+            if (tmp.equals(c.getId())) {
                 int i = dummy.getQty();
                 i++;
                 dummy.setQty(i);
@@ -55,18 +55,18 @@ public class ShoppingCartModelBean {
             cart.add(item);
         }
     }
-    
-    public void emptyCart(){
+
+    public void emptyCart() {
         cart = new ArrayList<OrderItem>();
     }
 
     public void removeProduct(CD cd) {
 
         Iterator<OrderItem> it = cart.iterator();
-        while(it.hasNext()){
+        while (it.hasNext()) {
             OrderItem dummy = it.next();
             Long id = dummy.getProduct().getId();
-            if (id.equals( cd.getId())) {
+            if (id.equals(cd.getId())) {
                 cart.remove(dummy);
             }
         }
@@ -74,11 +74,10 @@ public class ShoppingCartModelBean {
 
     public void removeOneProduct(CD cd) {
         Iterator<OrderItem> it = cart.iterator();
-//        for (OrderItem dummy : cart) {
-        while(it.hasNext()){ 
+        while (it.hasNext()) {
             OrderItem dummy = it.next();
             Long id = dummy.getProduct().getId();
-            if (id.equals(cd.getId() )) {
+            if (id.equals(cd.getId())) {
                 if ((dummy.getQty() - 1) == 0) {
                     it.remove();
                 }
@@ -86,24 +85,24 @@ public class ShoppingCartModelBean {
             }
         }
     }
-    
-    public int getCartCount(){
-        
+
+    public int getCartCount() {
+
         int count = 0;
         for (OrderItem dummy : cart) {
             count += dummy.getQty();
         }
         return count;
     }
-    
+
     /*
      * Gets the total price of all the items in the shoppingcart.
      */
-    public double getTotal(){
-        
+    public double getTotal() {
+
         double price = 0;
-        for(OrderItem order : cart){
-            price += order.getQty()*order.getProduct().getPrice();
+        for (OrderItem order : cart) {
+            price += order.getQty() * order.getProduct().getPrice();
         }
         return price;
     }
@@ -115,24 +114,24 @@ public class ShoppingCartModelBean {
     public void setCart(List<OrderItem> cart) {
         this.cart = cart;
     }
-    
-        @Override
+
+    @Override
     public String toString() {
-        
+
         // Help method for Mailer class
         StringBuilder b = new StringBuilder();
-        
+
         b.append(System.getProperty("line.separator"));
-        for(OrderItem item : cart){
-            
+        for (OrderItem item : cart) {
+
             CD tempcd = item.getProduct();
-            b.append("Quantity: " + item.getQty() +" ");
-            b.append(tempcd.toString() );
+            b.append("Quantity: " + item.getQty() + " ");
+            b.append(tempcd.toString());
             b.append(System.getProperty("line.separator"));
         }
         b.append("--------------------------------");
         b.append(System.getProperty("line.separator"));
-        b.append("Total cost:"+ this.getTotal() );
+        b.append("Total cost:" + this.getTotal());
         return b.toString();
     }
 
@@ -143,5 +142,4 @@ public class ShoppingCartModelBean {
     public void setLoginbean(LoginBean loginbean) {
         this.loginbean = loginbean;
     }
-    
 }

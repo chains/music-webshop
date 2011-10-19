@@ -1,4 +1,3 @@
-
 package com.chalmers.beans;
 
 import com.chalmers.core.CD;
@@ -43,35 +42,17 @@ public class ShopBackingBean {
     }
 
     public List<CD> getProducts() {
-//        products = dbControl.findEntities();
         return products;
     }
 
     public void setProducts(String genre) {
-        //TODO: Make it possible to return list with only specific genre.
         List<CD> cds;
 
         if (genre.equals("All Genres")) {
             cds = dbControl.findEntities();
-        }
-        else{
+        } else {
             cds = dbControl.findByGenre(genre);
         }
-        
-        
-        
-        
-        //Remove CD's with wrong genre
-//        Iterator<CD> it = cds.iterator();
-//        if (!genre.equalsIgnoreCase("All Genres")) {
-//            while (it.hasNext()) {
-//                CD cd = it.next();
-//                if (!cd.getGenre().equalsIgnoreCase(genre)) {
-//                    it.remove();
-//                }
-//            }
-//        }
-
         products = cds;
     }
 

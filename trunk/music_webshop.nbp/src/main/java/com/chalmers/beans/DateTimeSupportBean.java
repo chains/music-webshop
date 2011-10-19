@@ -12,23 +12,16 @@ import javax.faces.bean.SessionScoped;
 
 /**
  *
- * @author dannic
+ * @author Daniel Nicklasson
  */
-
-
-
 @ManagedBean
 @SessionScoped
-public class DateTimeSupportBean implements Serializable{
-    
-//    @ManagedProperty
-//    private String
+public class DateTimeSupportBean implements Serializable {
 
-    /** Creates a new instance of DateTimeSupportBean */
     public DateTimeSupportBean() {
     }
-    
-    public String getCurrentDateTimeSupportBean(){
+
+    public String getCurrentDateTimeSupportBean() {
         DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
         Date d = new Date();
         return dateFormat.format(d);
