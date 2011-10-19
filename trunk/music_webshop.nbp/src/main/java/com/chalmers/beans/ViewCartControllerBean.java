@@ -7,6 +7,7 @@ package com.chalmers.beans;
 import com.chalmers.core.CD;
 import com.chalmers.core.ShopUser;
 import com.chalmers.ctrl.Mail;
+import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.RequestScoped;
@@ -61,8 +62,13 @@ public class ViewCartControllerBean {
 
     public String confirmOrder() throws Exception {
         //Can not buy if not logged in or cart empty
-        if(cart.getCart().isEmpty() || !loginbean.isLoggedIn()){
-            return "refreshpage";
+        if(cart.getCart().isEmpty()){
+            FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR,"Pay failure", "You don't have any items in your cart! "));
+            return "";
+        }
+        else if(!loginbean.isLoggedIn()){
+            FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR,"Pay failure", "You are not logged in. Log in before you press pay. "));
+            return "";
         }
         // Get all needed text to send mail
         String message = cart.toString();

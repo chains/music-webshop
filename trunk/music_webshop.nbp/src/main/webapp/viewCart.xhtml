@@ -34,24 +34,26 @@
 
                     <p:column>  
                         <f:facet name="header">  
-                            <h:outputText value="Album" />  
+                            <h:outputText value="Artist" />  
                         </f:facet>  
                         <h:outputText value="#{order.product.artist}" />  
                     </p:column> 
                     <p:column>  
                         <p:commandButton value="Remove one" 
-                                         actionListener="#{viewCartControllerBean.removeOneProduct(order.product)}" action="removeOneProduct" update="@form"/>
+                                         actionListener="#{viewCartControllerBean.removeOneProduct(order.product)}" action="removeOneProduct"/>
                     </p:column> 
                     <p:column>  
                         <p:commandButton value="Remove all" 
-                                         actionListener="#{viewCartControllerBean.removeProduct(order.product)}" action="emptyCart"  update="@form"/>
+                                         actionListener="#{viewCartControllerBean.removeProduct(order.product)}" action="emptyCart"/>
                     </p:column> 
                 </p:dataTable>
-                   
-                        <p:commandButton value="Pay" action="#{viewCartControllerBean.confirmOrder()}"></p:commandButton>
-                   
-                    <p:commandButton value="Empty Cart" 
-                                     actionListener="#{viewCartControllerBean.emptyCart()}" action="emptyCart"/>
+
+                <p:commandButton value="Pay" action="#{viewCartControllerBean.confirmOrder()}"></p:commandButton>
+
+                <p:commandButton value="Empty Cart" 
+                                 actionListener="#{viewCartControllerBean.emptyCart()}" action="emptyCart"/>
+                <p:messages showDetail="true" showSummary="false"/>
+
             </h:form>  
         </p:panel>
     </ui:define>
