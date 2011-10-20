@@ -1,14 +1,14 @@
 package com.chalmers.beans;
 
 import javax.faces.bean.ManagedBean;
-import javax.faces.bean.SessionScoped;
+import javax.faces.bean.RequestScoped;
 
 /**
  *
  * @author Johan Sandström, Jonas Ekström
  */
 @ManagedBean
-@SessionScoped
+@RequestScoped
 public class AdminBackingBean {
 
     private String name;
